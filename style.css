@@ -1036,3 +1036,77 @@ h1 {
 .archive-card {
   position: relative;
 }
+
+/* ==========================================
+   CARD DETAILS
+========================================== */
+
+.card-represents {
+  margin: 20px 0 16px;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: #777770;
+}
+
+
+.info-button {
+  margin-bottom: 20px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #111111;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+
+.card-details {
+  margin: 0 0 24px;
+
+  padding: 20px 0;
+
+  border-top: 1px solid #c8c7c0;
+  border-bottom: 1px solid #c8c7c0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: #444440;
+}
+
+
+.card-details p {
+  margin: 0 0 15px;
+}
+
+
+.card-details p:last-child {
+  margin-bottom: 0;
+}
+
+
+.detail-label {
+  margin-top: 20px !important;
+  margin-bottom: 7px !important;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: #777770;
+}
+
+
+.detail-label:first-child {
+  margin-top: 0 !important;
+}
