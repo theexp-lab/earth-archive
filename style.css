@@ -278,3 +278,227 @@ h1 {
     font-size: 8px;
   }
 }
+/* ==========================================
+   ÉLÉMENT CACHÉ
+========================================== */
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ==========================================
+   MISSION BRIEF
+========================================== */
+
+.mission-screen {
+  min-height: 100vh;
+
+  background: #f2f1ec;
+  color: #111111;
+
+  padding: 32px 48px;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+
+/* HEADER */
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.dark-label {
+  color: #111111;
+}
+
+.dark-small {
+  color: #777770;
+}
+
+
+/* CONTENU */
+
+.mission-content {
+  width: min(100%, 1100px);
+
+  margin: auto;
+
+  padding: 60px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+/* NUMÉRO */
+
+.mission-number {
+  margin: 0 0 30px;
+
+  font-size: 11px;
+  letter-spacing: 0.18em;
+
+  color: #777770;
+}
+
+
+/* TITRE */
+
+.mission-content h2 {
+  margin: 0 0 55px;
+
+  font-size: clamp(75px, 9vw, 140px);
+  line-height: 0.82;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+}
+
+
+/* TEXTE DU BRIEF */
+
+.brief-text {
+  max-width: 620px;
+
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.brief-text p {
+  margin: 0 0 22px;
+}
+
+
+/* RÈGLE PRINCIPALE */
+
+.rule {
+  margin-top: 40px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #b8b8b0;
+
+  width: 100%;
+}
+
+.rule p {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+.rule strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 30px;
+}
+
+
+/* RESSOURCES */
+
+.resources {
+  width: 100%;
+
+  margin-top: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #b8b8b0;
+  border-bottom: 1px solid #b8b8b0;
+}
+
+.resource {
+  padding: 25px 20px 25px 0;
+}
+
+.resource + .resource {
+  padding-left: 25px;
+
+  border-left: 1px solid #b8b8b0;
+}
+
+.resource p {
+  margin: 0 0 12px;
+
+  font-size: 10px;
+  letter-spacing: 0.14em;
+
+  color: #777770;
+}
+
+.resource strong {
+  font-size: 30px;
+}
+
+
+/* BOUTON */
+
+.continue-button {
+  margin-top: 40px;
+
+  background: #111111;
+  color: #f2f1ec;
+
+  border: 1px solid #111111;
+
+  padding: 17px 22px;
+
+  font-size: 11px;
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.continue-button span {
+  margin-left: 35px;
+}
+
+.continue-button:hover {
+  background: transparent;
+  color: #111111;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .mission-screen {
+    padding: 22px;
+  }
+
+  .mission-content {
+    padding: 70px 0;
+  }
+
+  .mission-content h2 {
+    font-size: 19vw;
+  }
+
+  .brief-text {
+    font-size: 16px;
+  }
+
+  .resources {
+    grid-template-columns: 1fr;
+  }
+
+  .resource + .resource {
+    padding-left: 0;
+
+    border-left: none;
+    border-top: 1px solid #b8b8b0;
+  }
+}
