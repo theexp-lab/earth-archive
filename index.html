@@ -10,9 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
 
   <!-- ========================================
        SCREEN 1 — LANDING
@@ -21,7 +19,6 @@
   <main class="hero" id="landing-screen">
 
     <div class="topbar">
-
       <div>
         <p class="label">EARTH ARCHIVE</p>
         <p class="small">INTERSTELLAR PRESERVATION PROGRAM</p>
@@ -31,9 +28,7 @@
         <p class="label">MISSION EA-091</p>
         <p class="small">2091</p>
       </div>
-
     </div>
-
 
     <div class="hero-content">
 
@@ -57,17 +52,12 @@
 
     </div>
 
-
     <div class="bottom-info">
-
       <p>STATUS / ALLOCATION PENDING</p>
-
       <p>EARTH // HOME PLANET</p>
-
     </div>
 
   </main>
-
 
 
   <!-- ========================================
@@ -75,7 +65,6 @@
   ========================================= -->
 
   <section class="mission-screen hidden" id="mission-screen">
-
 
     <div class="mission-header">
 
@@ -95,25 +84,17 @@
     </div>
 
 
-
     <div class="mission-content">
 
-
       <div class="access-status">
-
         <span class="access-dot"></span>
-
         ARCHIVIST ACCESS // GRANTED
-
       </div>
-
 
       <h2>
         WELCOME,<br>
         ARCHIVIST.
       </h2>
-
-
 
       <div class="brief-text">
 
@@ -137,8 +118,6 @@
 
       </div>
 
-
-
       <div class="constraint">
 
         <p>
@@ -151,8 +130,6 @@
         </p>
 
       </div>
-
-
 
       <div class="choice-warning">
 
@@ -167,65 +144,40 @@
 
       </div>
 
-
-
       <p class="instruction">
         CHOOSE WHAT DESERVES THE SPACE.
       </p>
-
-
 
       <div class="allocation-title">
         YOUR ALLOCATION
       </div>
 
-
-
       <div class="resources">
 
-
         <div class="resource">
-
           <p>PHYSICAL CARGO</p>
-
           <strong>25 KG</strong>
-
         </div>
 
-
         <div class="resource">
-
           <p>DIGITAL STORAGE</p>
-
           <strong>10 TB</strong>
-
         </div>
-
 
         <div class="resource">
-
           <p>BIOLOGICAL ARCHIVE</p>
-
           <strong>5 SLOTS</strong>
-
         </div>
-
 
       </div>
 
-
-
       <button class="continue-button" id="continue-button">
-
         BEGIN SELECTION <span>→</span>
-
       </button>
-
 
     </div>
 
   </section>
-
 
 
   <!-- ========================================
@@ -234,12 +186,9 @@
 
   <section class="archive-screen hidden" id="physical-screen">
 
-
     <div class="archive-header">
 
-
       <div>
-
         <p class="label dark-label">
           EARTH ARCHIVE
         </p>
@@ -247,12 +196,9 @@
         <p class="small dark-small">
           INTERSTELLAR PRESERVATION PROGRAM
         </p>
-
       </div>
 
-
       <div class="mission-info">
-
         <p class="label dark-label">
           01 / 03
         </p>
@@ -260,46 +206,32 @@
         <p class="small dark-small">
           PHYSICAL ARCHIVE
         </p>
-
       </div>
-
 
     </div>
 
 
-
     <div class="archive-content">
-
-
-      <!-- INTRO -->
 
       <div class="archive-intro">
 
-
         <div>
-
           <p class="archive-step">
             01 / PHYSICAL
           </p>
-
 
           <h2 class="archive-title">
             PHYSICAL<br>
             ARCHIVE
           </h2>
 
-
           <p class="archive-description">
             Objects, materials and traces of life on Earth
             must share a limited physical cargo.
           </p>
-
         </div>
 
-
-
         <div class="capacity-box">
-
           <p>
             AVAILABLE CAPACITY
           </p>
@@ -307,12 +239,9 @@
           <strong>
             <span id="physical-remaining">25</span> KG
           </strong>
-
         </div>
 
-
       </div>
-
 
 
       <!-- =====================================
@@ -322,45 +251,62 @@
       <div class="object-grid">
 
 
+        <!-- 01 -->
 
-        <!-- CARD 1 -->
-
-        <article
-          class="archive-card"
-          data-weight="8"
-        >
-
+        <article class="archive-card" data-weight="8">
 
           <div class="card-image placeholder-image">
             IMAGE
           </div>
 
-
           <div class="card-content">
-
 
             <p class="card-id">
               EA-PH-001
             </p>
 
-
             <h3>
               GLOBAL SEED COLLECTION
             </h3>
 
-
             <p class="card-description">
-              Seeds from food crops and wild plants
-              collected across Earth.
+              Seeds from crops, wild plants and threatened flora.
             </p>
 
+            <p class="card-represents">
+              REPRESENTS / WHAT GREW HERE
+            </p>
 
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Seeds from major food crops, wild plants,
+                medicinal species and threatened flora,
+                collected across Earth's climates and regions.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Carries both the biological diversity of Earth's
+                plant life and thousands of years of human cultivation.
+              </p>
+
+            </div>
 
             <div class="card-footer">
 
-
               <div>
-
                 <p class="card-label">
                   MASS
                 </p>
@@ -368,63 +314,75 @@
                 <strong>
                   8 KG
                 </strong>
-
               </div>
-
 
               <button class="archive-button">
                 + ARCHIVE
               </button>
 
-
             </div>
 
-
           </div>
-
 
         </article>
 
 
+        <!-- 02 -->
 
-        <!-- CARD 2 -->
-
-        <article
-          class="archive-card"
-          data-weight="6"
-        >
-
+        <article class="archive-card" data-weight="6">
 
           <div class="card-image placeholder-image">
             IMAGE
           </div>
 
-
           <div class="card-content">
-
 
             <p class="card-id">
               EA-PH-002
             </p>
 
-
             <h3>
               ANTARCTIC ICE CORE
             </h3>
 
-
             <p class="card-description">
-              A preserved sample containing traces
-              of Earth's past atmosphere.
+              A preserved physical record of Earth's ancient atmosphere.
             </p>
 
+            <p class="card-represents">
+              REPRESENTS / OUR PLANET'S MEMORY
+            </p>
 
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                A preserved Antarctic ice sample containing
+                layers of snow, particles and ancient air
+                trapped over thousands of years.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                A physical record of Earth's atmosphere and climate,
+                written into the planet itself.
+              </p>
+
+            </div>
 
             <div class="card-footer">
 
-
               <div>
-
                 <p class="card-label">
                   MASS
                 </p>
@@ -432,63 +390,698 @@
                 <strong>
                   6 KG
                 </strong>
-
               </div>
-
 
               <button class="archive-button">
                 + ARCHIVE
               </button>
 
-
             </div>
 
-
           </div>
-
 
         </article>
 
 
+        <!-- 03 -->
 
-        <!-- CARD 3 -->
-
-        <article
-          class="archive-card"
-          data-weight="10"
-        >
-
+        <article class="archive-card" data-weight="6">
 
           <div class="card-image placeholder-image">
             IMAGE
           </div>
 
-
           <div class="card-content">
-
 
             <p class="card-id">
               EA-PH-003
             </p>
 
-
             <h3>
-              EVERYDAY HUMAN OBJECTS
+              EARTH MATERIAL LIBRARY
             </h3>
 
-
             <p class="card-description">
-              A collection of ordinary objects
-              selected from homes around the world.
+              Rock, soil, sand, clay, salt, minerals and fossils.
             </p>
 
+            <p class="card-represents">
+              REPRESENTS / THE PLANET WE INHERITED
+            </p>
 
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Rock, soil, sand, clay, salt, minerals,
+                volcanic glass and fossil samples collected
+                from environments across Earth.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Preserves the textures and substances
+                of the planet beneath our feet.
+              </p>
+
+            </div>
 
             <div class="card-footer">
 
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  6 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="archive-card" data-weight="6">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-004
+            </p>
+
+            <h3>
+              HUMAN MATERIAL LIBRARY
+            </h3>
+
+            <p class="card-description">
+              Materials transformed and created by humans.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / THE PLANET WE ALTERED
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Glass, steel, concrete, paper, plastic,
+                ceramic, textiles and other human-made
+                or transformed materials.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Shows how one species reshaped Earth's raw
+                materials into the environments and objects
+                it lived among.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
 
               <div>
+                <p class="card-label">
+                  MASS
+                </p>
 
+                <strong>
+                  6 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="archive-card" data-weight="9">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-005
+            </p>
+
+            <h3>
+              EVERYDAY HUMAN LIFE
+            </h3>
+
+            <p class="card-description">
+              The ordinary objects people lived with every day.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE LIVED
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Keys, glasses, cooking utensils, clothing,
+                shoes, receipts, packaging, notebooks,
+                photographs and household objects gathered
+                from homes around the world.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                History remembers exceptional things.
+                This collection preserves what an ordinary
+                human life actually looked like.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  9 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="archive-card" data-weight="3">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-006
+            </p>
+
+            <h3>
+              LETTERS & DIARIES
+            </h3>
+
+            <p class="card-description">
+              Private human voices never written for history.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / WHAT WE FELT
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Handwritten letters, diaries, postcards,
+                notes and personal accounts from different
+                ages, languages, countries and generations.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Preserves love, boredom, grief, jokes,
+                arguments, hopes and ordinary thoughts
+                that were never intended as official history.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  3 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 07 -->
+
+        <article class="archive-card" data-weight="7">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-007
+            </p>
+
+            <h3>
+              HANDMADE OBJECTS
+            </h3>
+
+            <p class="card-description">
+              Crafts, tools and techniques carried through human hands.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / WHAT OUR HANDS KNEW
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Ceramics, woven textiles, carved objects,
+                embroidery, baskets, hand tools and crafts
+                made in different regions of Earth.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Preserves knowledge learned, adapted and
+                passed between generations through physical practice.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  7 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 08 -->
+
+        <article class="archive-card" data-weight="12">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-008
+            </p>
+
+            <h3>
+              HUMAN TECHNOLOGY COLLECTION
+            </h3>
+
+            <p class="card-description">
+              Machines opened, dismantled and preserved as physical systems.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE BUILT
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Smartphones from different generations,
+                miniature machines, circuit boards, processors,
+                cables, batteries, sensors, motors, screens
+                and dismantled electronic devices.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Exposes the systems hidden inside the machines
+                that transformed how humans communicated,
+                worked, travelled and understood their world.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  12 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 09 -->
+
+        <article class="archive-card" data-weight="4">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-009
+            </p>
+
+            <h3>
+              CHILDREN'S WORLD
+            </h3>
+
+            <p class="card-description">
+              How humans learned, played and imagined before adulthood.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE BEGAN
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Toys, drawings, schoolwork, storybooks,
+                games and handmade objects created and used
+                by children around the world.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Preserves humanity before adulthood:
+                how we learned, played, imagined and first
+                tried to understand the world.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  4 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 10 -->
+
+        <article class="archive-card" data-weight="6">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-010
+            </p>
+
+            <h3>
+              EARTH ATLAS
+            </h3>
+
+            <p class="card-description">
+              A physical and human map of Earth recorded in 2091.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / THE WORLD WE INHABITED
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Physical relief maps and up-to-date records
+                of continents, oceans, ocean depths, mountain
+                ranges, rivers, tectonic plates, ecosystems,
+                climate zones, cities, populations, migration
+                routes and political borders.
+              </p>
+
+              <p>
+                It also records Earth's dimensions, elevations,
+                depths and cross-sections beneath the surface.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Captures the physical and human geography
+                of Earth at the moment the archive left it.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  6 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 11 -->
+
+        <article class="archive-card" data-weight="10">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-011
+            </p>
+
+            <h3>
+              MUSICAL INSTRUMENTS
+            </h3>
+
+            <p class="card-description">
+              The physical ways human bodies turned movement into music.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE MADE SOUND
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                A compact collection of acoustic instruments
+                and components representing strings,
+                percussion, wind, keys and resonating materials.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                A digital recording can preserve music.
+                These objects preserve how human bodies
+                physically created it.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
                 <p class="card-label">
                   MASS
                 </p>
@@ -496,20 +1089,259 @@
                 <strong>
                   10 KG
                 </strong>
-
               </div>
-
 
               <button class="archive-button">
                 + ARCHIVE
               </button>
 
-
             </div>
-
 
           </div>
 
+        </article>
+
+
+        <!-- 12 -->
+
+        <article class="archive-card" data-weight="8">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-012
+            </p>
+
+            <h3>
+              RITUALS & CELEBRATIONS
+            </h3>
+
+            <p class="card-description">
+              Objects and testimonies from rituals around the world.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE GAVE LIFE MEANING
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Objects, garments, decorations and records
+                connected to weddings, funerals, births,
+                coming-of-age ceremonies, festivals,
+                seasonal traditions and collective celebrations.
+              </p>
+
+              <p>
+                Each is accompanied by descriptions and
+                testimonies from the communities that practice them.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Preserves the traditions humans created around
+                birth, death, love, belonging, transformation
+                and the passage of time.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  8 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 13 -->
+
+        <article class="archive-card" data-weight="7">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-013
+            </p>
+
+            <h3>
+              INSTRUMENTS OF MEASUREMENT
+            </h3>
+
+            <p class="card-description">
+              The tools humans used to make reality measurable.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE MEASURED REALITY
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                A compass, mechanical clock, ruler, scale,
+                thermometer, sextant and selected scientific
+                measuring instruments from different periods.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Humans tried to turn an immense and confusing
+                universe into things they could compare,
+                calculate and understand.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  7 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 14 -->
+
+        <article class="archive-card" data-weight="6">
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+          <div class="card-content">
+
+            <p class="card-id">
+              EA-PH-014
+            </p>
+
+            <h3>
+              FOOD & COOKING CULTURES
+            </h3>
+
+            <p class="card-description">
+              Recipes, utensils and records of how humans ate together.
+            </p>
+
+            <p class="card-represents">
+              REPRESENTS / HOW WE ATE TOGETHER
+            </p>
+
+            <button class="info-button">
+              MORE INFO
+            </button>
+
+            <div class="card-details hidden">
+
+              <p class="detail-label">
+                WHAT'S INSIDE
+              </p>
+
+              <p>
+                Recipes, handwritten family cookbooks, menus,
+                cooking utensils, spice samples, preserved
+                ingredients and records of food traditions
+                from communities around the world.
+              </p>
+
+              <p>
+                The collection documents everyday meals,
+                street food, family dinners, celebrations
+                and ceremonial eating traditions.
+              </p>
+
+              <p class="detail-label">
+                WHY IT MATTERS
+              </p>
+
+              <p>
+                Food was never only about survival.
+                It carried geography, migration, memory,
+                family, identity and tradition.
+              </p>
+
+            </div>
+
+            <div class="card-footer">
+
+              <div>
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  6 KG
+                </strong>
+              </div>
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+            </div>
+
+          </div>
 
         </article>
 
@@ -517,40 +1349,24 @@
       </div>
 
 
-
-      <!-- BOTTOM NAVIGATION -->
-
       <div class="archive-bottom">
-
 
         <p>
           YOU MAY LEAVE SPACE UNUSED.
         </p>
 
-
         <button class="next-button">
-
           CONTINUE TO DIGITAL <span>→</span>
-
         </button>
-
 
       </div>
 
-
     </div>
-
 
   </section>
 
 
-
-  <!-- ========================================
-       JAVASCRIPT
-  ========================================= -->
-
   <script src="script.js"></script>
-
 
 </body>
 
