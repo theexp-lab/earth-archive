@@ -11,21 +11,33 @@ const remainingDisplay = document.getElementById("physical-remaining");
 let remainingWeight = 25;
 
 
+// LANDING → MISSION BRIEF
+
 beginButton.addEventListener("click", function () {
+
   landingScreen.classList.add("hidden");
+
   missionScreen.classList.remove("hidden");
 
   window.scrollTo(0, 0);
+
 });
 
 
+// MISSION BRIEF → PHYSICAL ARCHIVE
+
 continueButton.addEventListener("click", function () {
+
   missionScreen.classList.add("hidden");
+
   physicalScreen.classList.remove("hidden");
 
   window.scrollTo(0, 0);
+
 });
 
+
+// PHYSICAL ARCHIVE SELECTION
 
 archiveButtons.forEach(function (button) {
 
@@ -38,6 +50,9 @@ archiveButtons.forEach(function (button) {
     const isSelected = card.classList.contains("selected");
 
 
+    // SI LA CARTE EST DÉJÀ ARCHIVÉE :
+    // on la retire et on rend le poids disponible
+
     if (isSelected) {
 
       remainingWeight = remainingWeight + weight;
@@ -46,18 +61,31 @@ archiveButtons.forEach(function (button) {
 
       button.textContent = "+ ARCHIVE";
 
-    } else {
+    }
+
+
+    // SINON : on essaie de l'ajouter
+
+    else {
+
+      // PAS ASSEZ DE PLACE
 
       if (weight > remainingWeight) {
 
         button.textContent = "NO SPACE";
 
         setTimeout(function () {
+
           button.textContent = "+ ARCHIVE";
+
         }, 1000);
 
         return;
+
       }
+
+
+      // ASSEZ DE PLACE
 
       remainingWeight = remainingWeight - weight;
 
@@ -67,6 +95,8 @@ archiveButtons.forEach(function (button) {
 
     }
 
+
+    // MET À JOUR LE COMPTEUR
 
     remainingDisplay.textContent = remainingWeight;
 
