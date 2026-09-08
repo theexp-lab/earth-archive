@@ -1,23 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #0b0b0b;
-  color: #f2f1ec;
-  font-family: Arial, sans-serif;
   margin: 0;
+  background: #0b0b0b;
+  color: #f2f1ec;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
   min-height: 100vh;
+  padding: 28px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #0b0b0b;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mission-info {
+  text-align: right;
+}
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.small {
+  margin: 7px 0 0;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #8b8b84;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.eyebrow {
+  margin-bottom: 24px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: #8b8b84;
 }
 
 h1 {
-  font-size: 80px;
+  margin: 0;
+  font-size: clamp(80px, 13vw, 190px);
+  line-height: 0.78;
+  letter-spacing: -0.07em;
+  font-weight: 700;
 }
 
-p {
-  font-size: 20px;
+.question {
+  margin: 42px 0 34px;
+  max-width: 600px;
+  font-size: clamp(18px, 2vw, 26px);
+  line-height: 1.35;
 }
 
-button {
+.begin-button {
   background: transparent;
   color: #f2f1ec;
-  border: 1px solid #f2f1ec;
-  padding: 14px 24px;
+  border: 1px solid #4b4b47;
+  padding: 16px 20px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.begin-button span {
+  margin-left: 30px;
+}
+
+.begin-button:hover {
+  background: #f2f1ec;
+  color: #0b0b0b;
+  border-color: #f2f1ec;
+}
+
+.bottom-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #666660;
+}
+
+.bottom-info p {
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+
+  .hero {
+    padding: 22px;
+  }
+
+  .topbar .small {
+    display: none;
+  }
+
+  h1 {
+    font-size: 20vw;
+  }
+
+  .question br {
+    display: none;
+  }
+
+  .bottom-info {
+    gap: 20px;
+  }
 }
