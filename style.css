@@ -596,3 +596,119 @@ h1 {
 
   color: #777770;
 }
+
+/* ==========================================
+   MISSION BRIEF — TYPOGRAPHY CLEANUP
+========================================== */
+
+/* ACCESS GRANTED — petit statut isolé */
+.access-status {
+  margin-bottom: 70px;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+
+  color: #777770;
+}
+
+
+/* WELCOME ARCHIVIST — plus petit et plus élégant */
+.mission-content h2 {
+  margin: 0 0 48px;
+
+  font-size: clamp(52px, 6vw, 88px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+}
+
+
+/* TEXTE PRINCIPAL — UNE SEULE TAILLE */
+.brief-text {
+  max-width: 620px;
+
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.brief-text p {
+  margin: 0 0 20px;
+}
+
+
+/* "YOU" reste accentué sans agrandir toute la phrase */
+.important-line {
+  margin-top: 32px !important;
+
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.important-line strong {
+  font-size: inherit;
+  font-weight: 800;
+}
+
+
+/* CONTRAINTE — même typo que le texte */
+.constraint {
+  max-width: 620px;
+
+  margin-top: 45px;
+  padding-top: 28px;
+
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+
+/* AVERTISSEMENT */
+.choice-warning {
+  margin-top: 45px;
+  padding: 28px 0;
+}
+
+.choice-warning p {
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+
+/* On accentue par le poids, PAS par une énorme taille */
+.warning-main {
+  margin-top: 10px !important;
+
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+
+  font-weight: 700;
+}
+
+
+/* INSTRUCTION */
+.instruction {
+  margin: 48px 0 0;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+
+/* YOUR ALLOCATION */
+.allocation-title {
+  margin-top: 40px;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+
+  color: #777770;
+}
+
+
+/* LES 3 CHIFFRES */
+.resource strong {
+  font-size: 26px;
+}
