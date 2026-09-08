@@ -712,3 +712,278 @@ h1 {
 .resource strong {
   font-size: 26px;
 }
+
+/* ==========================================
+   PHYSICAL ARCHIVE
+========================================== */
+
+.archive-screen {
+  min-height: 100vh;
+  background: #f2f1ec;
+  color: #111111;
+  padding: 32px 48px;
+}
+
+.archive-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.archive-content {
+  width: min(100%, 1200px);
+  margin: 90px auto 60px;
+}
+
+
+/* INTRO */
+
+.archive-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+
+  padding-bottom: 40px;
+  border-bottom: 1px solid #b8b8b0;
+}
+
+.archive-step {
+  margin: 0 0 22px;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: #777770;
+}
+
+.archive-title {
+  margin: 0;
+
+  font-size: clamp(52px, 6vw, 88px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.archive-description {
+  max-width: 520px;
+  margin: 28px 0 0;
+
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+
+/* CAPACITY */
+
+.capacity-box {
+  text-align: right;
+  min-width: 180px;
+}
+
+.capacity-box p {
+  margin: 0 0 10px;
+
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #777770;
+}
+
+.capacity-box strong {
+  font-size: 38px;
+  letter-spacing: -0.03em;
+}
+
+
+/* GRID */
+
+.object-grid {
+  margin-top: 55px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+
+/* CARD */
+
+.archive-card {
+  border: 1px solid #b8b8b0;
+  background: #f2f1ec;
+
+  transition: transform 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.archive-card:hover {
+  transform: translateY(-3px);
+  border-color: #111111;
+}
+
+
+/* IMAGE TEMPORAIRE */
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.placeholder-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #deddd6;
+  color: #999990;
+
+  font-size: 9px;
+  letter-spacing: 0.18em;
+}
+
+
+/* CARD TEXT */
+
+.card-content {
+  padding: 22px;
+}
+
+.card-id {
+  margin: 0 0 20px;
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #777770;
+}
+
+.archive-card h3 {
+  margin: 0;
+
+  font-size: 19px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.card-description {
+  min-height: 72px;
+
+  margin: 18px 0 30px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555550;
+}
+
+
+/* FOOTER */
+
+.card-footer {
+  padding-top: 18px;
+
+  border-top: 1px solid #c8c7c0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-label {
+  margin: 0 0 4px;
+
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: #777770;
+}
+
+.card-footer strong {
+  font-size: 17px;
+}
+
+
+/* ARCHIVE BUTTON */
+
+.archive-button {
+  border: none;
+  background: transparent;
+  color: #111111;
+
+  padding: 0;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+
+/* BAS DE PAGE */
+
+.archive-bottom {
+  margin-top: 55px;
+  padding-top: 25px;
+
+  border-top: 1px solid #b8b8b0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.archive-bottom p {
+  margin: 0;
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #777770;
+}
+
+.next-button {
+  border: 1px solid #111111;
+
+  background: #111111;
+  color: #f2f1ec;
+
+  padding: 16px 20px;
+
+  font-size: 10px;
+  letter-spacing: 0.14em;
+
+  cursor: pointer;
+}
+
+.next-button span {
+  margin-left: 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .archive-screen {
+    padding: 22px;
+  }
+
+  .archive-content {
+    margin-top: 70px;
+  }
+
+  .archive-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .capacity-box {
+    text-align: left;
+  }
+
+  .object-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+  }
+}
