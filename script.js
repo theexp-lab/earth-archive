@@ -6,12 +6,14 @@ const missionScreen = document.getElementById("mission-screen");
 const physicalScreen = document.getElementById("physical-screen");
 
 const archiveButtons = document.querySelectorAll(".archive-button");
+const infoButtons = document.querySelectorAll(".info-button");
+
 const remainingDisplay = document.getElementById("physical-remaining");
 
 let remainingWeight = 25;
 
 
-// LANDING → MISSION BRIEF
+// LANDING → MISSION
 
 beginButton.addEventListener("click", function () {
 
@@ -24,7 +26,7 @@ beginButton.addEventListener("click", function () {
 });
 
 
-// MISSION BRIEF → PHYSICAL ARCHIVE
+// MISSION → PHYSICAL
 
 continueButton.addEventListener("click", function () {
 
@@ -37,7 +39,7 @@ continueButton.addEventListener("click", function () {
 });
 
 
-// PHYSICAL ARCHIVE SELECTION
+// ARCHIVE / REMOVE OBJECT
 
 archiveButtons.forEach(function (button) {
 
@@ -50,9 +52,6 @@ archiveButtons.forEach(function (button) {
     const isSelected = card.classList.contains("selected");
 
 
-    // SI LA CARTE EST DÉJÀ ARCHIVÉE :
-    // on la retire et on rend le poids disponible
-
     if (isSelected) {
 
       remainingWeight = remainingWeight + weight;
@@ -61,31 +60,18 @@ archiveButtons.forEach(function (button) {
 
       button.textContent = "+ ARCHIVE";
 
-    }
-
-
-    // SINON : on essaie de l'ajouter
-
-    else {
-
-      // PAS ASSEZ DE PLACE
+    } else {
 
       if (weight > remainingWeight) {
 
         button.textContent = "NO SPACE";
 
         setTimeout(function () {
-
           button.textContent = "+ ARCHIVE";
-
         }, 1000);
 
         return;
-
       }
-
-
-      // ASSEZ DE PLACE
 
       remainingWeight = remainingWeight - weight;
 
@@ -96,9 +82,39 @@ archiveButtons.forEach(function (button) {
     }
 
 
-    // MET À JOUR LE COMPTEUR
-
     remainingDisplay.textContent = remainingWeight;
+
+  });
+
+});
+
+
+// MORE INFO
+
+infoButtons.forEach(function (button) {
+
+  button.addEventListener("click", function () {
+
+    const card = button.closest(".archive-card");
+
+    const details = card.querySelector(".card-details");
+
+    const isOpen = !details.classList.contains("hidden");
+
+
+    if (isOpen) {
+
+      details.classList.add("hidden");
+
+      button.textContent = "MORE INFO";
+
+    } else {
+
+      details.classList.remove("hidden");
+
+      button.textContent = "CLOSE INFO";
+
+    }
 
   });
 
