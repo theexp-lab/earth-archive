@@ -1000,3 +1000,39 @@ h1 {
 .archive-card.selected .archive-button {
   font-weight: 800;
 }
+/* ==========================================
+   ARCHIVED STATE
+========================================== */
+
+.archive-card.selected {
+  border: 2px solid #111111;
+}
+
+.archive-card.selected .card-image {
+  opacity: 0.55;
+}
+
+.archive-card.selected .archive-button {
+  font-weight: 800;
+}
+
+.archive-card.selected::after {
+  content: "ARCHIVED";
+
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  padding: 7px 9px;
+
+  background: #111111;
+  color: #f2f1ec;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.archive-card {
+  position: relative;
+}
