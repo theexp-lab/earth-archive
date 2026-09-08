@@ -14,6 +14,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* =========================
    PAGE ENTIÈRE
 ========================= */
@@ -25,7 +26,75 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 
+  position: relative;
+  overflow: hidden;
+
   background: #0b0b0b;
+}
+
+
+/* =========================
+   IMAGE DE LA TERRE
+========================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  top: 50%;
+  left: 62%;
+
+  transform: translate(-50%, -50%);
+
+  background-image: url("earth.jpg");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 50%;
+
+  opacity: 0.42;
+
+  filter:
+    brightness(0.65)
+    contrast(1.1);
+
+  z-index: 0;
+}
+
+
+/* VOILE SOMBRE AU-DESSUS DE LA TERRE */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 11, 11, 0.78) 0%,
+      rgba(11, 11, 11, 0.28) 55%,
+      rgba(11, 11, 11, 0.55) 100%
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================
+   CONTENU AU-DESSUS
+========================= */
+
+.topbar,
+.hero-content,
+.bottom-info {
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -84,7 +153,7 @@ body {
   font-size: 11px;
   letter-spacing: 0.18em;
 
-  color: #8b8b84;
+  color: #9a9a94;
 }
 
 
@@ -129,7 +198,7 @@ h1 {
   align-items: center;
   justify-content: center;
 
-  background: transparent;
+  background: rgba(11, 11, 11, 0.25);
   color: #f2f1ec;
 
   border: 1px solid #777770;
@@ -142,6 +211,8 @@ h1 {
   cursor: pointer;
 
   transition: all 0.25s ease;
+
+  backdrop-filter: blur(4px);
 }
 
 .begin-button span {
@@ -168,7 +239,7 @@ h1 {
   font-size: 9px;
   letter-spacing: 0.14em;
 
-  color: #666660;
+  color: #777770;
 }
 
 .bottom-info p {
@@ -184,6 +255,13 @@ h1 {
 
   .hero {
     padding: 22px;
+  }
+
+  .hero::before {
+    width: 650px;
+    height: 650px;
+
+    left: 70%;
   }
 
   .topbar .small {
