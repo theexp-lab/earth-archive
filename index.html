@@ -4,16 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Earth Archive</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-  <!-- =========================
+
+  <!-- ========================================
        SCREEN 1 — LANDING
-  ========================== -->
+  ========================================= -->
 
   <main class="hero" id="landing-screen">
 
@@ -57,329 +60,497 @@
 
     <div class="bottom-info">
 
-      <p>
-        STATUS / ALLOCATION PENDING
-      </p>
+      <p>STATUS / ALLOCATION PENDING</p>
 
-      <p>
-        EARTH // HOME PLANET
-      </p>
+      <p>EARTH // HOME PLANET</p>
 
     </div>
 
   </main>
 
 
-  <!-- =========================
-     SCREEN 2 — MISSION BRIEF
-========================== -->
 
-<section class="mission-screen hidden" id="mission-screen">
+  <!-- ========================================
+       SCREEN 2 — MISSION BRIEF
+  ========================================= -->
 
-  <div class="mission-header">
-
-    <div>
-      <p class="label dark-label">EARTH ARCHIVE</p>
-      <p class="small dark-small">
-        INTERSTELLAR PRESERVATION PROGRAM
-      </p>
-    </div>
-
-    <div class="mission-info">
-      <p class="label dark-label">MISSION EA-091</p>
-      <p class="small dark-small">2091</p>
-    </div>
-
-  </div>
+  <section class="mission-screen hidden" id="mission-screen">
 
 
-  <div class="mission-content">
-
-    <div class="access-status">
-      <span class="access-dot"></span>
-      ARCHIVIST ACCESS // GRANTED
-    </div>
-
-
-    <h2>
-      WELCOME,<br>
-      ARCHIVIST.
-    </h2>
-
-
-    <div class="brief-text">
-
-      <p class="brief-intro">
-        You have been selected for Mission EA-091.
-      </p>
-
-      <p>
-        In 2091, humanity is preparing its first permanent
-        settlement beyond the Solar System.
-      </p>
-
-      <p>
-        The people born there may never see Earth.
-      </p>
-
-      <p class="important-line">
-        They will know this planet through what
-        <strong>YOU</strong> choose to send with them.
-      </p>
-
-    </div>
-
-
-    <div class="constraint">
-
-      <p>
-        But space aboard the mission is limited.
-      </p>
-
-      <p>
-        Only a small allocation has been reserved
-        for the Earth Archive.
-      </p>
-
-    </div>
-
-
-    <div class="choice-warning">
-
-      <p>You cannot preserve everything.</p>
-
-      <p class="warning-main">
-        Every choice will take up space.<br>
-        Every choice will leave something behind.
-      </p>
-
-    </div>
-
-
-    <p class="instruction">
-      CHOOSE WHAT DESERVES THE SPACE.
-    </p>
-
-
-    <div class="allocation-title">
-      YOUR ALLOCATION
-    </div>
-
-
-    <div class="resources">
-
-      <div class="resource">
-        <p>PHYSICAL CARGO</p>
-        <strong>25 KG</strong>
-      </div>
-
-      <div class="resource">
-        <p>DIGITAL STORAGE</p>
-        <strong>10 TB</strong>
-      </div>
-
-      <div class="resource">
-        <p>BIOLOGICAL ARCHIVE</p>
-        <strong>5 SLOTS</strong>
-      </div>
-
-    </div>
-
-
-    <button class="continue-button" id="continue-button">
-      BEGIN SELECTION <span>→</span>
-    </button>
-
-  </div>
-
-</section>
-<!-- =========================
-     SCREEN 3 — PHYSICAL ARCHIVE
-========================== -->
-
-<section class="archive-screen hidden" id="physical-screen">
-
-  <div class="archive-header">
-
-    <div>
-      <p class="label dark-label">EARTH ARCHIVE</p>
-      <p class="small dark-small">
-        INTERSTELLAR PRESERVATION PROGRAM
-      </p>
-    </div>
-
-    <div class="mission-info">
-      <p class="label dark-label">01 / 03</p>
-      <p class="small dark-small">PHYSICAL ARCHIVE</p>
-    </div>
-
-  </div>
-
-
-  <div class="archive-content">
-
-    <div class="archive-intro">
+    <div class="mission-header">
 
       <div>
-        <p class="archive-step">01 / PHYSICAL</p>
+        <p class="label dark-label">EARTH ARCHIVE</p>
 
-        <h2 class="archive-title">
-          PHYSICAL<br>
-          ARCHIVE
-        </h2>
-
-        <p class="archive-description">
-          Objects, materials and traces of life on Earth
-          must share a limited physical cargo.
+        <p class="small dark-small">
+          INTERSTELLAR PRESERVATION PROGRAM
         </p>
       </div>
 
-
-      <div class="capacity-box">
-
-        <p>AVAILABLE CAPACITY</p>
-
-        <strong>
-          <span id="physical-remaining">25</span> KG
-        </strong>
-
+      <div class="mission-info">
+        <p class="label dark-label">MISSION EA-091</p>
+        <p class="small dark-small">2091</p>
       </div>
 
     </div>
 
 
-    <div class="object-grid">
 
-      <!-- CARD 1 -->
-
-      <article class="archive-card">
-
-        <div class="card-image placeholder-image">
-          IMAGE
-        </div>
-
-        <div class="card-content">
-
-          <p class="card-id">EA-PH-001</p>
-
-          <h3>GLOBAL SEED COLLECTION</h3>
-
-          <p class="card-description">
-            Seeds from food crops and wild plants
-            collected across Earth.
-          </p>
-
-          <div class="card-footer">
-
-            <div>
-              <p class="card-label">MASS</p>
-              <strong>8 KG</strong>
-            </div>
-
-            <button class="archive-button">
-              + ARCHIVE
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
+    <div class="mission-content">
 
 
-      <!-- CARD 2 -->
+      <div class="access-status">
 
-      <article class="archive-card">
+        <span class="access-dot"></span>
 
-        <div class="card-image placeholder-image">
-          IMAGE
-        </div>
+        ARCHIVIST ACCESS // GRANTED
 
-        <div class="card-content">
-
-          <p class="card-id">EA-PH-002</p>
-
-          <h3>ANTARCTIC ICE CORE</h3>
-
-          <p class="card-description">
-            A preserved sample containing traces
-            of Earth's past atmosphere.
-          </p>
-
-          <div class="card-footer">
-
-            <div>
-              <p class="card-label">MASS</p>
-              <strong>6 KG</strong>
-            </div>
-
-            <button class="archive-button">
-              + ARCHIVE
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
+      </div>
 
 
-      <!-- CARD 3 -->
-
-      <article class="archive-card">
-
-        <div class="card-image placeholder-image">
-          IMAGE
-        </div>
-
-        <div class="card-content">
-
-          <p class="card-id">EA-PH-003</p>
-
-          <h3>EVERYDAY HUMAN OBJECTS</h3>
-
-          <p class="card-description">
-            A collection of ordinary objects
-            selected from homes around the world.
-          </p>
-
-          <div class="card-footer">
-
-            <div>
-              <p class="card-label">MASS</p>
-              <strong>10 KG</strong>
-            </div>
-
-            <button class="archive-button">
-              + ARCHIVE
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
+      <h2>
+        WELCOME,<br>
+        ARCHIVIST.
+      </h2>
 
 
-    <div class="archive-bottom">
 
-      <p>
-        YOU MAY LEAVE SPACE UNUSED.
+      <div class="brief-text">
+
+        <p class="brief-intro">
+          You have been selected for Mission EA-091.
+        </p>
+
+        <p>
+          In 2091, humanity is preparing its first permanent
+          settlement beyond the Solar System.
+        </p>
+
+        <p>
+          The people born there may never see Earth.
+        </p>
+
+        <p class="important-line">
+          They will know this planet through what
+          <strong>YOU</strong> choose to send with them.
+        </p>
+
+      </div>
+
+
+
+      <div class="constraint">
+
+        <p>
+          But space aboard the mission is limited.
+        </p>
+
+        <p>
+          Only a small allocation has been reserved
+          for the Earth Archive.
+        </p>
+
+      </div>
+
+
+
+      <div class="choice-warning">
+
+        <p>
+          You cannot preserve everything.
+        </p>
+
+        <p class="warning-main">
+          Every choice will take up space.<br>
+          Every choice will leave something behind.
+        </p>
+
+      </div>
+
+
+
+      <p class="instruction">
+        CHOOSE WHAT DESERVES THE SPACE.
       </p>
 
-      <button class="next-button">
-        CONTINUE TO DIGITAL <span>→</span>
+
+
+      <div class="allocation-title">
+        YOUR ALLOCATION
+      </div>
+
+
+
+      <div class="resources">
+
+
+        <div class="resource">
+
+          <p>PHYSICAL CARGO</p>
+
+          <strong>25 KG</strong>
+
+        </div>
+
+
+        <div class="resource">
+
+          <p>DIGITAL STORAGE</p>
+
+          <strong>10 TB</strong>
+
+        </div>
+
+
+        <div class="resource">
+
+          <p>BIOLOGICAL ARCHIVE</p>
+
+          <strong>5 SLOTS</strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <button class="continue-button" id="continue-button">
+
+        BEGIN SELECTION <span>→</span>
+
       </button>
+
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+
+
+  <!-- ========================================
+       SCREEN 3 — PHYSICAL ARCHIVE
+  ========================================= -->
+
+  <section class="archive-screen hidden" id="physical-screen">
+
+
+    <div class="archive-header">
+
+
+      <div>
+
+        <p class="label dark-label">
+          EARTH ARCHIVE
+        </p>
+
+        <p class="small dark-small">
+          INTERSTELLAR PRESERVATION PROGRAM
+        </p>
+
+      </div>
+
+
+      <div class="mission-info">
+
+        <p class="label dark-label">
+          01 / 03
+        </p>
+
+        <p class="small dark-small">
+          PHYSICAL ARCHIVE
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="archive-content">
+
+
+      <!-- INTRO -->
+
+      <div class="archive-intro">
+
+
+        <div>
+
+          <p class="archive-step">
+            01 / PHYSICAL
+          </p>
+
+
+          <h2 class="archive-title">
+            PHYSICAL<br>
+            ARCHIVE
+          </h2>
+
+
+          <p class="archive-description">
+            Objects, materials and traces of life on Earth
+            must share a limited physical cargo.
+          </p>
+
+        </div>
+
+
+
+        <div class="capacity-box">
+
+          <p>
+            AVAILABLE CAPACITY
+          </p>
+
+          <strong>
+            <span id="physical-remaining">25</span> KG
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- =====================================
+           OBJECT CARDS
+      ====================================== -->
+
+      <div class="object-grid">
+
+
+
+        <!-- CARD 1 -->
+
+        <article
+          class="archive-card"
+          data-weight="8"
+        >
+
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+
+          <div class="card-content">
+
+
+            <p class="card-id">
+              EA-PH-001
+            </p>
+
+
+            <h3>
+              GLOBAL SEED COLLECTION
+            </h3>
+
+
+            <p class="card-description">
+              Seeds from food crops and wild plants
+              collected across Earth.
+            </p>
+
+
+
+            <div class="card-footer">
+
+
+              <div>
+
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  8 KG
+                </strong>
+
+              </div>
+
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- CARD 2 -->
+
+        <article
+          class="archive-card"
+          data-weight="6"
+        >
+
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+
+          <div class="card-content">
+
+
+            <p class="card-id">
+              EA-PH-002
+            </p>
+
+
+            <h3>
+              ANTARCTIC ICE CORE
+            </h3>
+
+
+            <p class="card-description">
+              A preserved sample containing traces
+              of Earth's past atmosphere.
+            </p>
+
+
+
+            <div class="card-footer">
+
+
+              <div>
+
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  6 KG
+                </strong>
+
+              </div>
+
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- CARD 3 -->
+
+        <article
+          class="archive-card"
+          data-weight="10"
+        >
+
+
+          <div class="card-image placeholder-image">
+            IMAGE
+          </div>
+
+
+          <div class="card-content">
+
+
+            <p class="card-id">
+              EA-PH-003
+            </p>
+
+
+            <h3>
+              EVERYDAY HUMAN OBJECTS
+            </h3>
+
+
+            <p class="card-description">
+              A collection of ordinary objects
+              selected from homes around the world.
+            </p>
+
+
+
+            <div class="card-footer">
+
+
+              <div>
+
+                <p class="card-label">
+                  MASS
+                </p>
+
+                <strong>
+                  10 KG
+                </strong>
+
+              </div>
+
+
+              <button class="archive-button">
+                + ARCHIVE
+              </button>
+
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
+
+
+      <!-- BOTTOM NAVIGATION -->
+
+      <div class="archive-bottom">
+
+
+        <p>
+          YOU MAY LEAVE SPACE UNUSED.
+        </p>
+
+
+        <button class="next-button">
+
+          CONTINUE TO DIGITAL <span>→</span>
+
+        </button>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ========================================
+       JAVASCRIPT
+  ========================================= -->
 
   <script src="script.js"></script>
+
 
 </body>
 
