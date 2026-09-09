@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const digitalScreen =
     document.getElementById("digital-screen");
 
+  const biologicalScreen =
+  document.getElementById("biological-screen");
+
 
   // ==========================================
   // 2. NAVIGATION BUTTONS
@@ -32,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const digitalButton =
     document.getElementById("digital-button");
+
+  const biologicalButton =
+  document.getElementById("biological-button");
 
 
   // ==========================================
@@ -486,5 +492,175 @@ document.addEventListener("DOMContentLoaded", function () {
     digitalFiles[0].click();
 
   }
+// ==========================================
+// 15. DIGITAL → BIOLOGICAL
+// Passe du système informatique à la biobanque
+// ==========================================
 
+if (biologicalButton) {
+
+  biologicalButton.addEventListener("click", function () {
+
+    digitalScreen.classList.add("hidden");
+
+    biologicalScreen.classList.remove("hidden");
+
+    window.scrollTo(0, 0);
+
+  });
+
+}
+
+
+/* ==========================================
+   16. BIOLOGICAL ARCHIVE — VARIABLES
+   5 collections maximum
+========================================== */
+
+const bioCards =
+  document.querySelectorAll(".bio-card");
+
+const bioArchiveButtons =
+  document.querySelectorAll(".bio-archive-button");
+
+const bioInfoButtons =
+  document.querySelectorAll(".bio-info-button");
+
+const bioRemainingDisplay =
+  document.getElementById("bio-remaining");
+
+let remainingBioSlots = 5;
+
+
+/* ==========================================
+   17. BIOLOGICAL — ARCHIVE SELECTION
+   Chaque collection utilise 1 slot
+========================================== */
+
+bioArchiveButtons.forEach(function (button) {
+
+  button.addEventListener("click", function () {
+
+    const card =
+      button.closest(".bio-card");
+
+    const isSelected =
+      card.classList.contains("selected");
+
+
+    // ------------------------------------------
+    // REMOVE COLLECTION
+    // ------------------------------------------
+
+    if (isSelected) {
+
+      card.classList.remove("selected");
+
+      remainingBioSlots =
+        remainingBioSlots + 1;
+
+      button.textContent =
+        "+ ARCHIVE";
+
+    }
+
+
+    // ------------------------------------------
+    // ADD COLLECTION
+    // ------------------------------------------
+
+    else {
+
+      if (remainingBioSlots <= 0) {
+
+        button.textContent =
+          "NO SLOT AVAILABLE";
+
+        setTimeout(function () {
+
+          button.textContent =
+            "+ ARCHIVE";
+
+        }, 1200);
+
+        return;
+
+      }
+
+      card.classList.add("selected");
+
+      remainingBioSlots =
+        remainingBioSlots - 1;
+
+      button.textContent =
+        "✓ ARCHIVED";
+
+    }
+
+
+    // ------------------------------------------
+    // UPDATE SLOT COUNTER
+    // ------------------------------------------
+
+    if (bioRemainingDisplay) {
+
+      bioRemainingDisplay.textContent =
+        remainingBioSlots;
+
+    }
+
+  });
+
+});
+
+
+/* ==========================================
+   18. BIOLOGICAL — MORE INFO
+   Ouvre / ferme les informations scientifiques
+========================================== */
+
+bioInfoButtons.forEach(function (button) {
+
+  button.addEventListener("click", function () {
+
+    const card =
+      button.closest(".bio-card");
+
+    const details =
+      card.querySelector(".bio-details");
+
+    const isOpen =
+      !details.classList.contains("hidden");
+
+
+    // ------------------------------------------
+    // CLOSE
+    // ------------------------------------------
+
+    if (isOpen) {
+
+      details.classList.add("hidden");
+
+      button.textContent =
+        "MORE INFO";
+
+    }
+
+
+    // ------------------------------------------
+    // OPEN
+    // ------------------------------------------
+
+    else {
+
+      details.classList.remove("hidden");
+
+      button.textContent =
+        "CLOSE INFO";
+
+    }
+
+  });
+
+});
 });
