@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("digital-screen");
 
   const biologicalScreen =
-  document.getElementById("biological-screen");
+    document.getElementById("biological-screen");
 
 
   // ==========================================
@@ -37,20 +37,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("digital-button");
 
   const biologicalButton =
-  document.getElementById("biological-button");
+    document.getElementById("biological-button");
 
 
   // ==========================================
   // 3. LANDING → MISSION
   // ==========================================
 
-  if (beginButton) {
+  if (beginButton && landingScreen && missionScreen) {
 
     beginButton.addEventListener("click", function () {
 
       landingScreen.classList.add("hidden");
 
       missionScreen.classList.remove("hidden");
+
+      // IMPORTANT :
+      // ton nouveau CSS utilise cette classe
+      // pour lancer les animations Mission
+      missionScreen.classList.add("mission-active");
 
       window.scrollTo(0, 0);
 
@@ -63,14 +68,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // 4. MISSION → PHYSICAL
   // ==========================================
 
-  if (continueButton) {
+  if (continueButton && missionScreen && physicalScreen) {
 
     continueButton.addEventListener("click", function () {
 
       missionScreen.classList.add("hidden");
 
       physicalScreen.classList.remove("hidden");
-      physicalScreen.classList.add("physical-active");
 
       window.scrollTo(0, 0);
 
@@ -83,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 5. PHYSICAL → DIGITAL
   // ==========================================
 
-  if (digitalButton) {
+  if (digitalButton && physicalScreen && digitalScreen) {
 
     digitalButton.addEventListener("click", function () {
 
@@ -122,6 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const card =
         button.closest(".archive-card");
 
+      if (!card) {
+        return;
+      }
+
       const weight =
         Number(card.dataset.weight);
 
@@ -140,7 +148,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         card.classList.remove("selected");
 
-        button.textContent = "+ ARCHIVE";
+        button.textContent =
+          "+ ARCHIVE";
 
       }
 
@@ -153,11 +162,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (weight > remainingWeight) {
 
-          button.textContent = "NO SPACE";
+          button.textContent =
+            "NO SPACE";
 
           setTimeout(function () {
 
-            button.textContent = "+ ARCHIVE";
+            button.textContent =
+              "+ ARCHIVE";
 
           }, 1000);
 
@@ -165,12 +176,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         remainingWeight =
           remainingWeight - weight;
 
         card.classList.add("selected");
 
-        button.textContent = "✓ ARCHIVED";
+        button.textContent =
+          "✓ ARCHIVED";
 
       }
 
@@ -205,8 +218,16 @@ document.addEventListener("DOMContentLoaded", function () {
       const card =
         button.closest(".archive-card");
 
+      if (!card) {
+        return;
+      }
+
       const details =
         card.querySelector(".card-details");
+
+      if (!details) {
+        return;
+      }
 
       const isOpen =
         !details.classList.contains("hidden");
@@ -216,7 +237,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         details.classList.add("hidden");
 
-        button.textContent = "MORE INFO";
+        button.textContent =
+          "MORE INFO";
 
       }
 
@@ -224,7 +246,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         details.classList.remove("hidden");
 
-        button.textContent = "CLOSE INFO";
+        button.textContent =
+          "CLOSE INFO";
 
       }
 
@@ -314,40 +337,56 @@ document.addEventListener("DOMContentLoaded", function () {
       // UPDATE DETAIL PANEL
       // ------------------------------------------
 
-      detailId.textContent =
-        file.dataset.id;
+      if (detailId) {
+        detailId.textContent =
+          file.dataset.id;
+      }
 
-      detailTitle.textContent =
-        file.dataset.title;
+      if (detailTitle) {
+        detailTitle.textContent =
+          file.dataset.title;
+      }
 
-      detailFormat.textContent =
-        file.dataset.format;
+      if (detailFormat) {
+        detailFormat.textContent =
+          file.dataset.format;
+      }
 
-      detailSize.textContent =
-        file.dataset.storage + " TB";
+      if (detailSize) {
+        detailSize.textContent =
+          file.dataset.storage + " TB";
+      }
 
-      detailDescription.textContent =
-        file.dataset.description;
+      if (detailDescription) {
+        detailDescription.textContent =
+          file.dataset.description;
+      }
 
-      detailSignificance.textContent =
-        file.dataset.significance;
+      if (detailSignificance) {
+        detailSignificance.textContent =
+          file.dataset.significance;
+      }
 
 
       // ------------------------------------------
       // UPDATE ACTION BUTTON
       // ------------------------------------------
 
-      if (file.classList.contains("archived")) {
+      if (digitalActionButton) {
 
-        digitalActionButton.textContent =
-          "REMOVE FROM ARCHIVE";
+        if (file.classList.contains("archived")) {
 
-      }
+          digitalActionButton.textContent =
+            "REMOVE FROM ARCHIVE";
 
-      else {
+        }
 
-        digitalActionButton.textContent =
-          "ADD TO ARCHIVE";
+        else {
+
+          digitalActionButton.textContent =
+            "ADD TO ARCHIVE";
+
+        }
 
       }
 
@@ -356,8 +395,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // UPDATE SYSTEM LOG
       // ------------------------------------------
 
-      digitalLogText.textContent =
-        "> opened " + file.dataset.id;
+      if (digitalLogText) {
+
+        digitalLogText.textContent =
+          "> opened " + file.dataset.id;
+
+      }
 
     });
 
@@ -379,8 +422,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!currentDigitalFile) {
 
-        digitalLogText.textContent =
-          "> select a file before allocation";
+        if (digitalLogText) {
+
+          digitalLogText.textContent =
+            "> select a file before allocation";
+
+        }
 
         return;
 
@@ -408,16 +455,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentDigitalFile.classList.remove("archived");
 
-        status.textContent =
-          "OPEN";
+        if (status) {
+
+          status.textContent =
+            "OPEN";
+
+        }
 
         digitalActionButton.textContent =
           "ADD TO ARCHIVE";
 
-        digitalLogText.textContent =
-          "> " +
-          currentDigitalFile.dataset.id +
-          " removed from archive";
+        if (digitalLogText) {
+
+          digitalLogText.textContent =
+            "> " +
+            currentDigitalFile.dataset.id +
+            " removed from archive";
+
+        }
 
       }
 
@@ -430,12 +485,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (storage > remainingStorage) {
 
-          digitalLogText.textContent =
-            "> ALLOCATION FAILED // " +
-            storage +
-            " TB REQUIRED // " +
-            remainingStorage +
-            " TB AVAILABLE";
+          if (digitalLogText) {
+
+            digitalLogText.textContent =
+              "> ALLOCATION FAILED // " +
+              storage +
+              " TB REQUIRED // " +
+              remainingStorage +
+              " TB AVAILABLE";
+
+          }
 
           return;
 
@@ -447,16 +506,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         currentDigitalFile.classList.add("archived");
 
-        status.textContent =
-          "ARCHIVED";
+        if (status) {
+
+          status.textContent =
+            "ARCHIVED";
+
+        }
 
         digitalActionButton.textContent =
           "REMOVE FROM ARCHIVE";
 
-        digitalLogText.textContent =
-          "> integrity check complete // " +
-          currentDigitalFile.dataset.id +
-          " archived";
+        if (digitalLogText) {
+
+          digitalLogText.textContent =
+            "> integrity check complete // " +
+            currentDigitalFile.dataset.id +
+            " archived";
+
+        }
 
       }
 
@@ -466,8 +533,12 @@ document.addEventListener("DOMContentLoaded", function () {
       // Compteur + barre de remplissage
       // ==========================================
 
-      digitalRemainingDisplay.textContent =
-        remainingStorage;
+      if (digitalRemainingDisplay) {
+
+        digitalRemainingDisplay.textContent =
+          remainingStorage;
+
+      }
 
       const usedStorage =
         10 - remainingStorage;
@@ -475,8 +546,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const usedPercentage =
         (usedStorage / 10) * 100;
 
-      digitalStorageFill.style.width =
-        usedPercentage + "%";
+      if (digitalStorageFill) {
+
+        digitalStorageFill.style.width =
+          usedPercentage + "%";
+
+      }
 
     });
 
@@ -493,516 +568,542 @@ document.addEventListener("DOMContentLoaded", function () {
     digitalFiles[0].click();
 
   }
-// ==========================================
-// 15. DIGITAL → BIOLOGICAL
-// Passe du système informatique à la biobanque
-// ==========================================
-
-if (biologicalButton) {
-
-  biologicalButton.addEventListener("click", function () {
-
-    digitalScreen.classList.add("hidden");
-
-    biologicalScreen.classList.remove("hidden");
-
-    window.scrollTo(0, 0);
-
-  });
-
-}
 
 
-/* ==========================================
-   16. BIOLOGICAL ARCHIVE — VARIABLES
-   5 collections maximum
-========================================== */
+  // ==========================================
+  // 15. DIGITAL → BIOLOGICAL
+  // ==========================================
 
-const bioCards =
-  document.querySelectorAll(".bio-card");
+  if (biologicalButton && digitalScreen && biologicalScreen) {
 
-const bioArchiveButtons =
-  document.querySelectorAll(".bio-archive-button");
+    biologicalButton.addEventListener("click", function () {
 
-const bioInfoButtons =
-  document.querySelectorAll(".bio-info-button");
+      digitalScreen.classList.add("hidden");
 
-const bioRemainingDisplay =
-  document.getElementById("bio-remaining");
+      biologicalScreen.classList.remove("hidden");
 
-let remainingBioSlots = 5;
+      window.scrollTo(0, 0);
 
+    });
 
-/* ==========================================
-   17. BIOLOGICAL — ARCHIVE SELECTION
-   Chaque collection utilise 1 slot
-========================================== */
-
-bioArchiveButtons.forEach(function (button) {
-
-  button.addEventListener("click", function () {
-
-    const card =
-      button.closest(".bio-card");
-
-    const isSelected =
-      card.classList.contains("selected");
+  }
 
 
-    // ------------------------------------------
-    // REMOVE COLLECTION
-    // ------------------------------------------
+  // ==========================================
+  // 16. BIOLOGICAL ARCHIVE — VARIABLES
+  // 5 collections maximum
+  // ==========================================
 
-    if (isSelected) {
+  const bioArchiveButtons =
+    document.querySelectorAll(".bio-archive-button");
 
-      card.classList.remove("selected");
+  const bioInfoButtons =
+    document.querySelectorAll(".bio-info-button");
 
-      remainingBioSlots =
-        remainingBioSlots + 1;
+  const bioRemainingDisplay =
+    document.getElementById("bio-remaining");
 
-      button.textContent =
-        "+ ARCHIVE";
-
-    }
+  let remainingBioSlots = 5;
 
 
-    // ------------------------------------------
-    // ADD COLLECTION
-    // ------------------------------------------
+  // ==========================================
+  // 17. BIOLOGICAL — ARCHIVE SELECTION
+  // ==========================================
 
-    else {
+  bioArchiveButtons.forEach(function (button) {
 
-      if (remainingBioSlots <= 0) {
+    button.addEventListener("click", function () {
+
+      const card =
+        button.closest(".bio-card");
+
+      if (!card) {
+        return;
+      }
+
+      const isSelected =
+        card.classList.contains("selected");
+
+
+      // ------------------------------------------
+      // REMOVE COLLECTION
+      // ------------------------------------------
+
+      if (isSelected) {
+
+        card.classList.remove("selected");
+
+        remainingBioSlots =
+          remainingBioSlots + 1;
 
         button.textContent =
-          "NO SLOT AVAILABLE";
+          "+ ARCHIVE";
 
-        setTimeout(function () {
+      }
+
+
+      // ------------------------------------------
+      // ADD COLLECTION
+      // ------------------------------------------
+
+      else {
+
+        if (remainingBioSlots <= 0) {
 
           button.textContent =
-            "+ ARCHIVE";
+            "NO SLOT AVAILABLE";
 
-        }, 1200);
+          setTimeout(function () {
 
-        return;
+            button.textContent =
+              "+ ARCHIVE";
+
+          }, 1200);
+
+          return;
+
+        }
+
+
+        card.classList.add("selected");
+
+        remainingBioSlots =
+          remainingBioSlots - 1;
+
+        button.textContent =
+          "✓ ARCHIVED";
 
       }
 
-      card.classList.add("selected");
 
-      remainingBioSlots =
-        remainingBioSlots - 1;
+      // ------------------------------------------
+      // UPDATE SLOT COUNTER
+      // ------------------------------------------
 
-      button.textContent =
-        "✓ ARCHIVED";
+      if (bioRemainingDisplay) {
 
-    }
-
-
-    // ------------------------------------------
-    // UPDATE SLOT COUNTER
-    // ------------------------------------------
-
-    if (bioRemainingDisplay) {
-
-      bioRemainingDisplay.textContent =
-        remainingBioSlots;
-
-    }
-
-  });
-
-});
-
-
-/* ==========================================
-   18. BIOLOGICAL — MORE INFO
-   Ouvre / ferme les informations scientifiques
-========================================== */
-
-bioInfoButtons.forEach(function (button) {
-
-  button.addEventListener("click", function () {
-
-    const card =
-      button.closest(".bio-card");
-
-    const details =
-      card.querySelector(".bio-details");
-
-    const isOpen =
-      !details.classList.contains("hidden");
-
-
-    // ------------------------------------------
-    // CLOSE
-    // ------------------------------------------
-
-    if (isOpen) {
-
-      details.classList.add("hidden");
-
-      button.textContent =
-        "MORE INFO";
-
-    }
-
-
-    // ------------------------------------------
-    // OPEN
-    // ------------------------------------------
-
-    else {
-
-      details.classList.remove("hidden");
-
-      button.textContent =
-        "CLOSE INFO";
-
-    }
-
-  });
-
-});
-  // ==========================================
-// 19. BIOLOGICAL → MISSING ITEM
-// Termine les trois catégories
-// ==========================================
-
-const finalButton =
-  document.getElementById("final-button");
-
-const missingScreen =
-  document.getElementById("missing-screen");
-
-const missingInput =
-  document.getElementById("missing-input");
-
-const missingCount =
-  document.getElementById("missing-count");
-
-
-if (finalButton) {
-
-  finalButton.addEventListener("click", function () {
-
-    biologicalScreen.classList.add("hidden");
-
-    missingScreen.classList.remove("hidden");
-
-    window.scrollTo(0, 0);
-
-  });
-
-}
-
-
-// ==========================================
-// 20. MISSING ITEM — CHARACTER COUNTER
-// Compte les caractères tapés
-// ==========================================
-
-if (missingInput && missingCount) {
-
-  missingInput.addEventListener("input", function () {
-
-    missingCount.textContent =
-      missingInput.value.length;
-
-  });
-
-}
-  // ==========================================
-// 21. FINAL ARCHIVE — VARIABLES
-// Éléments de l'écran récapitulatif
-// ==========================================
-
-const summaryButton =
-  document.getElementById("summary-button");
-
-const summaryScreen =
-  document.getElementById("summary-screen");
-
-const summaryPhysicalList =
-  document.getElementById("summary-physical-list");
-
-const summaryDigitalList =
-  document.getElementById("summary-digital-list");
-
-const summaryBiologicalList =
-  document.getElementById("summary-biological-list");
-
-const summaryMissing =
-  document.getElementById("summary-missing");
-
-const summaryPhysical =
-  document.getElementById("summary-physical");
-
-const summaryDigital =
-  document.getElementById("summary-digital");
-
-const summaryBiological =
-  document.getElementById("summary-biological");
-
-const restartButton =
-  document.getElementById("restart-button");
-
-
-// ==========================================
-// 22. FINAL — HELPER FUNCTION
-// Crée une ligne dans le rapport
-// ==========================================
-
-function createSummaryItem(name, value) {
-
-  const item =
-    document.createElement("div");
-
-  item.classList.add("summary-item");
-
-
-  const itemName =
-    document.createElement("span");
-
-  itemName.textContent =
-    name;
-
-
-  const itemValue =
-    document.createElement("span");
-
-  itemValue.textContent =
-    value;
-
-
-  item.appendChild(itemName);
-
-  item.appendChild(itemValue);
-
-
-  return item;
-
-}
-
-
-// ==========================================
-// 23. FINAL — BUILD ARCHIVE REPORT
-// Récupère tous les choix du joueur
-// ==========================================
-
-if (summaryButton) {
-
-  summaryButton.addEventListener("click", function () {
-
-
-    // ==========================================
-    // RESET DES LISTES
-    // ==========================================
-
-    summaryPhysicalList.innerHTML = "";
-
-    summaryDigitalList.innerHTML = "";
-
-    summaryBiologicalList.innerHTML = "";
-
-
-    // ==========================================
-    // PHYSICAL SELECTIONS
-    // ==========================================
-
-    const selectedPhysical =
-      document.querySelectorAll(
-        ".physical-card.selected, .archive-card.selected"
-      );
-
-
-    let physicalUsed = 0;
-
-
-    selectedPhysical.forEach(function (card) {
-
-      const title =
-        card.querySelector("h3");
-
-      const weight =
-        Number(card.dataset.weight || 0);
-
-
-      physicalUsed += weight;
-
-
-      if (title) {
-
-        summaryPhysicalList.appendChild(
-          createSummaryItem(
-            title.textContent.trim(),
-            weight + " KG"
-          )
-        );
+        bioRemainingDisplay.textContent =
+          remainingBioSlots;
 
       }
 
     });
 
+  });
 
-    if (selectedPhysical.length === 0) {
+
+  // ==========================================
+  // 18. BIOLOGICAL — MORE INFO
+  // ==========================================
+
+  bioInfoButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const card =
+        button.closest(".bio-card");
+
+      if (!card) {
+        return;
+      }
+
+      const details =
+        card.querySelector(".bio-details");
+
+      if (!details) {
+        return;
+      }
+
+      const isOpen =
+        !details.classList.contains("hidden");
+
+
+      if (isOpen) {
+
+        details.classList.add("hidden");
+
+        button.textContent =
+          "MORE INFO";
+
+      }
+
+      else {
+
+        details.classList.remove("hidden");
+
+        button.textContent =
+          "CLOSE INFO";
+
+      }
+
+    });
+
+  });
+
+
+  // ==========================================
+  // 19. BIOLOGICAL → MISSING ITEM
+  // ==========================================
+
+  const finalButton =
+    document.getElementById("final-button");
+
+  const missingScreen =
+    document.getElementById("missing-screen");
+
+  const missingInput =
+    document.getElementById("missing-input");
+
+  const missingCount =
+    document.getElementById("missing-count");
+
+
+  if (finalButton && biologicalScreen && missingScreen) {
+
+    finalButton.addEventListener("click", function () {
+
+      biologicalScreen.classList.add("hidden");
+
+      missingScreen.classList.remove("hidden");
+
+      window.scrollTo(0, 0);
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 20. MISSING ITEM — CHARACTER COUNTER
+  // ==========================================
+
+  if (missingInput && missingCount) {
+
+    missingInput.addEventListener("input", function () {
+
+      missingCount.textContent =
+        missingInput.value.length;
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 21. FINAL ARCHIVE — VARIABLES
+  // ==========================================
+
+  const summaryButton =
+    document.getElementById("summary-button");
+
+  const summaryScreen =
+    document.getElementById("summary-screen");
+
+  const summaryPhysicalList =
+    document.getElementById("summary-physical-list");
+
+  const summaryDigitalList =
+    document.getElementById("summary-digital-list");
+
+  const summaryBiologicalList =
+    document.getElementById("summary-biological-list");
+
+  const summaryMissing =
+    document.getElementById("summary-missing");
+
+  const summaryPhysical =
+    document.getElementById("summary-physical");
+
+  const summaryDigital =
+    document.getElementById("summary-digital");
+
+  const summaryBiological =
+    document.getElementById("summary-biological");
+
+  const restartButton =
+    document.getElementById("restart-button");
+
+
+  // ==========================================
+  // 22. FINAL — HELPER FUNCTION
+  // Crée une ligne dans le rapport
+  // ==========================================
+
+  function createSummaryItem(name, value) {
+
+    const item =
+      document.createElement("div");
+
+    item.classList.add("summary-item");
+
+
+    const itemName =
+      document.createElement("span");
+
+    itemName.textContent =
+      name;
+
+
+    const itemValue =
+      document.createElement("span");
+
+    itemValue.textContent =
+      value;
+
+
+    item.appendChild(itemName);
+
+    item.appendChild(itemValue);
+
+
+    return item;
+
+  }
+
+
+  // ==========================================
+  // 23. FINAL — BUILD ARCHIVE REPORT
+  // ==========================================
+
+  if (
+    summaryButton &&
+    missingScreen &&
+    summaryScreen &&
+    summaryPhysicalList &&
+    summaryDigitalList &&
+    summaryBiologicalList &&
+    summaryPhysical &&
+    summaryDigital &&
+    summaryBiological &&
+    summaryMissing
+  ) {
+
+    summaryButton.addEventListener("click", function () {
+
+
+      // ==========================================
+      // RESET DES LISTES
+      // ==========================================
 
       summaryPhysicalList.innerHTML =
-        '<p class="summary-empty">NO PHYSICAL OBJECTS ARCHIVED</p>';
-
-    }
-
-
-    summaryPhysical.textContent =
-      physicalUsed + " / 25 KG";
-
-
-    // ==========================================
-    // DIGITAL SELECTIONS
-    // ==========================================
-
-    const selectedDigital =
-      document.querySelectorAll(
-        ".digital-file.archived"
-      );
-
-
-    let digitalUsed = 0;
-
-
-    selectedDigital.forEach(function (file) {
-
-      const title =
-        file.dataset.title || "UNKNOWN FILE";
-
-      const storage =
-        Number(file.dataset.storage || 0);
-
-
-      digitalUsed += storage;
-
-
-      summaryDigitalList.appendChild(
-        createSummaryItem(
-          title,
-          storage + " TB"
-        )
-      );
-
-    });
-
-
-    if (selectedDigital.length === 0) {
+        "";
 
       summaryDigitalList.innerHTML =
-        '<p class="summary-empty">NO DIGITAL FILES ARCHIVED</p>';
+        "";
 
-    }
-
-
-    summaryDigital.textContent =
-      digitalUsed + " / 10 TB";
+      summaryBiologicalList.innerHTML =
+        "";
 
 
-    // ==========================================
-    // BIOLOGICAL SELECTIONS
-    // ==========================================
+      // ==========================================
+      // PHYSICAL SELECTIONS
+      // ==========================================
 
-    const selectedBiological =
-      document.querySelectorAll(
-        ".bio-card.selected"
-      );
-
-
-    selectedBiological.forEach(function (card) {
-
-      const title =
-        card.querySelector("h3");
-
-      const format =
-        card.querySelector(".bio-format");
-
-
-      if (title) {
-
-        summaryBiologicalList.appendChild(
-          createSummaryItem(
-            title.textContent.trim(),
-            format
-              ? format.textContent.trim()
-              : "BIOLOGICAL SAMPLE"
-          )
+      const selectedPhysical =
+        document.querySelectorAll(
+          ".archive-card.selected"
         );
+
+
+      let physicalUsed =
+        0;
+
+
+      selectedPhysical.forEach(function (card) {
+
+        const title =
+          card.querySelector("h3");
+
+        const weight =
+          Number(card.dataset.weight || 0);
+
+
+        physicalUsed +=
+          weight;
+
+
+        if (title) {
+
+          summaryPhysicalList.appendChild(
+
+            createSummaryItem(
+              title.textContent.trim(),
+              weight + " KG"
+            )
+
+          );
+
+        }
+
+      });
+
+
+      if (selectedPhysical.length === 0) {
+
+        summaryPhysicalList.innerHTML =
+          '<p class="summary-empty">NO PHYSICAL OBJECTS ARCHIVED</p>';
 
       }
 
+
+      summaryPhysical.textContent =
+        physicalUsed + " / 25 KG";
+
+
+      // ==========================================
+      // DIGITAL SELECTIONS
+      // ==========================================
+
+      const selectedDigital =
+        document.querySelectorAll(
+          ".digital-file.archived"
+        );
+
+
+      let digitalUsed =
+        0;
+
+
+      selectedDigital.forEach(function (file) {
+
+        const title =
+          file.dataset.title || "UNKNOWN FILE";
+
+        const storage =
+          Number(file.dataset.storage || 0);
+
+
+        digitalUsed +=
+          storage;
+
+
+        summaryDigitalList.appendChild(
+
+          createSummaryItem(
+            title,
+            storage + " TB"
+          )
+
+        );
+
+      });
+
+
+      if (selectedDigital.length === 0) {
+
+        summaryDigitalList.innerHTML =
+          '<p class="summary-empty">NO DIGITAL FILES ARCHIVED</p>';
+
+      }
+
+
+      summaryDigital.textContent =
+        digitalUsed + " / 10 TB";
+
+
+      // ==========================================
+      // BIOLOGICAL SELECTIONS
+      // ==========================================
+
+      const selectedBiological =
+        document.querySelectorAll(
+          ".bio-card.selected"
+        );
+
+
+      selectedBiological.forEach(function (card) {
+
+        const title =
+          card.querySelector("h3");
+
+        const format =
+          card.querySelector(".bio-format");
+
+
+        if (title) {
+
+          summaryBiologicalList.appendChild(
+
+            createSummaryItem(
+              title.textContent.trim(),
+              format
+                ? format.textContent.trim()
+                : "BIOLOGICAL SAMPLE"
+            )
+
+          );
+
+        }
+
+      });
+
+
+      if (selectedBiological.length === 0) {
+
+        summaryBiologicalList.innerHTML =
+          '<p class="summary-empty">NO BIOLOGICAL COLLECTIONS ARCHIVED</p>';
+
+      }
+
+
+      summaryBiological.textContent =
+        selectedBiological.length +
+        " / 5 SLOTS";
+
+
+      // ==========================================
+      // ARCHIVIST FREE ENTRY
+      // ==========================================
+
+      const missingValue =
+        missingInput
+          ? missingInput.value.trim()
+          : "";
+
+
+      if (missingValue) {
+
+        summaryMissing.textContent =
+          missingValue;
+
+      }
+
+      else {
+
+        summaryMissing.textContent =
+          "NO ADDITIONAL ENTRY";
+
+      }
+
+
+      // ==========================================
+      // OPEN FINAL SCREEN
+      // ==========================================
+
+      missingScreen.classList.add("hidden");
+
+      summaryScreen.classList.remove("hidden");
+
+      window.scrollTo(0, 0);
+
     });
 
-
-    if (selectedBiological.length === 0) {
-
-      summaryBiologicalList.innerHTML =
-        '<p class="summary-empty">NO BIOLOGICAL COLLECTIONS ARCHIVED</p>';
-
-    }
+  }
 
 
-    summaryBiological.textContent =
-      selectedBiological.length + " / 5 SLOTS";
+  // ==========================================
+  // 24. RESTART EXPERIENCE
+  // ==========================================
+
+  if (restartButton) {
+
+    restartButton.addEventListener("click", function () {
+
+      window.location.reload();
+
+    });
+
+  }
 
 
-    // ==========================================
-    // ARCHIVIST FREE ENTRY
-    // ==========================================
-
-    const missingValue =
-      missingInput.value.trim();
-
-
-    if (missingValue) {
-
-      summaryMissing.textContent =
-        missingValue;
-
-    }
-
-    else {
-
-      summaryMissing.textContent =
-        "NO ADDITIONAL ENTRY";
-
-    }
-
-
-    // ==========================================
-    // OPEN FINAL SCREEN
-    // ==========================================
-
-    missingScreen.classList.add("hidden");
-
-    summaryScreen.classList.remove("hidden");
-
-    window.scrollTo(0, 0);
-
-  });
-
-}
-
-
-// ==========================================
-// 24. RESTART EXPERIENCE
-// Recharge l'expérience depuis le début
-// ==========================================
-
-if (restartButton) {
-
-  restartButton.addEventListener("click", function () {
-
-    window.location.reload();
-
-    window.scrollTo(0, 0);
-
-  });
-
-}
 });
