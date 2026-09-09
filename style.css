@@ -1716,54 +1716,99 @@ h1 {
 
 }
 /* ==========================================
-   BIOLOGICAL ARCHIVE — INTRO
-   Présentation de la biobanque
+   BIOLOGICAL ARCHIVE — BIOBANK SYSTEM
+   Direction artistique :
+   laboratoire / cryobanque / spécimens
 ========================================== */
 
-.bio-intro {
-  width: min(1200px, calc(100% - 80px));
-  margin: 80px auto 50px;
-}
 
-.bio-warning {
-  display: inline-block;
+/* ==========================================
+   1. BIOLOGICAL — GENERAL SCREEN
+========================================== */
 
-  margin-top: 30px;
-  padding: 10px 14px;
-
-  border: 1px solid #111111;
-
-  font-family: monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+#biological-screen {
+  background: #eef0eb;
+  color: #111111;
 }
 
 
 /* ==========================================
-   BIOLOGICAL ARCHIVE — CAPACITY
-   Compteur des 5 slots
+   2. BIOLOGICAL — INTRO
+========================================== */
+
+.bio-intro {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 90px auto 55px;
+}
+
+.bio-intro .archive-title {
+  margin-bottom: 28px;
+}
+
+.bio-intro .archive-description {
+  max-width: 720px;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   3. BIOLOGICAL — SAFETY LABEL
+========================================== */
+
+.bio-warning {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 28px;
+  padding: 10px 13px;
+
+  border: 1px solid #83877f;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+}
+
+.bio-warning::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #111111;
+}
+
+
+/* ==========================================
+   4. BIOLOGICAL — CAPACITY PANEL
 ========================================== */
 
 .bio-capacity {
   width: min(1200px, calc(100% - 80px));
-  margin: 0 auto 30px;
+
+  margin: 0 auto 35px;
+  padding: 18px 0;
 
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 
-  padding: 18px 0;
-
-  border-top: 1px solid #aaa9a2;
-  border-bottom: 1px solid #aaa9a2;
+  border-top: 1px solid #a8aca4;
+  border-bottom: 1px solid #a8aca4;
 }
 
 .bio-capacity p {
   margin: 0;
 
   font-family: monospace;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-size: 9px;
+  letter-spacing: 0.12em;
 }
 
 .bio-capacity strong {
@@ -1771,39 +1816,44 @@ h1 {
 
   margin-top: 6px;
 
-  font-size: 28px;
+  font-family: monospace;
+  font-size: 30px;
 }
 
 
 /* ==========================================
-   BIOLOGICAL ARCHIVE — GRID
-   Grille générale des collections
+   5. BIOLOGICAL — SPECIMEN GRID
 ========================================== */
 
 .bio-grid {
   width: min(1200px, calc(100% - 80px));
-  margin: 0 auto 80px;
+
+  margin: 0 auto 90px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  border-top: 1px solid #aaa9a2;
-  border-left: 1px solid #aaa9a2;
+  border-top: 1px solid #a8aca4;
+  border-left: 1px solid #a8aca4;
 }
 
 
 /* ==========================================
-   BIOLOGICAL ARCHIVE — CARD
-   Une collection biologique
+   6. BIOLOGICAL — SPECIMEN CARD
 ========================================== */
 
 .bio-card {
   min-width: 0;
 
-  border-right: 1px solid #aaa9a2;
-  border-bottom: 1px solid #aaa9a2;
+  display: flex;
+  flex-direction: column;
 
-  background: #f2f1ec;
+  position: relative;
+
+  border-right: 1px solid #a8aca4;
+  border-bottom: 1px solid #a8aca4;
+
+  background: #eef0eb;
 
   transition:
     background 0.25s ease,
@@ -1811,168 +1861,311 @@ h1 {
 }
 
 .bio-card:hover {
-  background: #ebeae4;
+  background: #e7e9e4;
 }
 
 .bio-card.selected {
-  background: #deddd6;
+  background: #dce1da;
 }
 
 
 /* ==========================================
-   BIOLOGICAL — SPECIMEN WINDOW
-   Zone laboratoire / échantillon
+   7. BIOLOGICAL — SPECIMEN WINDOW
+   La "vitrine" scientifique
 ========================================== */
 
 .bio-specimen {
-  aspect-ratio: 4 / 3;
+  height: 250px;
+
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  position: relative;
-
   overflow: hidden;
 
-  border-bottom: 1px solid #aaa9a2;
+  border-bottom: 1px solid #a8aca4;
 
   background:
-    radial-gradient(circle at center, #d8d7d0 0 18%, transparent 19%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 18px,
-      rgba(0, 0, 0, 0.04) 19px
-    );
-}
+    linear-gradient(
+      rgba(17, 17, 17, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(17, 17, 17, 0.035) 1px,
+      transparent 1px
+    ),
+    #e4e7e1;
 
-.bio-specimen::before {
-  content: "";
-
-  width: 42%;
-  aspect-ratio: 1;
-
-  position: absolute;
-
-  border: 1px solid #111111;
-  border-radius: 50%;
-}
-
-.bio-specimen::after {
-  content: "";
-
-  width: 28%;
-  aspect-ratio: 1;
-
-  position: absolute;
-
-  border: 1px dashed #777770;
-  border-radius: 50%;
-}
-
-.bio-specimen span {
-  position: relative;
-  z-index: 2;
-
-  font-family: monospace;
-  font-size: 10px;
-  letter-spacing: 0.16em;
-
-  background: #f2f1ec;
-
-  padding: 5px 8px;
+  background-size: 24px 24px;
 }
 
 
 /* ==========================================
-   BIOLOGICAL — CARD CONTENT
+   8. SPECIMEN — OUTER DISH
+   Cercle type boîte de Petri
 ========================================== */
 
-.bio-card-content {
-  padding: 22px;
+.bio-specimen::before {
+  content: "";
+
+  width: 145px;
+  height: 145px;
+
+  position: absolute;
+
+  border: 1px solid #747970;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 38% 35%,
+      rgba(17, 17, 17, 0.12) 0 4px,
+      transparent 5px
+    ),
+    radial-gradient(
+      circle at 62% 58%,
+      rgba(17, 17, 17, 0.08) 0 8px,
+      transparent 9px
+    ),
+    radial-gradient(
+      circle at 46% 70%,
+      rgba(17, 17, 17, 0.09) 0 3px,
+      transparent 4px
+    );
+
+  box-shadow:
+    inset 0 0 0 9px rgba(255, 255, 255, 0.15);
 }
 
-.bio-card-content h3 {
-  margin: 10px 0 14px;
 
-  font-size: 25px;
-  line-height: 1;
+/* ==========================================
+   9. SPECIMEN — INNER SAMPLE
+========================================== */
+
+.bio-specimen::after {
+  content: "";
+
+  width: 100px;
+  height: 100px;
+
+  position: absolute;
+
+  border: 1px dashed #9ca098;
+  border-radius: 50%;
 }
 
-.bio-format {
-  display: inline-block;
 
-  margin: 18px 0;
+/* ==========================================
+   10. SPECIMEN — SAMPLE NAME
+========================================== */
 
-  padding: 7px 9px;
+.bio-specimen span {
+  position: relative;
+  z-index: 3;
 
-  border: 1px solid #aaa9a2;
+  padding: 6px 9px;
+
+  border: 1px solid #747970;
+
+  background: #eef0eb;
 
   font-family: monospace;
   font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+
+/* ==========================================
+   11. SPECIMEN — TECHNICAL MARKINGS
+   Ajoute des petits repères laboratoire
+========================================== */
+
+.bio-card::before {
+  content: "CRYO / -196°C";
+
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  z-index: 4;
+
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+
+  opacity: 0.55;
+}
+
+.bio-card::after {
+  content: "SAMPLE / STABLE";
+
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  z-index: 4;
+
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+
+  opacity: 0.55;
+}
+
+
+/* ==========================================
+   12. BIOLOGICAL — CARD CONTENT
+========================================== */
+
+.bio-card-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px;
+}
+
+.bio-card-content .card-id {
+  margin: 0 0 10px;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+
+  opacity: 0.55;
+}
+
+.bio-card-content h3 {
+  margin: 0 0 15px;
+
+  font-size: 25px;
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+}
+
+.bio-card-content .card-description {
+  margin: 0 0 20px;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.bio-card-content .card-represents {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+
+  opacity: 0.6;
+}
+
+
+/* ==========================================
+   13. BIOLOGICAL — PRESERVATION FORMAT
+========================================== */
+
+.bio-format {
+  align-self: flex-start;
+
+  margin: 20px 0;
+
+  padding: 7px 9px;
+
+  border: 1px solid #9ca098;
+
+  font-family: monospace;
+  font-size: 8px;
   letter-spacing: 0.1em;
 }
 
 
 /* ==========================================
-   BIOLOGICAL — MORE INFO BUTTON
+   14. BIOLOGICAL — MORE INFO
 ========================================== */
 
 .bio-info-button {
-  display: block;
+  appearance: none;
 
-  margin: 5px 0 18px;
+  align-self: flex-start;
 
-  padding: 0;
+  margin: 0 0 18px;
+  padding: 0 0 4px;
 
   border: none;
+  border-bottom: 1px solid #111111;
 
   background: transparent;
 
   font-family: monospace;
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 
   cursor: pointer;
 }
 
 
 /* ==========================================
-   BIOLOGICAL — DETAILS
+   15. BIOLOGICAL — HIDDEN DETAILS
 ========================================== */
 
 .bio-details {
-  padding: 18px 0;
+  margin-bottom: 20px;
+  padding: 18px 0 4px;
 
-  border-top: 1px solid #aaa9a2;
+  border-top: 1px solid #a8aca4;
 }
 
-.bio-details p {
-  font-size: 13px;
+.bio-details .card-label {
+  margin: 0 0 7px;
+
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+
+  opacity: 0.55;
+}
+
+.bio-details p:not(.card-label) {
+  margin: 0 0 18px;
+
+  font-size: 12px;
   line-height: 1.55;
 }
 
 
 /* ==========================================
-   BIOLOGICAL — ARCHIVE BUTTON
+   16. BIOLOGICAL — ARCHIVE BUTTON
 ========================================== */
 
 .bio-archive-button {
+  appearance: none;
+
   width: 100%;
 
-  margin-top: 10px;
-  padding: 13px 10px;
+  margin-top: auto;
+  padding: 14px;
 
   border: 1px solid #111111;
+  border-radius: 0;
 
   background: transparent;
+  color: #111111;
 
   font-family: monospace;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
 
   cursor: pointer;
 
@@ -1983,25 +2176,83 @@ h1 {
 
 .bio-archive-button:hover {
   background: #111111;
-  color: #f2f1ec;
+  color: #eef0eb;
 }
 
 .bio-card.selected .bio-archive-button {
   background: #111111;
-  color: #f2f1ec;
+  color: #eef0eb;
 }
 
 
 /* ==========================================
-   BIOLOGICAL — MOBILE
+   17. BIOLOGICAL — SELECTED SPECIMEN
 ========================================== */
 
-@media (max-width: 900px) {
+.bio-card.selected .bio-specimen {
+  background:
+    linear-gradient(
+      rgba(17, 17, 17, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(17, 17, 17, 0.045) 1px,
+      transparent 1px
+    ),
+    #d9ded7;
+
+  background-size: 24px 24px;
+}
+
+.bio-card.selected::after {
+  content: "SAMPLE / ARCHIVED";
+
+  font-weight: 700;
+
+  opacity: 1;
+}
+
+
+/* ==========================================
+   18. BIOLOGICAL — BOTTOM
+========================================== */
+
+.bio-bottom {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto 100px;
+}
+
+
+/* ==========================================
+   19. BIOLOGICAL — TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+  .bio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* ==========================================
+   20. BIOLOGICAL — MOBILE
+========================================== */
+
+@media (max-width: 650px) {
 
   .bio-intro,
   .bio-capacity,
-  .bio-grid {
+  .bio-grid,
+  .bio-bottom {
     width: calc(100% - 30px);
+  }
+
+  .bio-intro {
+    margin-top: 50px;
   }
 
   .bio-grid {
@@ -2009,8 +2260,9 @@ h1 {
   }
 
   .bio-capacity {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
+
     gap: 18px;
   }
 
