@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       missionScreen.classList.add("hidden");
 
       physicalScreen.classList.remove("hidden");
+      physicalScreen.classList.add("physical-active");
 
       window.scrollTo(0, 0);
 
