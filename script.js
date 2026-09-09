@@ -711,4 +711,297 @@ if (missingInput && missingCount) {
   });
 
 }
+  // ==========================================
+// 21. FINAL ARCHIVE — VARIABLES
+// Éléments de l'écran récapitulatif
+// ==========================================
+
+const summaryButton =
+  document.getElementById("summary-button");
+
+const summaryScreen =
+  document.getElementById("summary-screen");
+
+const summaryPhysicalList =
+  document.getElementById("summary-physical-list");
+
+const summaryDigitalList =
+  document.getElementById("summary-digital-list");
+
+const summaryBiologicalList =
+  document.getElementById("summary-biological-list");
+
+const summaryMissing =
+  document.getElementById("summary-missing");
+
+const summaryPhysical =
+  document.getElementById("summary-physical");
+
+const summaryDigital =
+  document.getElementById("summary-digital");
+
+const summaryBiological =
+  document.getElementById("summary-biological");
+
+const restartButton =
+  document.getElementById("restart-button");
+
+
+// ==========================================
+// 22. FINAL — HELPER FUNCTION
+// Crée une ligne dans le rapport
+// ==========================================
+
+function createSummaryItem(name, value) {
+
+  const item =
+    document.createElement("div");
+
+  item.classList.add("summary-item");
+
+
+  const itemName =
+    document.createElement("span");
+
+  itemName.textContent =
+    name;
+
+
+  const itemValue =
+    document.createElement("span");
+
+  itemValue.textContent =
+    value;
+
+
+  item.appendChild(itemName);
+
+  item.appendChild(itemValue);
+
+
+  return item;
+
+}
+
+
+// ==========================================
+// 23. FINAL — BUILD ARCHIVE REPORT
+// Récupère tous les choix du joueur
+// ==========================================
+
+if (summaryButton) {
+
+  summaryButton.addEventListener("click", function () {
+
+
+    // ==========================================
+    // RESET DES LISTES
+    // ==========================================
+
+    summaryPhysicalList.innerHTML = "";
+
+    summaryDigitalList.innerHTML = "";
+
+    summaryBiologicalList.innerHTML = "";
+
+
+    // ==========================================
+    // PHYSICAL SELECTIONS
+    // ==========================================
+
+    const selectedPhysical =
+      document.querySelectorAll(
+        ".physical-card.selected, .archive-card.selected"
+      );
+
+
+    let physicalUsed = 0;
+
+
+    selectedPhysical.forEach(function (card) {
+
+      const title =
+        card.querySelector("h3");
+
+      const weight =
+        Number(card.dataset.weight || 0);
+
+
+      physicalUsed += weight;
+
+
+      if (title) {
+
+        summaryPhysicalList.appendChild(
+          createSummaryItem(
+            title.textContent.trim(),
+            weight + " KG"
+          )
+        );
+
+      }
+
+    });
+
+
+    if (selectedPhysical.length === 0) {
+
+      summaryPhysicalList.innerHTML =
+        '<p class="summary-empty">NO PHYSICAL OBJECTS ARCHIVED</p>';
+
+    }
+
+
+    summaryPhysical.textContent =
+      physicalUsed + " / 25 KG";
+
+
+    // ==========================================
+    // DIGITAL SELECTIONS
+    // ==========================================
+
+    const selectedDigital =
+      document.querySelectorAll(
+        ".digital-file.archived"
+      );
+
+
+    let digitalUsed = 0;
+
+
+    selectedDigital.forEach(function (file) {
+
+      const title =
+        file.dataset.title || "UNKNOWN FILE";
+
+      const storage =
+        Number(file.dataset.storage || 0);
+
+
+      digitalUsed += storage;
+
+
+      summaryDigitalList.appendChild(
+        createSummaryItem(
+          title,
+          storage + " TB"
+        )
+      );
+
+    });
+
+
+    if (selectedDigital.length === 0) {
+
+      summaryDigitalList.innerHTML =
+        '<p class="summary-empty">NO DIGITAL FILES ARCHIVED</p>';
+
+    }
+
+
+    summaryDigital.textContent =
+      digitalUsed + " / 10 TB";
+
+
+    // ==========================================
+    // BIOLOGICAL SELECTIONS
+    // ==========================================
+
+    const selectedBiological =
+      document.querySelectorAll(
+        ".bio-card.selected"
+      );
+
+
+    selectedBiological.forEach(function (card) {
+
+      const title =
+        card.querySelector("h3");
+
+      const format =
+        card.querySelector(".bio-format");
+
+
+      if (title) {
+
+        summaryBiologicalList.appendChild(
+          createSummaryItem(
+            title.textContent.trim(),
+            format
+              ? format.textContent.trim()
+              : "BIOLOGICAL SAMPLE"
+          )
+        );
+
+      }
+
+    });
+
+
+    if (selectedBiological.length === 0) {
+
+      summaryBiologicalList.innerHTML =
+        '<p class="summary-empty">NO BIOLOGICAL COLLECTIONS ARCHIVED</p>';
+
+    }
+
+
+    summaryBiological.textContent =
+      selectedBiological.length + " / 5 SLOTS";
+
+
+    // ==========================================
+    // ARCHIVIST FREE ENTRY
+    // ==========================================
+
+    const missingValue =
+      missingInput.value.trim();
+
+
+    if (missingValue) {
+
+      summaryMissing.textContent =
+        missingValue;
+
+    }
+
+    else {
+
+      summaryMissing.textContent =
+        "NO ADDITIONAL ENTRY";
+
+    }
+
+
+    // ==========================================
+    // OPEN FINAL SCREEN
+    // ==========================================
+
+    missingScreen.classList.add("hidden");
+
+    summaryScreen.classList.remove("hidden");
+
+    window.scrollTo(0, 0);
+
+  });
+
+}
+
+
+// ==========================================
+// 24. RESTART EXPERIENCE
+// Recharge l'expérience depuis le début
+// ==========================================
+
+if (restartButton) {
+
+  restartButton.addEventListener("click", function () {
+
+    window.location.reload();
+
+    window.scrollTo(0, 0);
+
+  });
+
+}
 });
