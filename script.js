@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // ==========================================
-  // SCREENS + NAVIGATION
+  // 1. RÉCUPÉRATION DES BOUTONS DE NAVIGATION
   // ==========================================
 
   const beginButton = document.getElementById("begin-button");
   const continueButton = document.getElementById("continue-button");
   const digitalButton = document.getElementById("digital-button");
+
+
+  // ==========================================
+  // 2. RÉCUPÉRATION DES DIFFÉRENTS ÉCRANS
+  // ==========================================
 
   const landingScreen = document.getElementById("landing-screen");
   const missionScreen = document.getElementById("mission-screen");
@@ -15,19 +20,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // PHYSICAL ARCHIVE
+  // 3. PHYSICAL ARCHIVE — VARIABLES
+  // Gère les KG restants
   // ==========================================
 
-  const archiveButtons = document.querySelectorAll(".archive-button");
+  const physicalArchiveButtons =
+    document.querySelectorAll(".archive-button");
 
-  const floatingRemainingDisplay =
+  const physicalRemainingDisplay =
     document.getElementById("physical-remaining-floating");
 
   let remainingWeight = 25;
 
 
   // ==========================================
-  // LANDING → MISSION
+  // 4. DIGITAL ARCHIVE — VARIABLES
+  // Gère les TB restants
+  // ==========================================
+
+  const digitalArchiveButtons =
+    document.querySelectorAll(".digital-archive-button");
+
+  const digitalRemainingDisplay =
+    document.getElementById("digital-remaining");
+
+  let remainingStorage = 10;
+
+
+  // ==========================================
+  // 5. LANDING → MISSION
   // ==========================================
 
   if (beginButton) {
@@ -45,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // MISSION → PHYSICAL
+  // 6. MISSION → PHYSICAL
   // ==========================================
 
   if (continueButton) {
@@ -63,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // PHYSICAL → DIGITAL
+  // 7. PHYSICAL → DIGITAL
   // ==========================================
 
   if (digitalButton) {
@@ -81,10 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // PHYSICAL — ARCHIVE / REMOVE OBJECT
+  // 8. PHYSICAL ARCHIVE — SÉLECTION
+  // Ajoute ou retire un objet physique
   // ==========================================
 
-  archiveButtons.forEach(function (button) {
+  physicalArchiveButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
@@ -96,7 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
         card.classList.contains("selected");
 
 
-      // REMOVE FROM ARCHIVE
+      // ------------------------------------------
+      // RETIRER DE L'ARCHIVE
+      // ------------------------------------------
 
       if (isSelected) {
 
@@ -109,7 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
 
-      // ADD TO ARCHIVE
+      // ------------------------------------------
+      // AJOUTER À L'ARCHIVE
+      // ------------------------------------------
 
       else {
 
@@ -136,9 +162,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
 
-      if (floatingRemainingDisplay) {
+      // ------------------------------------------
+      // MET À JOUR LE COMPTEUR KG
+      // ------------------------------------------
 
-        floatingRemainingDisplay.textContent =
+      if (physicalRemainingDisplay) {
+
+        physicalRemainingDisplay.textContent =
           remainingWeight;
 
       }
@@ -149,7 +179,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // MORE INFO
+  // 9. DIGITAL ARCHIVE — SÉLECTION
+  // Ajoute ou retire un dataset numérique
+  // ==========================================
+
+  digitalArchiveButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const card = button.closest(".digital-card");
+
+      const storage = Number(card.dataset.storage);
+
+      const isSelected =
+        card.classList.contains("selected");
+
+
+      // ------------------------------------------
+      // RETIRER DE L'ARCHIVE
+      // ------------------------------------------
+
+      if (isSelected) {
+
+        remainingStorage =
+          remainingStorage + storage;
+
+        card.classList.remove("selected");
+
+        button.textContent = "+ ARCHIVE";
+
+      }
+
+
+      // ------------------------------------------
+      // AJOUTER À L'ARCHIVE
+      // ------------------------------------------
+
+      else {
+
+        if (storage > remainingStorage) {
+
+          button.textContent = "NO SPACE";
+
+          setTimeout(function () {
+
+            button.textContent = "+ ARCHIVE";
+
+          }, 1000);
+
+          return;
+
+        }
+
+        remainingStorage =
+          remainingStorage - storage;
+
+        card.classList.add("selected");
+
+        button.textContent = "✓ ARCHIVED";
+
+      }
+
+
+      // ------------------------------------------
+      // MET À JOUR LE COMPTEUR TB
+      // ------------------------------------------
+
+      if (digitalRemainingDisplay) {
+
+        digitalRemainingDisplay.textContent =
+          remainingStorage;
+
+      }
+
+    });
+
+  });
+
+
+  // ==========================================
+  // 10. MORE INFO — TOUTES LES CARTES
+  // Fonctionne pour Physical + Digital
   // ==========================================
 
   const infoButtons =
@@ -169,6 +279,10 @@ document.addEventListener("DOMContentLoaded", function () {
         !details.classList.contains("hidden");
 
 
+      // ------------------------------------------
+      // FERMER LES DÉTAILS
+      // ------------------------------------------
+
       if (isOpen) {
 
         details.classList.add("hidden");
@@ -176,6 +290,11 @@ document.addEventListener("DOMContentLoaded", function () {
         button.textContent = "MORE INFO";
 
       }
+
+
+      // ------------------------------------------
+      // OUVRIR LES DÉTAILS
+      // ------------------------------------------
 
       else {
 
