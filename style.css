@@ -1274,24 +1274,24 @@ h1 {
 
 /* ==========================================
    DIGITAL ARCHIVE — COMPUTER SYSTEM
-   Nouvelle direction artistique :
-   interface informatique de la mission
+   Interface informatique de la mission
 ========================================== */
 
-/* Le nouveau CSS Digital commence ici */
 
 /* ==========================================
-   DIGITAL ARCHIVE — MAIN SYSTEM
-   Interface ordinateur de mission
+   DIGITAL — MAIN SYSTEM
 ========================================== */
 
 .digital-system {
   width: min(1400px, calc(100% - 80px));
-  margin: 70px auto 100px auto;
+  margin: 70px auto 100px;
 
   border: 1px solid #a7a79f;
 
   background: #e9e8e2;
+  color: #111111;
+
+  overflow: hidden;
 }
 
 
@@ -1342,6 +1342,8 @@ h1 {
   width: 7px;
   height: 7px;
 
+  flex-shrink: 0;
+
   border-radius: 50%;
 
   background: #111111;
@@ -1377,6 +1379,8 @@ h1 {
   width: 100%;
   height: 8px;
 
+  box-sizing: border-box;
+
   border: 1px solid #111111;
 
   background: transparent;
@@ -1400,7 +1404,7 @@ h1 {
 .digital-workspace {
   display: grid;
 
-  grid-template-columns: 1.4fr 0.8fr;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
 
   min-height: 650px;
 }
@@ -1411,12 +1415,15 @@ h1 {
 ========================================== */
 
 .digital-directory {
+  min-width: 0;
+
   border-right: 1px solid #a7a79f;
 }
 
 .directory-header {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 
   padding: 16px 18px;
 
@@ -1437,23 +1444,32 @@ h1 {
 ========================================== */
 
 .digital-file {
+  appearance: none;
+  -webkit-appearance: none;
+
   width: 100%;
 
   display: grid;
 
-  grid-template-columns: 45px 1fr 70px 80px;
+  grid-template-columns: 45px minmax(0, 1fr) 70px 80px;
 
   align-items: center;
 
   gap: 10px;
 
+  margin: 0;
   padding: 18px;
 
   border: none;
+  border-radius: 0;
   border-bottom: 1px solid #c5c5bf;
+
+  outline: none;
 
   background: transparent;
   color: #111111;
+
+  font: inherit;
 
   text-align: left;
 
@@ -1461,11 +1477,13 @@ h1 {
 
   transition:
     background 0.2s ease,
-    padding-left 0.2s ease;
+    padding-left 0.2s ease,
+    color 0.2s ease;
 }
 
 .digital-file:hover {
   background: #dcdad2;
+
   padding-left: 24px;
 }
 
@@ -1480,6 +1498,7 @@ h1 {
 
 .digital-file.archived.active {
   background: #111111;
+  color: #f2f1ec;
 }
 
 .digital-file span,
@@ -1492,8 +1511,15 @@ h1 {
 }
 
 .digital-file strong {
+  min-width: 0;
+
+  overflow: hidden;
+
   font-size: 11px;
   letter-spacing: 0.06em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .file-status {
@@ -1509,6 +1535,8 @@ h1 {
 ========================================== */
 
 .digital-detail {
+  min-width: 0;
+
   padding: 32px;
 
   position: sticky;
@@ -1539,7 +1567,6 @@ h1 {
 
   font-size: clamp(30px, 3vw, 52px);
   line-height: 0.95;
-
   letter-spacing: -0.04em;
 }
 
@@ -1547,9 +1574,9 @@ h1 {
   width: 100%;
   height: 1px;
 
-  background: #a7a79f;
-
   margin: 28px 0;
+
+  background: #a7a79f;
 }
 
 .detail-meta {
@@ -1594,13 +1621,16 @@ h1 {
 ========================================== */
 
 .digital-action-button {
+  appearance: none;
+  -webkit-appearance: none;
+
   width: 100%;
 
   margin-top: 10px;
-
   padding: 16px;
 
   border: 1px solid #111111;
+  border-radius: 0;
 
   background: #111111;
   color: #f2f1ec;
@@ -1677,7 +1707,7 @@ h1 {
   }
 
   .digital-file {
-    grid-template-columns: 35px 1fr 55px;
+    grid-template-columns: 35px minmax(0, 1fr) 55px;
   }
 
   .file-status {
