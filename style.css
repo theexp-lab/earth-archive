@@ -990,8 +990,6 @@ h1 {
   }
 
   .capacity-box {
-    position: sticky;
-    top: 12px;
     width: 100%;
     text-align: left;
   }
