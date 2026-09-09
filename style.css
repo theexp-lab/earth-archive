@@ -2267,3 +2267,175 @@ h1 {
   }
 
 }
+
+/* ==========================================
+   MISSING ITEM — FINAL INPUT SCREEN
+========================================== */
+
+#missing-screen {
+  min-height: 100vh;
+
+  background: #f2f1ec;
+  color: #111111;
+}
+
+
+/* ==========================================
+   MISSING — MAIN CONTENT
+========================================== */
+
+.missing-content {
+  width: min(900px, calc(100% - 80px));
+
+  margin: 100px auto 120px;
+}
+
+
+/* ==========================================
+   MISSING — TITLE
+========================================== */
+
+.missing-title {
+  margin: 20px 0 30px;
+
+  font-size: clamp(60px, 9vw, 130px);
+  line-height: 0.82;
+
+  letter-spacing: -0.07em;
+}
+
+
+/* ==========================================
+   MISSING — QUESTION
+========================================== */
+
+.missing-question {
+  margin: 0 0 15px;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   MISSING — DESCRIPTION
+========================================== */
+
+.missing-description {
+  max-width: 650px;
+
+  margin: 0 0 60px;
+
+  font-size: 15px;
+  line-height: 1.65;
+
+  opacity: 0.7;
+}
+
+
+/* ==========================================
+   MISSING — INPUT AREA
+========================================== */
+
+.missing-input-area {
+  padding-top: 18px;
+
+  border-top: 1px solid #9c9c96;
+  border-bottom: 1px solid #9c9c96;
+}
+
+.missing-input-area label {
+  display: block;
+
+  margin-bottom: 16px;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+
+/* ==========================================
+   MISSING — TEXTAREA
+========================================== */
+
+#missing-input {
+  width: 100%;
+  min-height: 160px;
+
+  box-sizing: border-box;
+
+  padding: 0 0 30px;
+
+  border: none;
+  outline: none;
+
+  resize: none;
+
+  background: transparent;
+  color: #111111;
+
+  font-family: Arial, sans-serif;
+  font-size: clamp(24px, 4vw, 44px);
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+#missing-input::placeholder {
+  color: #111111;
+
+  opacity: 0.2;
+}
+
+
+/* ==========================================
+   MISSING — INPUT FOOTER
+========================================== */
+
+.missing-input-footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 14px 0;
+
+  border-top: 1px solid #d0d0ca;
+}
+
+.missing-input-footer p {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+
+  opacity: 0.55;
+}
+
+
+/* ==========================================
+   MISSING — FINAL BUTTON
+========================================== */
+
+.missing-submit {
+  margin-top: 45px;
+}
+
+
+/* ==========================================
+   MISSING — MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  .missing-content {
+    width: calc(100% - 30px);
+
+    margin-top: 60px;
+  }
+
+  .missing-title {
+    font-size: 58px;
+  }
+
+}
