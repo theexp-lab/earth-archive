@@ -663,4 +663,52 @@ bioInfoButtons.forEach(function (button) {
   });
 
 });
+  // ==========================================
+// 19. BIOLOGICAL → MISSING ITEM
+// Termine les trois catégories
+// ==========================================
+
+const finalButton =
+  document.getElementById("final-button");
+
+const missingScreen =
+  document.getElementById("missing-screen");
+
+const missingInput =
+  document.getElementById("missing-input");
+
+const missingCount =
+  document.getElementById("missing-count");
+
+
+if (finalButton) {
+
+  finalButton.addEventListener("click", function () {
+
+    biologicalScreen.classList.add("hidden");
+
+    missingScreen.classList.remove("hidden");
+
+    window.scrollTo(0, 0);
+
+  });
+
+}
+
+
+// ==========================================
+// 20. MISSING ITEM — CHARACTER COUNTER
+// Compte les caractères tapés
+// ==========================================
+
+if (missingInput && missingCount) {
+
+  missingInput.addEventListener("input", function () {
+
+    missingCount.textContent =
+      missingInput.value.length;
+
+  });
+
+}
 });
