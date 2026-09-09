@@ -4,6 +4,8 @@ const continueButton = document.getElementById("continue-button");
 const landingScreen = document.getElementById("landing-screen");
 const missionScreen = document.getElementById("mission-screen");
 const physicalScreen = document.getElementById("physical-screen");
+const digitalScreen = document.getElementById("digital-screen");
+const digitalButton = document.getElementById("digital-button");
 
 const archiveButtons = document.querySelectorAll(".archive-button");
 const infoButtons = document.querySelectorAll(".info-button");
@@ -120,3 +122,10 @@ infoButtons.forEach(function (button) {
   });
 
 });
+digitalButton.addEventListener("click", function () {
+  physicalScreen.classList.add("hidden");
+  digitalScreen.classList.remove("hidden");
+
+  window.scrollTo(0, 0);
+});
+
