@@ -1233,3 +1233,311 @@ h1 {
   font-size: 28px;
   letter-spacing: -0.03em;
 }
+/* ==========================================
+   NEXT BUTTON — HOVER
+   Animation du bouton quand on passe la souris
+========================================== */
+
+.next-button {
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.next-button:hover {
+  background: transparent;
+  color: #111111;
+  transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   DIGITAL ARCHIVE — CARD BUTTON
+   Même logique que le bouton Physical
+========================================== */
+
+.digital-archive-button {
+  border: none;
+  background: transparent;
+  color: #111111;
+
+  padding: 0;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   DIGITAL ARCHIVE — PREVIEW
+   Zone visuelle en haut de chaque carte
+========================================== */
+
+.digital-preview {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  background: #111111;
+  color: #f2f1ec;
+
+  padding: 24px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: monospace;
+
+  border-bottom: 1px solid #b8b8b0;
+}
+
+
+/* ==========================================
+   SCIENTIFIC KNOWLEDGE
+========================================== */
+
+.preview-science {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.preview-science span {
+  border: 1px solid #555550;
+
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+
+/* ==========================================
+   WORLD LITERATURE
+========================================== */
+
+.preview-literature {
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  font-size: 22px;
+  letter-spacing: 0.08em;
+}
+
+.preview-literature span:nth-child(2) {
+  margin-left: 30px;
+}
+
+.preview-literature span:nth-child(3) {
+  margin-left: 65px;
+
+  color: #777770;
+}
+
+
+/* ==========================================
+   FILM & MOVING IMAGE
+========================================== */
+
+.preview-film {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 8px;
+}
+
+.preview-film span {
+  aspect-ratio: 1;
+
+  border: 1px solid #777770;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+}
+
+
+/* ==========================================
+   AUDIO WAVEFORMS
+   Utilisé pour Music + Earth in Sound
+========================================== */
+
+.preview-wave {
+  font-size: 32px;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+
+/* ==========================================
+   VIDEO GAMES
+========================================== */
+
+.preview-games {
+  display: grid;
+
+  grid-template-columns: repeat(2, 80px);
+
+  gap: 18px;
+}
+
+.preview-games span {
+  height: 80px;
+
+  border: 1px solid #777770;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+}
+
+
+/* ==========================================
+   THE INTERNET
+========================================== */
+
+.preview-internet {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  font-size: 18px;
+}
+
+.preview-internet span {
+  border: 1px solid #555550;
+
+  padding: 20px 10px;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   ORDINARY HUMAN PHOTOGRAPHY
+========================================== */
+
+.preview-photo {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+}
+
+.preview-photo span {
+  aspect-ratio: 1;
+
+  background: #2a2a28;
+
+  border: 1px solid #777770;
+}
+
+
+/* ==========================================
+   LANGUAGES OF EARTH
+========================================== */
+
+.preview-language {
+  gap: 24px;
+
+  flex-wrap: wrap;
+
+  font-size: 34px;
+}
+
+
+/* ==========================================
+   HISTORICAL RECORD
+========================================== */
+
+.preview-history {
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.preview-history::before {
+  content: "";
+
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+
+  top: 50%;
+
+  height: 1px;
+
+  background: #777770;
+}
+
+.preview-history span {
+  position: relative;
+  z-index: 2;
+
+  background: #111111;
+
+  padding: 8px;
+
+  font-size: 13px;
+}
+
+
+/* ==========================================
+   ART & VISUAL CULTURE
+========================================== */
+
+.preview-art {
+  display: grid;
+
+  grid-template-columns: repeat(2, 80px);
+
+  gap: 14px;
+
+  font-size: 35px;
+}
+
+
+/* ==========================================
+   HUMAN VOICES
+========================================== */
+
+.preview-voice {
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 15px;
+
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.preview-voice span {
+  width: 100%;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #555550;
+}
