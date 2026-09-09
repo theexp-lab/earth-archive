@@ -8,7 +8,6 @@ const physicalScreen = document.getElementById("physical-screen");
 const archiveButtons = document.querySelectorAll(".archive-button");
 const infoButtons = document.querySelectorAll(".info-button");
 
-const remainingDisplay = document.getElementById("physical-remaining");
 const floatingRemainingDisplay =
   document.getElementById("physical-remaining-floating");
 
@@ -84,8 +83,7 @@ archiveButtons.forEach(function (button) {
     }
 
 
-    remainingDisplay.textContent = remainingWeight;
-floatingRemainingDisplay.textContent = remainingWeight;
+    floatingRemainingDisplay.textContent = remainingWeight;
 
   });
 
