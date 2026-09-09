@@ -242,7 +242,7 @@ body {
   transform: translateY(18px);
 
   animation: contentReveal 0.9s ease forwards;
-  animation-delay: 1.05s;
+  animation-delay: 3.8s;
 }
 
 
@@ -277,7 +277,7 @@ body {
   transform: translateY(16px);
 
   animation: contentReveal 0.8s ease forwards;
-  animation-delay: 1.30s;
+  animation-delay: 4.3s;
 
   transition:
     background 0.25s ease,
@@ -326,7 +326,7 @@ body {
   opacity: 0;
 
   animation: interfaceReveal 0.8s ease forwards;
-  animation-delay: 1.55s;
+  animation-delay: 4.7s;
 }
 
 
