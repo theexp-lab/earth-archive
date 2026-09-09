@@ -1005,7 +1005,19 @@
      SCREEN 4 — DIGITAL ARCHIVE
 ========================================== -->
 
+<!-- ==========================================
+     SCREEN 4 — DIGITAL ARCHIVE
+     Interface ordinateur / système de mission
+========================================== -->
+
 <section id="digital-screen" class="archive-screen hidden">
+
+
+  <!-- ==========================================
+       DIGITAL — TOP HEADER
+       Informations générales de mission
+  ========================================== -->
+
   <div class="archive-header">
 
     <div>
@@ -1031,855 +1043,451 @@
   </div>
 
 
-  <div class="floating-capacity digital-floating-capacity">
+  <!-- ==========================================
+       DIGITAL — MAIN SYSTEM
+       Faux ordinateur de mission
+  ========================================== -->
 
-    <p>AVAILABLE CAPACITY</p>
-
-    <strong>
-      <span id="digital-remaining">10</span> TB
-    </strong>
-
-  </div>
+  <div class="digital-system">
 
 
-  <div class="archive-content">
+    <!-- ==========================================
+         DIGITAL — SYSTEM BAR
+    ========================================== -->
 
-    <div class="archive-intro">
+    <div class="digital-system-bar">
 
       <div>
-
-        <p class="archive-step">
-          ARCHIVE CATEGORY 02
+        <p class="digital-system-title">
+          DIGITAL PRESERVATION SYSTEM
         </p>
 
-        <h2 class="archive-title">
-          DIGITAL<br>
-          ARCHIVE
+        <p class="digital-system-sub">
+          ARCHIVE NODE / EA-091-D
+        </p>
+      </div>
+
+      <div class="digital-status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         DIGITAL — STORAGE
+         Barre des TB disponibles
+    ========================================== -->
+
+    <div class="digital-storage">
+
+      <div class="digital-storage-top">
+
+        <p>
+          AVAILABLE STORAGE
+        </p>
+
+        <strong>
+          <span id="digital-remaining">10</span> / 10 TB
+        </strong>
+
+      </div>
+
+      <div class="storage-track">
+
+        <div
+          class="storage-fill"
+          id="digital-storage-fill"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         DIGITAL — MAIN WORKSPACE
+         Liste à gauche + détail à droite
+    ========================================== -->
+
+    <div class="digital-workspace">
+
+
+      <!-- ==========================================
+           DIGITAL — ARCHIVE DIRECTORY
+      ========================================== -->
+
+      <div class="digital-directory">
+
+        <div class="directory-header">
+
+          <p>ARCHIVE DIRECTORY</p>
+
+          <p>12 COLLECTIONS FOUND</p>
+
+        </div>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 01
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="4"
+          data-id="EA-DG-001"
+          data-title="SCIENTIFIC KNOWLEDGE"
+          data-format="RESEARCH DATA + DOCUMENTS"
+          data-description="Medicine, mathematics, physics, chemistry, engineering, astronomy, biology, climate science, scientific papers, datasets and technical manuals."
+          data-significance="Preserves humanity's accumulated understanding of nature, life, matter and the systems built to investigate them."
+        >
+          <span>01</span>
+          <strong>SCIENTIFIC KNOWLEDGE</strong>
+          <span>4 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 02
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="2"
+          data-id="EA-DG-002"
+          data-title="WORLD LITERATURE"
+          data-format="TEXT + TRANSCRIPT ARCHIVE"
+          data-description="Novels, poetry, theatre, essays, transcribed oral traditions, children's stories and writing from languages and regions across Earth."
+          data-significance="Preserves the ways humans imagined, feared, desired and interpreted the world."
+        >
+          <span>02</span>
+          <strong>WORLD LITERATURE</strong>
+          <span>2 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 03
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="4"
+          data-id="EA-DG-003"
+          data-title="FILM & MOVING IMAGE"
+          data-format="VIDEO ARCHIVE"
+          data-description="Films, documentaries, animation, television, independent cinema, news footage, home video and experimental works."
+          data-significance="Preserves faces, places, gestures, fiction and moments that text cannot fully reproduce."
+        >
+          <span>03</span>
+          <strong>FILM & MOVING IMAGE</strong>
+          <span>4 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 04
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="1"
+          data-id="EA-DG-004"
+          data-title="RECORDED MUSIC"
+          data-format="AUDIO ARCHIVE"
+          data-description="Songs, instrumental music, live performances, folk traditions, electronic music, sacred music and recordings from different eras."
+          data-significance="Music carries rhythm, language, emotion and cultural memory across generations."
+        >
+          <span>04</span>
+          <strong>RECORDED MUSIC</strong>
+          <span>1 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 05
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="3"
+          data-id="EA-DG-005"
+          data-title="VIDEO GAMES"
+          data-format="INTERACTIVE SOFTWARE"
+          data-description="Games across eras and regions, independent games, interactive narratives, multiplayer worlds and preservation software."
+          data-significance="Unlike film or literature, games preserve experiences in which the audience acts rather than only watches or reads."
+        >
+          <span>05</span>
+          <strong>VIDEO GAMES</strong>
+          <span>3 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 06
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="6"
+          data-id="EA-DG-006"
+          data-title="THE INTERNET"
+          data-format="WEB SNAPSHOT"
+          data-description="Websites, forums, social platforms, memes, blogs, online communities, digital journalism, personal pages and selected public conversations."
+          data-significance="Chaotic and imperfect, the internet became one of the richest records of everyday human communication."
+        >
+          <span>06</span>
+          <strong>THE INTERNET</strong>
+          <span>6 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 07
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="2"
+          data-id="EA-DG-007"
+          data-title="ORDINARY HUMAN PHOTOGRAPHY"
+          data-format="IMAGE ARCHIVE"
+          data-description="Family photos, friends, homes, holidays, birthdays, street scenes, meals, pets, workplaces and everyday moments."
+          data-significance="Personal photographs preserve what people themselves considered worth remembering."
+        >
+          <span>07</span>
+          <strong>ORDINARY HUMAN PHOTOGRAPHY</strong>
+          <span>2 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 08
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="1"
+          data-id="EA-DG-008"
+          data-title="LANGUAGES OF EARTH"
+          data-format="LINGUISTIC DATABASE"
+          data-description="Dictionaries, grammar, writing systems, accents, conversations, endangered languages and regional speech."
+          data-significance="The loss of a language can also mean the loss of a way of describing and organising reality."
+        >
+          <span>08</span>
+          <strong>LANGUAGES OF EARTH</strong>
+          <span>1 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 09
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="3"
+          data-id="EA-DG-009"
+          data-title="HISTORICAL RECORD"
+          data-format="DOCUMENT + MAP ARCHIVE"
+          data-description="Chronologies, maps, archives, treaties, migrations, conflicts, social movements, political systems, discoveries and major events."
+          data-significance="Future generations need evidence of the past, not only the myths created about it."
+        >
+          <span>09</span>
+          <strong>HISTORICAL RECORD</strong>
+          <span>3 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 10
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="1"
+          data-id="EA-DG-010"
+          data-title="EARTH IN SOUND"
+          data-format="ENVIRONMENTAL AUDIO"
+          data-description="Rain, oceans, forests, storms, birds, insects, cities, traffic, crowds, markets, trains and quiet environments."
+          data-significance="A photograph can show an ocean. It cannot reproduce the experience of hearing one."
+        >
+          <span>10</span>
+          <strong>EARTH IN SOUND</strong>
+          <span>1 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 11
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="2"
+          data-id="EA-DG-011"
+          data-title="ART & VISUAL CULTURE"
+          data-format="VISUAL ARCHIVE"
+          data-description="Painting, illustration, photography, sculpture documentation, architecture, graphic design, posters, fashion and visual culture."
+          data-significance="Preserves representations of beauty, power, identity, belief, conflict and imagination."
+        >
+          <span>11</span>
+          <strong>ART & VISUAL CULTURE</strong>
+          <span>2 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+
+        <!-- ==========================================
+             DIGITAL ITEM 12
+        ========================================== -->
+
+        <button
+          class="digital-file"
+          data-storage="1"
+          data-id="EA-DG-012"
+          data-title="HUMAN VOICES"
+          data-format="VOICE RECORDINGS"
+          data-description="Interviews, oral histories, personal testimonies, conversations and recorded stories across ages and regions."
+          data-significance="History often speaks through institutions. This archive preserves people speaking for themselves."
+        >
+          <span>12</span>
+          <strong>HUMAN VOICES</strong>
+          <span>1 TB</span>
+          <span class="file-status">OPEN</span>
+        </button>
+
+      </div>
+
+
+      <!-- ==========================================
+           DIGITAL — DETAIL PANEL
+           Change quand on clique sur un fichier
+      ========================================== -->
+
+      <div class="digital-detail">
+
+        <p class="detail-label">
+          SELECTED FILE
+        </p>
+
+        <p
+          class="detail-id"
+          id="digital-detail-id"
+        >
+          EA-DG-001
+        </p>
+
+        <h2 id="digital-detail-title">
+          SCIENTIFIC KNOWLEDGE
         </h2>
 
-        <p class="archive-description">
-          Earth produced more information than any archive could preserve.
-          Select the knowledge, culture and digital traces that should
-          survive the journey.
-        </p>
+        <div class="detail-line"></div>
 
-      </div>
+        <div class="detail-meta">
 
-    </div>
+          <div>
+            <p>FORMAT</p>
+            <strong id="digital-detail-format">
+              RESEARCH DATA + DOCUMENTS
+            </strong>
+          </div>
 
+          <div>
+            <p>ARCHIVE SIZE</p>
+            <strong id="digital-detail-size">
+              4 TB
+            </strong>
+          </div>
 
-    <!-- DIGITAL CARDS WILL GO HERE -->
-
-   <!-- ==========================================
-     DIGITAL ARCHIVE — CARDS
-     12 collections numériques à choisir
-========================================== -->
-
-<div class="object-grid" id="digital-grid">
-
-
-  <!-- ==========================================
-       EA-DG-001 — SCIENTIFIC KNOWLEDGE
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="4">
-
-    <div class="digital-preview preview-science">
-      <span>Σ</span>
-      <span>DNA</span>
-      <span>H₂O</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-001</p>
-
-      <h3>SCIENTIFIC KNOWLEDGE</h3>
-
-      <p class="card-description">
-        Research, discoveries and methods that explain how the universe works.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / WHAT WE LEARNED
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Medicine, mathematics, physics, chemistry, engineering,
-          astronomy, biology, climate science, scientific papers,
-          datasets and technical manuals.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Preserves humanity's accumulated understanding of nature,
-          life, matter and the systems built to investigate them.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>4 TB</strong>
         </div>
 
-        <button class="digital-archive-button">
-          + ARCHIVE
+        <div class="detail-section">
+
+          <p class="detail-label">
+            CONTENTS
+          </p>
+
+          <p id="digital-detail-description">
+            Medicine, mathematics, physics, chemistry, engineering,
+            astronomy, biology, climate science, scientific papers,
+            datasets and technical manuals.
+          </p>
+
+        </div>
+
+        <div class="detail-section">
+
+          <p class="detail-label">
+            SIGNIFICANCE
+          </p>
+
+          <p id="digital-detail-significance">
+            Preserves humanity's accumulated understanding of nature,
+            life, matter and the systems built to investigate them.
+          </p>
+
+        </div>
+
+        <button
+          class="digital-action-button"
+          id="digital-action-button"
+        >
+          ADD TO ARCHIVE
         </button>
 
       </div>
 
     </div>
 
-  </article>
 
+    <!-- ==========================================
+         DIGITAL — SYSTEM LOG
+         Petit feedback système en bas
+    ========================================== -->
 
-  <!-- ==========================================
-       EA-DG-002 — WORLD LITERATURE
-  ========================================== -->
+    <div class="digital-log">
 
-  <article class="archive-card digital-card" data-storage="2">
+      <p class="detail-label">
+        SYSTEM LOG
+      </p>
 
-    <div class="digital-preview preview-literature">
-      <span>WORDS</span>
-      <span>STORIES</span>
-      <span>MEMORY</span>
+      <p id="digital-log-text">
+        > archive directory loaded
+      </p>
+
     </div>
 
-    <div class="card-content">
 
-      <p class="card-id">EA-DG-002</p>
+    <!-- ==========================================
+         DIGITAL — BOTTOM ACTION
+    ========================================== -->
 
-      <h3>WORLD LITERATURE</h3>
+    <div class="archive-bottom">
 
-      <p class="card-description">
-        Stories, poems and ideas across cultures and centuries.
+      <p>
+        YOU MAY LEAVE STORAGE UNUSED.
       </p>
 
-      <p class="card-represents">
-        REPRESENTS / WHAT WE IMAGINED
-      </p>
-
-      <button class="info-button">
-        MORE INFO
+      <button
+        class="next-button"
+        id="biological-button"
+      >
+        CONTINUE TO BIOLOGICAL <span>→</span>
       </button>
 
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Novels, poetry, theatre, essays, transcribed oral traditions,
-          children's stories and writing from languages and regions
-          across Earth.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Preserves the ways humans imagined, feared, desired and
-          interpreted the world.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>2 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
     </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-003 — FILM & MOVING IMAGE
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="4">
-
-    <div class="digital-preview preview-film">
-      <span>01</span>
-      <span>02</span>
-      <span>03</span>
-      <span>04</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-003</p>
-
-      <h3>FILM & MOVING IMAGE</h3>
-
-      <p class="card-description">
-        Cinema, documentary, animation and recorded moving images.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE SAW OURSELVES
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Films, documentaries, animation, television, independent
-          cinema, news footage, home video and experimental works.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Preserves faces, places, gestures, fiction and moments that
-          text cannot fully reproduce.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>4 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-004 — RECORDED MUSIC
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="1">
-
-    <div class="digital-preview preview-wave">
-      ▂▅▇▃▆▂▇▅▃▆
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-004</p>
-
-      <h3>RECORDED MUSIC</h3>
-
-      <p class="card-description">
-        Music created, performed and recorded across Earth.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE SOUNDED
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Songs, instrumental music, live performances, folk traditions,
-          electronic music, sacred music and recordings from different eras.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Music carries rhythm, language, emotion and cultural memory
-          across generations.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>1 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-005 — VIDEO GAMES
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="3">
-
-    <div class="digital-preview preview-games">
-      <span>▲</span>
-      <span>●</span>
-      <span>■</span>
-      <span>+</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-005</p>
-
-      <h3>VIDEO GAMES</h3>
-
-      <p class="card-description">
-        Interactive worlds built to be explored, played and changed.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE PLAYED
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Games across eras and regions, independent games,
-          interactive narratives, multiplayer worlds and preservation software.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Unlike film or literature, games preserve experiences in which
-          the audience acts rather than only watches or reads.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>3 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-006 — THE INTERNET
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="6">
-
-    <div class="digital-preview preview-internet">
-      <span>HTTP</span>
-      <span>@</span>
-      <span>#</span>
-      <span>404</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-006</p>
-
-      <h3>THE INTERNET</h3>
-
-      <p class="card-description">
-        A partial record of humanity's largest shared digital space.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE CONNECTED
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Websites, forums, social platforms, memes, blogs, online
-          communities, digital journalism, personal pages and selected
-          public conversations.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Chaotic and imperfect, the internet became one of the richest
-          records of everyday human communication.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>6 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-007 — ORDINARY HUMAN PHOTOGRAPHY
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="2">
-
-    <div class="digital-preview preview-photo">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-007</p>
-
-      <h3>ORDINARY HUMAN PHOTOGRAPHY</h3>
-
-      <p class="card-description">
-        Images made to remember ordinary people and ordinary days.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / WHAT WE CHOSE TO REMEMBER
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Family photos, friends, homes, holidays, birthdays, street
-          scenes, meals, pets, workplaces and everyday moments.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Personal photographs preserve what people themselves considered
-          worth remembering.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>2 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-008 — LANGUAGES OF EARTH
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="1">
-
-    <div class="digital-preview preview-language">
-      <span>A</span>
-      <span>文</span>
-      <span>ع</span>
-      <span>Ж</span>
-      <span>한</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-008</p>
-
-      <h3>LANGUAGES OF EARTH</h3>
-
-      <p class="card-description">
-        How humans spoke, wrote and understood one another.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE SPOKE
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Dictionaries, grammar, writing systems, accents,
-          conversations, endangered languages and regional speech.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          The loss of a language can also mean the loss of a way of
-          describing and organising reality.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>1 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-009 — HISTORICAL RECORD
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="3">
-
-    <div class="digital-preview preview-history">
-      <span>-5000</span>
-      <span>0</span>
-      <span>2000</span>
-      <span>2091</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-009</p>
-
-      <h3>HISTORICAL RECORD</h3>
-
-      <p class="card-description">
-        The documented record of humanity's shared and conflicting past.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / WHAT HAPPENED HERE
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Chronologies, maps, archives, treaties, migrations, conflicts,
-          social movements, political systems, discoveries and major events.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Future generations need evidence of the past, not only the myths
-          created about it.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>3 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-010 — EARTH IN SOUND
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="1">
-
-    <div class="digital-preview preview-wave">
-      ▁▃▇▅▂▆▃▁▅▇
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-010</p>
-
-      <h3>EARTH IN SOUND</h3>
-
-      <p class="card-description">
-        Sounds of a planet that may never be heard again.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / WHAT EARTH SOUNDED LIKE
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Rain, oceans, forests, storms, birds, insects, cities,
-          traffic, crowds, markets, trains and quiet environments.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          A photograph can show an ocean. It cannot reproduce the
-          experience of hearing one.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>1 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-011 — ART & VISUAL CULTURE
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="2">
-
-    <div class="digital-preview preview-art">
-      <span>●</span>
-      <span>▲</span>
-      <span>■</span>
-      <span>◇</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-011</p>
-
-      <h3>ART & VISUAL CULTURE</h3>
-
-      <p class="card-description">
-        Images humans created to communicate beyond ordinary language.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE MADE THINGS VISIBLE
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Painting, illustration, photography, sculpture documentation,
-          architecture, graphic design, posters, fashion and visual culture.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          Preserves representations of beauty, power, identity,
-          belief, conflict and imagination.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>2 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- ==========================================
-       EA-DG-012 — HUMAN VOICES
-  ========================================== -->
-
-  <article class="archive-card digital-card" data-storage="1">
-
-    <div class="digital-preview preview-voice">
-      <span>VOICE_001.wav</span>
-      <span>VOICE_238.wav</span>
-      <span>VOICE_914.wav</span>
-    </div>
-
-    <div class="card-content">
-
-      <p class="card-id">EA-DG-012</p>
-
-      <h3>HUMAN VOICES</h3>
-
-      <p class="card-description">
-        People describing their own lives in their own voices.
-      </p>
-
-      <p class="card-represents">
-        REPRESENTS / HOW WE TOLD OUR STORIES
-      </p>
-
-      <button class="info-button">
-        MORE INFO
-      </button>
-
-      <div class="card-details hidden">
-
-        <p class="card-label">WHAT'S INSIDE</p>
-
-        <p>
-          Interviews, oral histories, personal testimonies,
-          conversations and recorded stories across ages and regions.
-        </p>
-
-        <p class="card-label">WHY IT MATTERS</p>
-
-        <p>
-          History often speaks through institutions. This archive preserves
-          people speaking for themselves.
-        </p>
-
-      </div>
-
-      <div class="card-footer">
-
-        <div>
-          <p class="card-label">STORAGE</p>
-          <strong>1 TB</strong>
-        </div>
-
-        <button class="digital-archive-button">
-          + ARCHIVE
-        </button>
-
-      </div>
-
-    </div>
-
-  </article>
-
-</div>
-
 
   </div>
 
