@@ -1,27 +1,98 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ==========================================
-  // 1. RÉCUPÉRATION DES BOUTONS DE NAVIGATION
-  // ==========================================
-
-  const beginButton = document.getElementById("begin-button");
-  const continueButton = document.getElementById("continue-button");
-  const digitalButton = document.getElementById("digital-button");
-
 
   // ==========================================
-  // 2. RÉCUPÉRATION DES DIFFÉRENTS ÉCRANS
+  // 1. SCREENS
+  // Tous les écrans principaux du parcours
   // ==========================================
 
-  const landingScreen = document.getElementById("landing-screen");
-  const missionScreen = document.getElementById("mission-screen");
-  const physicalScreen = document.getElementById("physical-screen");
-  const digitalScreen = document.getElementById("digital-screen");
+  const landingScreen =
+    document.getElementById("landing-screen");
+
+  const missionScreen =
+    document.getElementById("mission-screen");
+
+  const physicalScreen =
+    document.getElementById("physical-screen");
+
+  const digitalScreen =
+    document.getElementById("digital-screen");
 
 
   // ==========================================
-  // 3. PHYSICAL ARCHIVE — VARIABLES
-  // Gère les KG restants
+  // 2. NAVIGATION BUTTONS
+  // Boutons pour passer d'un écran à l'autre
+  // ==========================================
+
+  const beginButton =
+    document.getElementById("begin-button");
+
+  const continueButton =
+    document.getElementById("continue-button");
+
+  const digitalButton =
+    document.getElementById("digital-button");
+
+
+  // ==========================================
+  // 3. LANDING → MISSION
+  // ==========================================
+
+  if (beginButton) {
+
+    beginButton.addEventListener("click", function () {
+
+      landingScreen.classList.add("hidden");
+
+      missionScreen.classList.remove("hidden");
+
+      window.scrollTo(0, 0);
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 4. MISSION → PHYSICAL
+  // ==========================================
+
+  if (continueButton) {
+
+    continueButton.addEventListener("click", function () {
+
+      missionScreen.classList.add("hidden");
+
+      physicalScreen.classList.remove("hidden");
+
+      window.scrollTo(0, 0);
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 5. PHYSICAL → DIGITAL
+  // ==========================================
+
+  if (digitalButton) {
+
+    digitalButton.addEventListener("click", function () {
+
+      physicalScreen.classList.add("hidden");
+
+      digitalScreen.classList.remove("hidden");
+
+      window.scrollTo(0, 0);
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 6. PHYSICAL ARCHIVE — VARIABLES
   // ==========================================
 
   const physicalArchiveButtons =
@@ -34,97 +105,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // 4. DIGITAL ARCHIVE — VARIABLES
-  // Gère les TB restants
-  // ==========================================
-
-  const digitalArchiveButtons =
-    document.querySelectorAll(".digital-archive-button");
-
-  const digitalRemainingDisplay =
-    document.getElementById("digital-remaining");
-
-  let remainingStorage = 10;
-
-
-  // ==========================================
-  // 5. LANDING → MISSION
-  // ==========================================
-
-  if (beginButton) {
-
-    beginButton.addEventListener("click", function () {
-
-      landingScreen.classList.add("hidden");
-      missionScreen.classList.remove("hidden");
-
-      window.scrollTo(0, 0);
-
-    });
-
-  }
-
-
-  // ==========================================
-  // 6. MISSION → PHYSICAL
-  // ==========================================
-
-  if (continueButton) {
-
-    continueButton.addEventListener("click", function () {
-
-      missionScreen.classList.add("hidden");
-      physicalScreen.classList.remove("hidden");
-
-      window.scrollTo(0, 0);
-
-    });
-
-  }
-
-
-  // ==========================================
-  // 7. PHYSICAL → DIGITAL
-  // ==========================================
-
-  if (digitalButton) {
-
-    digitalButton.addEventListener("click", function () {
-
-      physicalScreen.classList.add("hidden");
-      digitalScreen.classList.remove("hidden");
-
-      window.scrollTo(0, 0);
-
-    });
-
-  }
-
-
-  // ==========================================
-  // 8. PHYSICAL ARCHIVE — SÉLECTION
-  // Ajoute ou retire un objet physique
+  // 7. PHYSICAL ARCHIVE — SELECTION
   // ==========================================
 
   physicalArchiveButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
-      const card = button.closest(".archive-card");
+      const card =
+        button.closest(".archive-card");
 
-      const weight = Number(card.dataset.weight);
+      const weight =
+        Number(card.dataset.weight);
 
       const isSelected =
         card.classList.contains("selected");
 
 
       // ------------------------------------------
-      // RETIRER DE L'ARCHIVE
+      // REMOVE FROM ARCHIVE
       // ------------------------------------------
 
       if (isSelected) {
 
-        remainingWeight = remainingWeight + weight;
+        remainingWeight =
+          remainingWeight + weight;
 
         card.classList.remove("selected");
 
@@ -134,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       // ------------------------------------------
-      // AJOUTER À L'ARCHIVE
+      // ADD TO ARCHIVE
       // ------------------------------------------
 
       else {
@@ -153,7 +158,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        remainingWeight = remainingWeight - weight;
+        remainingWeight =
+          remainingWeight - weight;
 
         card.classList.add("selected");
 
@@ -163,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       // ------------------------------------------
-      // MET À JOUR LE COMPTEUR KG
+      // UPDATE KG COUNTER
       // ------------------------------------------
 
       if (physicalRemainingDisplay) {
@@ -179,87 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // 9. DIGITAL ARCHIVE — SÉLECTION
-  // Ajoute ou retire un dataset numérique
-  // ==========================================
-
-  digitalArchiveButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-      const card = button.closest(".digital-card");
-
-      const storage = Number(card.dataset.storage);
-
-      const isSelected =
-        card.classList.contains("selected");
-
-
-      // ------------------------------------------
-      // RETIRER DE L'ARCHIVE
-      // ------------------------------------------
-
-      if (isSelected) {
-
-        remainingStorage =
-          remainingStorage + storage;
-
-        card.classList.remove("selected");
-
-        button.textContent = "+ ARCHIVE";
-
-      }
-
-
-      // ------------------------------------------
-      // AJOUTER À L'ARCHIVE
-      // ------------------------------------------
-
-      else {
-
-        if (storage > remainingStorage) {
-
-          button.textContent = "NO SPACE";
-
-          setTimeout(function () {
-
-            button.textContent = "+ ARCHIVE";
-
-          }, 1000);
-
-          return;
-
-        }
-
-        remainingStorage =
-          remainingStorage - storage;
-
-        card.classList.add("selected");
-
-        button.textContent = "✓ ARCHIVED";
-
-      }
-
-
-      // ------------------------------------------
-      // MET À JOUR LE COMPTEUR TB
-      // ------------------------------------------
-
-      if (digitalRemainingDisplay) {
-
-        digitalRemainingDisplay.textContent =
-          remainingStorage;
-
-      }
-
-    });
-
-  });
-
-
-  // ==========================================
-  // 10. MORE INFO — TOUTES LES CARTES
-  // Fonctionne pour Physical + Digital
+  // 8. MORE INFO — PHYSICAL CARDS
   // ==========================================
 
   const infoButtons =
@@ -279,10 +205,6 @@ document.addEventListener("DOMContentLoaded", function () {
         !details.classList.contains("hidden");
 
 
-      // ------------------------------------------
-      // FERMER LES DÉTAILS
-      // ------------------------------------------
-
       if (isOpen) {
 
         details.classList.add("hidden");
@@ -290,11 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
         button.textContent = "MORE INFO";
 
       }
-
-
-      // ------------------------------------------
-      // OUVRIR LES DÉTAILS
-      // ------------------------------------------
 
       else {
 
@@ -307,5 +224,267 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   });
+
+
+  // ==========================================
+  // 9. DIGITAL ARCHIVE — VARIABLES
+  // ==========================================
+
+  const digitalFiles =
+    document.querySelectorAll(".digital-file");
+
+  const digitalRemainingDisplay =
+    document.getElementById("digital-remaining");
+
+  const digitalStorageFill =
+    document.getElementById("digital-storage-fill");
+
+  const digitalActionButton =
+    document.getElementById("digital-action-button");
+
+  const digitalLogText =
+    document.getElementById("digital-log-text");
+
+  let remainingStorage = 10;
+
+  let currentDigitalFile = null;
+
+
+  // ==========================================
+  // 10. DIGITAL DETAIL PANEL — ELEMENTS
+  // ==========================================
+
+  const detailId =
+    document.getElementById("digital-detail-id");
+
+  const detailTitle =
+    document.getElementById("digital-detail-title");
+
+  const detailFormat =
+    document.getElementById("digital-detail-format");
+
+  const detailSize =
+    document.getElementById("digital-detail-size");
+
+  const detailDescription =
+    document.getElementById("digital-detail-description");
+
+  const detailSignificance =
+    document.getElementById("digital-detail-significance");
+
+
+  // ==========================================
+  // 11. DIGITAL — OPEN FILE
+  // Cliquer sur une ligne affiche son détail
+  // ==========================================
+
+  digitalFiles.forEach(function (file) {
+
+    file.addEventListener("click", function () {
+
+
+      // ------------------------------------------
+      // REMOVE ACTIVE STATE FROM OTHER FILES
+      // ------------------------------------------
+
+      digitalFiles.forEach(function (otherFile) {
+
+        otherFile.classList.remove("active");
+
+      });
+
+
+      // ------------------------------------------
+      // MARK THIS FILE AS ACTIVE
+      // ------------------------------------------
+
+      file.classList.add("active");
+
+      currentDigitalFile = file;
+
+
+      // ------------------------------------------
+      // UPDATE DETAIL PANEL
+      // ------------------------------------------
+
+      detailId.textContent =
+        file.dataset.id;
+
+      detailTitle.textContent =
+        file.dataset.title;
+
+      detailFormat.textContent =
+        file.dataset.format;
+
+      detailSize.textContent =
+        file.dataset.storage + " TB";
+
+      detailDescription.textContent =
+        file.dataset.description;
+
+      detailSignificance.textContent =
+        file.dataset.significance;
+
+
+      // ------------------------------------------
+      // UPDATE ACTION BUTTON
+      // ------------------------------------------
+
+      if (file.classList.contains("archived")) {
+
+        digitalActionButton.textContent =
+          "REMOVE FROM ARCHIVE";
+
+      }
+
+      else {
+
+        digitalActionButton.textContent =
+          "ADD TO ARCHIVE";
+
+      }
+
+
+      // ------------------------------------------
+      // UPDATE SYSTEM LOG
+      // ------------------------------------------
+
+      digitalLogText.textContent =
+        "> opened " + file.dataset.id;
+
+    });
+
+  });
+
+
+  // ==========================================
+  // 12. DIGITAL — ADD / REMOVE ARCHIVE
+  // ==========================================
+
+  if (digitalActionButton) {
+
+    digitalActionButton.addEventListener("click", function () {
+
+
+      // ------------------------------------------
+      // NOTHING SELECTED
+      // ------------------------------------------
+
+      if (!currentDigitalFile) {
+
+        digitalLogText.textContent =
+          "> select a file before allocation";
+
+        return;
+
+      }
+
+
+      const storage =
+        Number(currentDigitalFile.dataset.storage);
+
+      const status =
+        currentDigitalFile.querySelector(".file-status");
+
+      const isArchived =
+        currentDigitalFile.classList.contains("archived");
+
+
+      // ------------------------------------------
+      // REMOVE FILE
+      // ------------------------------------------
+
+      if (isArchived) {
+
+        remainingStorage =
+          remainingStorage + storage;
+
+        currentDigitalFile.classList.remove("archived");
+
+        status.textContent =
+          "OPEN";
+
+        digitalActionButton.textContent =
+          "ADD TO ARCHIVE";
+
+        digitalLogText.textContent =
+          "> " +
+          currentDigitalFile.dataset.id +
+          " removed from archive";
+
+      }
+
+
+      // ------------------------------------------
+      // ADD FILE
+      // ------------------------------------------
+
+      else {
+
+        if (storage > remainingStorage) {
+
+          digitalLogText.textContent =
+            "> ALLOCATION FAILED // " +
+            storage +
+            " TB REQUIRED // " +
+            remainingStorage +
+            " TB AVAILABLE";
+
+          return;
+
+        }
+
+
+        remainingStorage =
+          remainingStorage - storage;
+
+        currentDigitalFile.classList.add("archived");
+
+        status.textContent =
+          "ARCHIVED";
+
+        digitalActionButton.textContent =
+          "REMOVE FROM ARCHIVE";
+
+        digitalLogText.textContent =
+          "> integrity check complete // " +
+          currentDigitalFile.dataset.id +
+          " archived";
+
+      }
+
+
+      // ==========================================
+      // 13. UPDATE DIGITAL STORAGE
+      // Compteur + barre de remplissage
+      // ==========================================
+
+      digitalRemainingDisplay.textContent =
+        remainingStorage;
+
+      const usedStorage =
+        10 - remainingStorage;
+
+      const usedPercentage =
+        (usedStorage / 10) * 100;
+
+      digitalStorageFill.style.width =
+        usedPercentage + "%";
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 14. DIGITAL — DEFAULT FILE
+  // Ouvre le premier fichier automatiquement
+  // ==========================================
+
+  if (digitalFiles.length > 0) {
+
+    digitalFiles[0].click();
+
+  }
 
 });
