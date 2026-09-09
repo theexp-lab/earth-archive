@@ -1132,6 +1132,125 @@ body {
 }
 
 
+/* ==========================================
+   PHYSICAL — ARCHIVED STATE
+========================================== */
+
+.archive-card {
+  position: relative;
+}
+
+.archive-card.selected {
+  border: 2px solid #111111;
+}
+
+.archive-card.selected .card-image {
+  opacity: 0.55;
+}
+
+.archive-card.selected .archive-button {
+  font-weight: 800;
+}
+
+.archive-card.selected::after {
+  content: "ARCHIVED";
+
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  padding: 7px 9px;
+
+  background: #111111;
+  color: #f2f1ec;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+
+/* ==========================================
+   PHYSICAL — REPRESENTS + MORE INFO
+========================================== */
+
+.card-represents {
+  margin: 20px 0 16px;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: #777770;
+}
+
+.info-button {
+  margin-bottom: 20px;
+  padding: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+  color: #111111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+}
+
+.info-button:hover {
+  opacity: 0.55;
+}
+
+
+/* ==========================================
+   PHYSICAL — EXPANDED DETAILS
+========================================== */
+
+.card-details {
+  margin: 0 0 24px;
+  padding: 20px 0;
+
+  border-top: 1px solid #c8c7c0;
+  border-bottom: 1px solid #c8c7c0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: #444440;
+}
+
+.card-details p {
+  margin: 0 0 15px;
+}
+
+.card-details p:last-child {
+  margin-bottom: 0;
+}
+
+.card-details .detail-label {
+  margin-top: 20px !important;
+  margin-bottom: 7px !important;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: #777770;
+}
+
+.card-details .detail-label:first-child {
+  margin-top: 0 !important;
+}
+
+
 /* BAS DE PAGE */
 
 .archive-bottom {
@@ -1250,9 +1369,23 @@ body {
 
 @media (max-width: 800px) {
 
-  /* ==========================================
+  .floating-capacity {
+    top: 75px;
+    right: 12px;
+
+    min-width: 125px;
+    padding: 10px 12px;
+  }
+
+  .floating-capacity strong {
+    font-size: 22px;
+  }
+
+}
+
+
+/* ==========================================
    NEXT BUTTON — HOVER
-   Animation du bouton quand on passe la souris
 ========================================== */
 
 .next-button {
@@ -1542,7 +1675,7 @@ body {
   align-self: start;
 }
 
-.card-details .digital-detail .detail-label {
+.digital-detail .detail-label {
   margin: 0 0 8px;
 
   font-family: monospace;
