@@ -9,6 +9,8 @@ const archiveButtons = document.querySelectorAll(".archive-button");
 const infoButtons = document.querySelectorAll(".info-button");
 
 const remainingDisplay = document.getElementById("physical-remaining");
+const floatingRemainingDisplay =
+  document.getElementById("physical-remaining-floating");
 
 let remainingWeight = 25;
 
@@ -83,6 +85,7 @@ archiveButtons.forEach(function (button) {
 
 
     remainingDisplay.textContent = remainingWeight;
+floatingRemainingDisplay.textContent = remainingWeight;
 
   });
 
