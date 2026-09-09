@@ -9,20 +9,15 @@ body {
 }
 
 body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   background: #0b0b0b;
   color: #f2f1ec;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /* ==========================================
-   LANDING PAGE — EARTH ARCHIVE
-   Terre plus visible + animations
-========================================== */
-
-
-/* ==========================================
-   PAGE ENTIÈRE
+   LANDING PAGE — FIX
 ========================================== */
 
 .hero {
@@ -39,10 +34,7 @@ body {
 }
 
 
-/* ==========================================
-   IMAGE DE LA TERRE
-   Plus lumineuse + zoom très lent
-========================================== */
+/* IMAGE DE LA TERRE */
 
 .hero::before {
   content: "";
@@ -54,8 +46,6 @@ body {
   background-size: cover;
   background-position: center;
 
-  /* AVANT : 0.48
-     Maintenant la Terre est beaucoup plus visible */
   opacity: 0.82;
 
   filter:
@@ -71,10 +61,7 @@ body {
 }
 
 
-/* ==========================================
-   VOILE SOMBRE
-   Beaucoup moins sombre qu'avant
-========================================== */
+/* VOILE SOMBRE */
 
 .hero::after {
   content: "";
@@ -82,22 +69,19 @@ body {
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5, 6, 7, 0.15) 0%,
-      rgba(5, 6, 7, 0.06) 38%,
-      rgba(5, 6, 7, 0.18) 68%,
-      rgba(5, 6, 7, 0.48) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(5, 6, 7, 0.15) 0%,
+    rgba(5, 6, 7, 0.06) 38%,
+    rgba(5, 6, 7, 0.18) 68%,
+    rgba(5, 6, 7, 0.48) 100%
+  );
 
   z-index: 1;
 }
 
 
-/* ==========================================
-   CONTENU AU-DESSUS DE LA TERRE
-========================================== */
+/* CONTENU AU-DESSUS DE L'IMAGE */
 
 .topbar,
 .hero-content,
@@ -107,19 +91,12 @@ body {
 }
 
 
-/* ==========================================
-   INFORMATIONS EN HAUT
-========================================== */
+/* HAUT DE PAGE */
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
-  opacity: 0;
-
-  animation: interfaceFade 0.8s ease forwards;
-  animation-delay: 0.15s;
 }
 
 .mission-info {
@@ -144,9 +121,7 @@ body {
 }
 
 
-/* ==========================================
-   CONTENU CENTRAL
-========================================== */
+/* CONTENU CENTRAL */
 
 .hero-content {
   align-self: center;
@@ -162,9 +137,7 @@ body {
 }
 
 
-/* ==========================================
-   ARCHIVE ALLOCATION // PENDING
-========================================== */
+/* PETIT TEXTE AU-DESSUS DU TITRE */
 
 .eyebrow {
   margin: 0 0 30px;
@@ -173,80 +146,55 @@ body {
   letter-spacing: 0.18em;
 
   color: rgba(242, 241, 236, 0.62);
-
-  opacity: 0;
-
-  animation: eyebrowReveal 0.8s ease forwards;
-  animation-delay: 0.35s;
 }
 
 
-/* ==========================================
-   GROS TITRE
-   Apparition + grossissement
-========================================== */
+/* TITRE */
 
 h1 {
   margin: 0;
 
   font-size: clamp(80px, 10vw, 155px);
   line-height: 0.82;
+
   letter-spacing: -0.055em;
   font-weight: 700;
 
   text-align: center;
 
-  opacity: 0;
-
-  transform: scale(0.78) translateY(35px);
-
-  filter: blur(5px);
-
-  animation:
-    titleReveal 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-
-  animation-delay: 0.45s;
+  animation: titleReveal 1.3s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
 
 
-/* ==========================================
-   QUESTION
-========================================== */
+/* QUESTION */
 
 .question {
-  margin: 42px auto 32px;
-
   max-width: 650px;
+
+  margin: 42px auto 32px;
 
   font-size: clamp(18px, 1.8vw, 26px);
   line-height: 1.35;
 
   text-align: center;
-
-  opacity: 0;
-
-  transform: translateY(18px);
-
-  animation: contentReveal 0.9s ease forwards;
-  animation-delay: 1.05s;
 }
 
 
-/* ==========================================
-   BOUTON BEGIN ARCHIVE
-========================================== */
+/* BOUTON */
 
 .begin-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  background: rgba(11, 11, 11, 0.18);
-  color: #f2f1ec;
+  padding: 16px 22px;
 
   border: 1px solid rgba(242, 241, 236, 0.48);
 
-  padding: 16px 22px;
+  background: rgba(11, 11, 11, 0.18);
+  color: #f2f1ec;
 
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -255,45 +203,25 @@ h1 {
 
   backdrop-filter: blur(5px);
 
-  opacity: 0;
-
-  transform: translateY(15px);
-
-  animation: contentReveal 0.8s ease forwards;
-  animation-delay: 1.3s;
-
   transition:
     background 0.25s ease,
     color 0.25s ease,
-    border-color 0.25s ease,
     transform 0.25s ease;
 }
 
 .begin-button span {
   margin-left: 30px;
-
-  display: inline-block;
-
-  transition: transform 0.25s ease;
 }
 
 .begin-button:hover {
   background: #f2f1ec;
   color: #0b0b0b;
 
-  border-color: #f2f1ec;
-
   transform: translateY(-3px);
 }
 
-.begin-button:hover span {
-  transform: translateX(5px);
-}
 
-
-/* ==========================================
-   INFORMATIONS EN BAS
-========================================== */
+/* BAS DE PAGE */
 
 .bottom-info {
   display: flex;
@@ -304,11 +232,6 @@ h1 {
   letter-spacing: 0.14em;
 
   color: rgba(242, 241, 236, 0.52);
-
-  opacity: 0;
-
-  animation: interfaceFade 0.8s ease forwards;
-  animation-delay: 1.55s;
 }
 
 .bottom-info p {
@@ -316,10 +239,7 @@ h1 {
 }
 
 
-/* ==========================================
-   ANIMATION 01
-   La Terre se rapproche très lentement
-========================================== */
+/* ANIMATION TERRE */
 
 @keyframes earthZoom {
 
@@ -334,10 +254,7 @@ h1 {
 }
 
 
-/* ==========================================
-   ANIMATION 02
-   Le titre arrive vers l'utilisateur
-========================================== */
+/* ANIMATION TITRE */
 
 @keyframes titleReveal {
 
@@ -364,86 +281,12 @@ h1 {
 }
 
 
-/* ==========================================
-   ANIMATION 03
-   ARCHIVE ALLOCATION
-========================================== */
-
-@keyframes eyebrowReveal {
-
-  from {
-    opacity: 0;
-
-    transform: translateY(10px);
-
-    letter-spacing: 0.32em;
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-
-    letter-spacing: 0.18em;
-  }
-
-}
-
-
-/* ==========================================
-   ANIMATION 04
-   Question + bouton
-========================================== */
-
-@keyframes contentReveal {
-
-  from {
-    opacity: 0;
-
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-
-}
-
-
-/* ==========================================
-   ANIMATION 05
-   Interface mission
-========================================== */
-
-@keyframes interfaceFade {
-
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-
-}
-
-
-/* ==========================================
-   VERSION MOBILE
-========================================== */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
   .hero {
     padding: 22px;
-  }
-
-  .hero::before {
-    background-position: center;
-
-    opacity: 0.82;
   }
 
   .topbar .small {
@@ -466,32 +309,6 @@ h1 {
     gap: 20px;
 
     font-size: 8px;
-  }
-
-}
-
-
-/* ==========================================
-   ACCESSIBILITÉ
-   Désactive les animations si nécessaire
-========================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hero::before,
-  .topbar,
-  .eyebrow,
-  h1,
-  .question,
-  .begin-button,
-  .bottom-info {
-    animation: none;
-
-    opacity: 1;
-
-    transform: none;
-
-    filter: none;
   }
 
 }
