@@ -3121,3 +3121,94 @@ body {
   }
 
 }
+/* ==========================================
+   SCREEN 2 — MISSION BRIEF
+   SPACING POLISH
+========================================== */
+
+
+/* Contenu principal légèrement plus compact */
+
+.mission-content {
+  padding-top: 55px;
+  padding-bottom: 80px;
+}
+
+
+/* ACCESS GRANTED → WELCOME */
+
+.access-status {
+  margin-bottom: 62px;
+}
+
+
+/* WELCOME ARCHIVIST */
+
+.mission-content h2 {
+  margin-top: 0;
+  margin-bottom: 52px;
+}
+
+
+/* Bloc d'introduction */
+
+.brief-text {
+  margin-bottom: 58px;
+}
+
+
+/* Espacement des paragraphes */
+
+.brief-text p {
+  margin-top: 0;
+  margin-bottom: 27px;
+}
+
+.brief-text p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Contraintes */
+
+.constraint {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+/* Warning */
+
+.choice-warning {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+
+/* Phrase de décision */
+
+.instruction {
+  margin-top: 48px;
+  margin-bottom: 42px;
+}
+
+
+/* YOUR ALLOCATION */
+
+.allocation-title {
+  margin-bottom: 28px;
+}
+
+
+/* Ressources */
+
+.resources {
+  margin-bottom: 42px;
+}
+
+
+/* Bouton final */
+
+.continue-button {
+  margin-top: 0;
+}
