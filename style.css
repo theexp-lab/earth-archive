@@ -2955,3 +2955,169 @@ body {
   }
 
 }
+/* ==========================================
+   SCREEN 2 — MISSION BRIEF
+   ENTRY ANIMATIONS
+========================================== */
+
+
+/* HEADER */
+
+.mission-header {
+  opacity: 0;
+
+  animation: missionFade 0.7s ease forwards;
+  animation-delay: 0.1s;
+}
+
+
+/* ACCESS GRANTED */
+
+.access-status {
+  opacity: 0;
+  transform: translateY(8px);
+
+  animation: missionReveal 0.7s ease forwards;
+  animation-delay: 0.3s;
+}
+
+
+/* WELCOME ARCHIVIST */
+
+.mission-content h2 {
+  opacity: 0;
+
+  transform:
+    translateY(28px)
+    scale(0.97);
+
+  animation: missionTitleReveal 0.9s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+
+  animation-delay: 0.45s;
+}
+
+
+/* PREMIER TEXTE */
+
+.brief-text {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: missionReveal 0.8s ease forwards;
+  animation-delay: 0.75s;
+}
+
+
+/* CONTRAINTE */
+
+.constraint {
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: missionReveal 0.8s ease forwards;
+  animation-delay: 0.95s;
+}
+
+
+/* WARNING */
+
+.choice-warning {
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: missionReveal 0.8s ease forwards;
+  animation-delay: 1.1s;
+}
+
+
+/* INSTRUCTION + ALLOCATION */
+
+.instruction,
+.allocation-title,
+.resources,
+.continue-button {
+  opacity: 0;
+  transform: translateY(12px);
+
+  animation: missionReveal 0.8s ease forwards;
+}
+
+
+.instruction {
+  animation-delay: 1.25s;
+}
+
+.allocation-title {
+  animation-delay: 1.35s;
+}
+
+.resources {
+  animation-delay: 1.45s;
+}
+
+.continue-button {
+  animation-delay: 1.6s;
+}
+
+
+/* ==========================================
+   ANIMATION — SIMPLE REVEAL
+========================================== */
+
+@keyframes missionReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==========================================
+   ANIMATION — WELCOME
+========================================== */
+
+@keyframes missionTitleReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(28px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* ==========================================
+   ANIMATION — FADE
+========================================== */
+
+@keyframes missionFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
