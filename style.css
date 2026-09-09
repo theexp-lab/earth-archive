@@ -2439,3 +2439,296 @@ h1 {
   }
 
 }
+/* ==========================================
+   FINAL ARCHIVE — MISSION REPORT
+========================================== */
+
+#summary-screen {
+  min-height: 100vh;
+
+  background: #f2f1ec;
+  color: #111111;
+}
+
+
+/* ==========================================
+   FINAL — INTRO
+========================================== */
+
+.summary-intro {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 100px auto 70px;
+}
+
+.summary-title {
+  margin: 20px 0 30px;
+
+  font-size: clamp(70px, 11vw, 150px);
+  line-height: 0.78;
+
+  letter-spacing: -0.075em;
+}
+
+.summary-description {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-size: 17px;
+  line-height: 1.6;
+
+  opacity: 0.7;
+}
+
+
+/* ==========================================
+   FINAL — RESOURCE REPORT
+========================================== */
+
+.summary-resources {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto 80px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-top: 1px solid #999991;
+  border-left: 1px solid #999991;
+}
+
+.summary-resource {
+  padding: 24px;
+
+  border-right: 1px solid #999991;
+  border-bottom: 1px solid #999991;
+}
+
+.summary-resource p {
+  margin: 0 0 15px;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+
+  opacity: 0.55;
+}
+
+.summary-resource strong {
+  font-family: monospace;
+  font-size: 26px;
+}
+
+
+/* ==========================================
+   FINAL — ARCHIVE CONTENT
+========================================== */
+
+.summary-archive {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+}
+
+.summary-section {
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  padding: 32px 0;
+
+  border-top: 1px solid #999991;
+}
+
+.summary-section:last-child {
+  border-bottom: 1px solid #999991;
+}
+
+
+/* ==========================================
+   FINAL — SECTION TITLES
+========================================== */
+
+.summary-section-header p {
+  margin: 0 0 8px;
+
+  font-family: monospace;
+  font-size: 9px;
+
+  opacity: 0.5;
+}
+
+.summary-section-header h3 {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* ==========================================
+   FINAL — SELECTED ITEMS
+========================================== */
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #d1d1cb;
+}
+
+.summary-item:first-child {
+  padding-top: 0;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item span:first-child {
+  font-size: 15px;
+}
+
+.summary-item span:last-child {
+  font-family: monospace;
+  font-size: 9px;
+
+  opacity: 0.5;
+}
+
+
+/* ==========================================
+   FINAL — EMPTY CATEGORY
+========================================== */
+
+.summary-empty {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 10px;
+
+  opacity: 0.4;
+}
+
+
+/* ==========================================
+   FINAL — ARCHIVIST CONTRIBUTION
+========================================== */
+
+.summary-contribution #summary-missing {
+  margin: 0;
+
+  max-width: 800px;
+
+  font-size: clamp(28px, 4vw, 54px);
+  line-height: 1.05;
+
+  letter-spacing: -0.04em;
+}
+
+
+/* ==========================================
+   FINAL — REFLECTION
+========================================== */
+
+.summary-reflection {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 140px auto;
+  padding-top: 25px;
+
+  border-top: 1px solid #111111;
+}
+
+.summary-reflection-label {
+  margin: 0 0 50px;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.summary-reflection h2 {
+  max-width: 1050px;
+
+  margin: 0;
+
+  font-size: clamp(42px, 7vw, 95px);
+  line-height: 0.96;
+
+  letter-spacing: -0.055em;
+}
+
+
+/* ==========================================
+   FINAL — END
+========================================== */
+
+.summary-end {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+  padding: 30px 0 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid #111111;
+}
+
+.summary-end p {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
+
+/* ==========================================
+   FINAL — MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+  .summary-intro,
+  .summary-resources,
+  .summary-archive,
+  .summary-reflection,
+  .summary-end {
+    width: calc(100% - 30px);
+  }
+
+
+  .summary-resources {
+    grid-template-columns: 1fr;
+  }
+
+
+  .summary-section {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .summary-end {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+  }
+
+}
