@@ -12,52 +12,118 @@
 
 <body>
 
-  <!-- ========================================
-       SCREEN 1 — LANDING
-  ========================================= -->
 
-  <main class="hero" id="landing-screen">
+<!-- ==========================================
+     SCREEN 1 — LANDING
+     Earth Archive
+========================================== -->
 
-    <div class="topbar">
-      <div>
-        <p class="label">EARTH ARCHIVE</p>
-        <p class="small">INTERSTELLAR PRESERVATION PROGRAM</p>
-      </div>
+<section id="landing-screen" class="landing-screen">
 
-      <div class="mission-info">
-        <p class="label">MISSION EA-091</p>
-        <p class="small">2091</p>
-      </div>
-    </div>
+  <!-- ==========================================
+       BACKGROUND EARTH
+  ========================================== -->
 
-    <div class="hero-content">
+  <div class="landing-background"></div>
 
-      <p class="eyebrow">
-        ARCHIVE ALLOCATION // PENDING
+  <div class="landing-overlay"></div>
+
+
+  <!-- ==========================================
+       TOP HEADER
+  ========================================== -->
+
+  <div class="landing-header">
+
+    <div class="landing-brand">
+
+      <p class="landing-label">
+        EARTH ARCHIVE
       </p>
 
-      <h1>
-        EARTH<br>
+      <p class="landing-small">
+        INTERSTELLAR PRESERVATION PROGRAM
+      </p>
+
+    </div>
+
+
+    <div class="landing-mission">
+
+      <p class="landing-label">
+        MISSION EA-091
+      </p>
+
+      <p class="landing-small">
+        2091
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================
+       CENTER CONTENT
+  ========================================== -->
+
+  <div class="landing-content">
+
+    <p class="landing-status">
+      ARCHIVE ALLOCATION // PENDING
+    </p>
+
+
+    <h1 class="landing-title">
+
+      <span class="landing-title-line">
+        EARTH
+      </span>
+
+      <span class="landing-title-line">
         ARCHIVE
-      </h1>
+      </span>
 
-      <p class="question">
-        When preservation has a cost,<br>
-        how do we decide what deserves to survive?
-      </p>
+    </h1>
 
-      <button class="begin-button" id="begin-button">
-        BEGIN ARCHIVE <span>→</span>
-      </button>
 
-    </div>
+    <p class="landing-question">
+      When preservation has a cost,<br>
+      how do we decide what deserves to survive?
+    </p>
 
-    <div class="bottom-info">
-      <p>STATUS / ALLOCATION PENDING</p>
-      <p>EARTH // HOME PLANET</p>
-    </div>
 
-  </main>
+    <button
+      class="landing-button"
+      id="start-button"
+    >
+      <span>BEGIN ARCHIVE</span>
+
+      <span class="landing-arrow">
+        →
+      </span>
+    </button>
+
+  </div>
+
+
+  <!-- ==========================================
+       BOTTOM STATUS
+  ========================================== -->
+
+  <div class="landing-footer">
+
+    <p>
+      STATUS // ALLOCATION PENDING
+    </p>
+
+    <p>
+      EARTH // HOME PLANET
+    </p>
+
+  </div>
+
+</section>
 
 
   <!-- ========================================
