@@ -778,6 +778,19 @@ h1 {
 .capacity-box {
   text-align: right;
   min-width: 180px;
+
+  position: sticky;
+  top: 30px;
+
+  align-self: flex-start;
+
+  background: #f2f1ec;
+
+  padding: 12px 14px;
+
+  border: 1px solid #b8b8b0;
+
+  z-index: 10;
 }
 
 .capacity-box p {
