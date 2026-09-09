@@ -970,7 +970,9 @@ h1 {
 }
 
 
-/* MOBILE */
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media (max-width: 800px) {
 
@@ -988,11 +990,11 @@ h1 {
   }
 
   .capacity-box {
-  position: sticky;
-  top: 12px;
-  width: 100%;
-  text-align: left;
-}
+    position: sticky;
+    top: 12px;
+    width: 100%;
+    text-align: left;
+  }
 
   .object-grid {
     grid-template-columns: 1fr;
@@ -1003,6 +1005,70 @@ h1 {
     flex-direction: column;
     gap: 25px;
   }
+
+}
+
+
+/* ==========================================
+   FLOATING CAPACITY
+========================================== */
+
+.floating-capacity {
+  position: fixed;
+
+  top: 90px;
+  right: 48px;
+
+  z-index: 50;
+
+  background: #f2f1ec;
+  color: #111111;
+
+  border: 1px solid #b8b8b0;
+
+  padding: 12px 16px;
+
+  min-width: 150px;
+
+  text-align: right;
+}
+
+.floating-capacity p {
+  margin: 0 0 6px;
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+
+  color: #777770;
+}
+
+.floating-capacity strong {
+  display: block;
+
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+
+/* ==========================================
+   FLOATING CAPACITY — MOBILE
+========================================== */
+
+@media (max-width: 800px) {
+
+  .floating-capacity {
+    top: 75px;
+    right: 12px;
+
+    min-width: 125px;
+
+    padding: 10px 12px;
+  }
+
+  .floating-capacity strong {
+    font-size: 22px;
+  }
+
 }
 /* SELECTED CARD */
 
