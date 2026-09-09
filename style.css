@@ -17,93 +17,105 @@ body {
 
 
 /* ==========================================
-   LANDING PAGE — FIX
+   SCREEN 1 — LANDING
 ========================================== */
 
-.hero {
+.landing-screen {
   min-height: 100vh;
   padding: 32px 48px;
-
-  display: grid;
-  grid-template-rows: auto 1fr auto;
 
   position: relative;
   overflow: hidden;
 
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
   background: #0b0b0b;
+  color: #f2f1ec;
 }
 
 
-/* IMAGE DE LA TERRE */
+/* ==========================================
+   BACKGROUND EARTH
+========================================== */
 
-.hero::before {
-  content: "";
-
+.landing-background {
   position: absolute;
-  inset: -4%;
+
+  /* légèrement plus grand que l'écran
+     pour permettre le zoom sans voir les bords */
+  inset: -5%;
 
   background-image: url("earth.jpg");
   background-size: cover;
   background-position: center;
 
-  opacity: 0.82;
-
-  filter:
-    brightness(0.82)
-    contrast(1.08)
-    saturate(1.08);
-
   z-index: 0;
 
   transform: scale(1.03);
 
-  animation: earthZoom 18s ease-out forwards;
+  animation: earthCamera 18s ease-out forwards;
 }
 
 
-/* VOILE SOMBRE */
+/* ==========================================
+   DARK OVERLAY
+   Léger pour garder la Terre visible
+========================================== */
 
-.hero::after {
-  content: "";
-
+.landing-overlay {
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-    180deg,
-    rgba(5, 6, 7, 0.15) 0%,
-    rgba(5, 6, 7, 0.06) 38%,
-    rgba(5, 6, 7, 0.18) 68%,
-    rgba(5, 6, 7, 0.48) 100%
-  );
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.18) 0%,
+      rgba(0, 0, 0, 0.08) 35%,
+      rgba(0, 0, 0, 0.22) 75%,
+      rgba(0, 0, 0, 0.50) 100%
+    );
 
   z-index: 1;
+
+  pointer-events: none;
 }
 
 
-/* CONTENU AU-DESSUS DE L'IMAGE */
+/* ==========================================
+   ELEMENTS ABOVE BACKGROUND
+========================================== */
 
-.topbar,
-.hero-content,
-.bottom-info {
+.landing-header,
+.landing-content,
+.landing-footer {
   position: relative;
   z-index: 2;
 }
 
 
-/* HAUT DE PAGE */
+/* ==========================================
+   HEADER
+========================================== */
 
-.topbar {
+.landing-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  opacity: 0;
+
+  animation: interfaceReveal 0.8s ease forwards;
+  animation-delay: 0.15s;
 }
 
-.mission-info {
+
+.landing-mission {
   text-align: right;
 }
 
-.label {
+
+.landing-label {
   margin: 0;
 
   font-size: 12px;
@@ -111,23 +123,26 @@ body {
   letter-spacing: 0.16em;
 }
 
-.small {
+
+.landing-small {
   margin: 7px 0 0;
 
   font-size: 10px;
   letter-spacing: 0.12em;
 
-  color: rgba(242, 241, 236, 0.58);
+  color: rgba(242, 241, 236, 0.65);
 }
 
 
-/* CONTENU CENTRAL */
+/* ==========================================
+   CENTER CONTENT
+========================================== */
 
-.hero-content {
+.landing-content {
   align-self: center;
   justify-self: center;
 
-  width: min(100%, 1100px);
+  width: min(100%, 1200px);
 
   display: flex;
   flex-direction: column;
@@ -137,64 +152,119 @@ body {
 }
 
 
-/* PETIT TEXTE AU-DESSUS DU TITRE */
+/* ==========================================
+   STATUS
+========================================== */
 
-.eyebrow {
+.landing-status {
   margin: 0 0 30px;
 
   font-size: 11px;
   letter-spacing: 0.18em;
 
-  color: rgba(242, 241, 236, 0.62);
+  color: rgba(242, 241, 236, 0.68);
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  animation: statusReveal 0.8s ease forwards;
+  animation-delay: 0.35s;
 }
 
 
-/* TITRE */
+/* ==========================================
+   MAIN TITLE
+========================================== */
 
-h1 {
+.landing-title {
   margin: 0;
 
-  font-size: clamp(80px, 10vw, 155px);
-  line-height: 0.82;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  letter-spacing: -0.055em;
+  font-size: clamp(90px, 12vw, 190px);
+  line-height: 0.73;
+
+  letter-spacing: -0.065em;
   font-weight: 700;
 
   text-align: center;
+}
 
-  animation: titleReveal 1.3s
+
+.landing-title-line {
+  display: block;
+
+  opacity: 0;
+
+  transform:
+    scale(0.80)
+    translateY(35px);
+
+  filter: blur(5px);
+
+  animation: titleReveal 1.25s
     cubic-bezier(0.16, 1, 0.3, 1)
     forwards;
 }
 
 
-/* QUESTION */
+/* EARTH apparaît d'abord */
 
-.question {
-  max-width: 650px;
-
-  margin: 42px auto 32px;
-
-  font-size: clamp(18px, 1.8vw, 26px);
-  line-height: 1.35;
-
-  text-align: center;
+.landing-title-line:nth-child(1) {
+  animation-delay: 0.45s;
 }
 
 
-/* BOUTON */
+/* ARCHIVE arrive légèrement après */
 
-.begin-button {
+.landing-title-line:nth-child(2) {
+  animation-delay: 0.58s;
+}
+
+
+/* ==========================================
+   QUESTION
+========================================== */
+
+.landing-question {
+  margin: 48px auto 32px;
+
+  max-width: 650px;
+
+  font-size: clamp(18px, 1.7vw, 25px);
+  line-height: 1.35;
+
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: contentReveal 0.9s ease forwards;
+  animation-delay: 1.05s;
+}
+
+
+/* ==========================================
+   BEGIN ARCHIVE BUTTON
+========================================== */
+
+.landing-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  padding: 16px 22px;
+  min-width: 190px;
 
-  border: 1px solid rgba(242, 241, 236, 0.48);
+  padding: 16px 20px;
 
-  background: rgba(11, 11, 11, 0.18);
+  border: 1px solid rgba(242, 241, 236, 0.55);
+
+  background: rgba(11, 11, 11, 0.22);
   color: #f2f1ec;
+
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -203,27 +273,47 @@ h1 {
 
   backdrop-filter: blur(5px);
 
+  opacity: 0;
+  transform: translateY(16px);
+
+  animation: contentReveal 0.8s ease forwards;
+  animation-delay: 1.30s;
+
   transition:
     background 0.25s ease,
     color 0.25s ease,
+    border-color 0.25s ease,
     transform 0.25s ease;
 }
 
-.begin-button span {
+
+.landing-arrow {
   margin-left: 30px;
+
+  transition: transform 0.25s ease;
 }
 
-.begin-button:hover {
+
+.landing-button:hover {
   background: #f2f1ec;
   color: #0b0b0b;
+
+  border-color: #f2f1ec;
 
   transform: translateY(-3px);
 }
 
 
-/* BAS DE PAGE */
+.landing-button:hover .landing-arrow {
+  transform: translateX(5px);
+}
 
-.bottom-info {
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.landing-footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -231,17 +321,25 @@ h1 {
   font-size: 9px;
   letter-spacing: 0.14em;
 
-  color: rgba(242, 241, 236, 0.52);
+  color: rgba(242, 241, 236, 0.58);
+
+  opacity: 0;
+
+  animation: interfaceReveal 0.8s ease forwards;
+  animation-delay: 1.55s;
 }
 
-.bottom-info p {
+
+.landing-footer p {
   margin: 0;
 }
 
 
-/* ANIMATION TERRE */
+/* ==========================================
+   ANIMATION — EARTH
+========================================== */
 
-@keyframes earthZoom {
+@keyframes earthCamera {
 
   from {
     transform: scale(1.03);
@@ -254,7 +352,9 @@ h1 {
 }
 
 
-/* ANIMATION TITRE */
+/* ==========================================
+   ANIMATION — TITLE
+========================================== */
 
 @keyframes titleReveal {
 
@@ -262,7 +362,7 @@ h1 {
     opacity: 0;
 
     transform:
-      scale(0.78)
+      scale(0.80)
       translateY(35px);
 
     filter: blur(5px);
@@ -281,34 +381,123 @@ h1 {
 }
 
 
-/* MOBILE */
+/* ==========================================
+   ANIMATION — STATUS
+========================================== */
+
+@keyframes statusReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==========================================
+   ANIMATION — CONTENT
+========================================== */
+
+@keyframes contentReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==========================================
+   ANIMATION — INTERFACE
+========================================== */
+
+@keyframes interfaceReveal {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* ==========================================
+   LANDING — MOBILE
+========================================== */
 
 @media (max-width: 700px) {
 
-  .hero {
+  .landing-screen {
     padding: 22px;
   }
 
-  .topbar .small {
+
+  .landing-small {
     display: none;
   }
 
-  h1 {
+
+  .landing-title {
     font-size: 20vw;
   }
 
-  .question {
+
+  .landing-question {
+    margin-top: 38px;
+
     font-size: 17px;
   }
 
-  .question br {
+
+  .landing-question br {
     display: none;
   }
 
-  .bottom-info {
+
+  .landing-footer {
     gap: 20px;
 
     font-size: 8px;
+  }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .landing-background,
+  .landing-header,
+  .landing-status,
+  .landing-title-line,
+  .landing-question,
+  .landing-button,
+  .landing-footer {
+    animation: none;
+
+    opacity: 1;
+
+    transform: none;
+
+    filter: none;
   }
 
 }
