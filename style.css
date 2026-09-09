@@ -988,8 +988,11 @@ h1 {
   }
 
   .capacity-box {
-    text-align: left;
-  }
+  position: sticky;
+  top: 12px;
+  width: 100%;
+  text-align: left;
+}
 
   .object-grid {
     grid-template-columns: 1fr;
