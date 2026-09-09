@@ -199,10 +199,10 @@ body {
   opacity: 0;
 
   transform:
-    scale(0.80)
-    translateY(35px);
+    scale(0.92)
+    translateY(18px);
 
-  filter: blur(5px);
+  filter: blur(8px);
 
  animation: titleReveal 3.8s
   cubic-bezier(0.16, 1, 0.3, 1)
@@ -511,19 +511,18 @@ body {
 
 
 /* ==========================================
-   MISSION BRIEF
+   SCREEN 2 — MISSION BRIEF
 ========================================== */
 
 .mission-screen {
   min-height: 100vh;
-
-  background: #f2f1ec;
-  color: #111111;
-
   padding: 32px 48px;
 
   display: grid;
   grid-template-rows: auto 1fr;
+
+  background: #f2f1ec;
+  color: #111111;
 }
 
 
@@ -535,6 +534,23 @@ body {
   align-items: flex-start;
 }
 
+.mission-info {
+  text-align: right;
+}
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.small {
+  margin: 7px 0 0;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
 .dark-label {
   color: #111111;
 }
@@ -544,14 +560,12 @@ body {
 }
 
 
-/* CONTENU */
+/* MAIN CONTENT */
 
 .mission-content {
   width: min(100%, 1100px);
-
   margin: auto;
-
-  padding: 60px 0;
+  padding: 55px 0 80px;
 
   display: flex;
   flex-direction: column;
@@ -559,79 +573,159 @@ body {
 }
 
 
-/* NUMÉRO */
+/* ACCESS STATUS */
 
-.mission-number {
-  margin: 0 0 30px;
+.access-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
 
-  font-size: 11px;
-  letter-spacing: 0.18em;
+  margin-bottom: 62px;
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
 
   color: #777770;
 }
 
+.access-dot {
+  width: 7px;
+  height: 7px;
 
-/* TITRE */
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #7dff8a;
+}
+
+
+/* TITLE */
 
 .mission-content h2 {
-  margin: 0 0 55px;
+  margin: 0 0 52px;
 
-  font-size: clamp(75px, 9vw, 140px);
-  line-height: 0.82;
-
-  letter-spacing: -0.055em;
+  font-size: clamp(52px, 6vw, 88px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
 
   font-weight: 700;
 }
 
 
-/* TEXTE DU BRIEF */
+/* BRIEF */
 
 .brief-text {
   max-width: 620px;
+  margin-bottom: 58px;
 
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.55;
 }
 
 .brief-text p {
-  margin: 0 0 22px;
+  margin: 0 0 27px;
+}
+
+.brief-text p:last-child {
+  margin-bottom: 0;
+}
+
+.brief-intro {
+  font-weight: 700;
+}
+
+.important-line {
+  margin-top: 32px !important;
+
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.important-line strong {
+  font-size: inherit;
+  font-weight: 800;
 }
 
 
-/* RÈGLE PRINCIPALE */
+/* CONSTRAINT */
 
-.rule {
-  margin-top: 40px;
+.constraint {
+  width: 100%;
+  max-width: 620px;
 
-  padding-top: 25px;
+  margin-top: 45px;
+  padding: 30px 0;
 
   border-top: 1px solid #b8b8b0;
 
-  width: 100%;
+  font-size: 17px;
+  line-height: 1.55;
 }
 
-.rule p {
+.constraint p {
+  margin: 0 0 8px;
+}
+
+.constraint p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* CHOICE WARNING */
+
+.choice-warning {
+  width: 100%;
+
+  margin-top: 45px;
+  padding: 30px 0;
+
+  border-top: 1px solid #b8b8b0;
+  border-bottom: 1px solid #b8b8b0;
+}
+
+.choice-warning p {
   margin: 0;
 
   font-size: 17px;
+  line-height: 1.55;
 }
 
-.rule strong {
-  display: block;
+.warning-main {
+  margin-top: 10px !important;
 
-  margin-top: 5px;
+  font-size: 17px !important;
+  line-height: 1.55 !important;
 
-  font-size: 30px;
+  font-weight: 700;
 }
 
 
-/* RESSOURCES */
+/* INSTRUCTION */
+
+.instruction {
+  margin: 48px 0 42px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+
+/* ALLOCATION */
+
+.allocation-title {
+  margin-bottom: 28px;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+
+  color: #777770;
+}
 
 .resources {
   width: 100%;
-
-  margin-top: 50px;
+  margin: 0 0 42px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -646,7 +740,6 @@ body {
 
 .resource + .resource {
   padding-left: 25px;
-
   border-left: 1px solid #b8b8b0;
 }
 
@@ -660,28 +753,31 @@ body {
 }
 
 .resource strong {
-  font-size: 30px;
+  font-size: 26px;
 }
 
 
-/* BOUTON */
+/* CONTINUE BUTTON */
 
 .continue-button {
-  margin-top: 40px;
+  margin-top: 0;
+  padding: 17px 22px;
+
+  border: 1px solid #111111;
 
   background: #111111;
   color: #f2f1ec;
 
-  border: 1px solid #111111;
-
-  padding: 17px 22px;
-
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
   letter-spacing: 0.14em;
 
   cursor: pointer;
 
-  transition: all 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .continue-button span {
@@ -691,13 +787,115 @@ body {
 .continue-button:hover {
   background: transparent;
   color: #111111;
+  transform: translateY(-2px);
 }
 
 
-/* MOBILE */
+/* ENTRY ANIMATIONS
+   These start only when JS adds .mission-active.
+*/
+
+.mission-screen.mission-active .mission-header {
+  opacity: 0;
+  animation: missionFade 0.7s ease 0.1s forwards;
+}
+
+.mission-screen.mission-active .access-status {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: missionReveal 0.7s ease 0.3s forwards;
+}
+
+.mission-screen.mission-active .mission-content h2 {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+
+  animation: missionTitleReveal 0.9s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.45s forwards;
+}
+
+.mission-screen.mission-active .brief-text {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: missionReveal 0.8s ease 0.75s forwards;
+}
+
+.mission-screen.mission-active .constraint {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: missionReveal 0.8s ease 0.95s forwards;
+}
+
+.mission-screen.mission-active .choice-warning {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: missionReveal 0.8s ease 1.1s forwards;
+}
+
+.mission-screen.mission-active .instruction,
+.mission-screen.mission-active .allocation-title,
+.mission-screen.mission-active .resources,
+.mission-screen.mission-active .continue-button {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: missionReveal 0.8s ease forwards;
+}
+
+.mission-screen.mission-active .instruction {
+  animation-delay: 1.25s;
+}
+
+.mission-screen.mission-active .allocation-title {
+  animation-delay: 1.35s;
+}
+
+.mission-screen.mission-active .resources {
+  animation-delay: 1.45s;
+}
+
+.mission-screen.mission-active .continue-button {
+  animation-delay: 1.6s;
+}
+
+@keyframes missionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes missionTitleReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes missionFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* MISSION — MOBILE */
 
 @media (max-width: 700px) {
-
   .mission-screen {
     padding: 22px;
   }
@@ -720,221 +918,31 @@ body {
 
   .resource + .resource {
     padding-left: 0;
-
     border-left: none;
     border-top: 1px solid #b8b8b0;
   }
 }
-/* ==========================================
-   MISSION BRIEF — DETAILS
-========================================== */
 
-.access-status {
-  display: flex;
-  align-items: center;
-  gap: 9px;
 
-  margin-bottom: 30px;
+/* MISSION — REDUCED MOTION */
 
-  font-size: 10px;
-  letter-spacing: 0.16em;
-
-  color: #62625d;
+@media (prefers-reduced-motion: reduce) {
+  .mission-screen.mission-active .mission-header,
+  .mission-screen.mission-active .access-status,
+  .mission-screen.mission-active .mission-content h2,
+  .mission-screen.mission-active .brief-text,
+  .mission-screen.mission-active .constraint,
+  .mission-screen.mission-active .choice-warning,
+  .mission-screen.mission-active .instruction,
+  .mission-screen.mission-active .allocation-title,
+  .mission-screen.mission-active .resources,
+  .mission-screen.mission-active .continue-button {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.access-dot {
-  width: 7px;
-  height: 7px;
-
-  background: #7dff8a;
-  border-radius: 50%;
-}
-
-.brief-intro {
-  font-weight: 700;
-}
-
-.important-line {
-  margin-top: 35px !important;
-  font-size: 21px;
-}
-
-.important-line strong {
-  font-weight: 800;
-}
-
-.constraint {
-  width: 100%;
-  max-width: 620px;
-
-  margin-top: 35px;
-  padding-top: 25px;
-
-  border-top: 1px solid #b8b8b0;
-
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.constraint p {
-  margin: 0 0 8px;
-}
-
-.choice-warning {
-  width: 100%;
-
-  margin-top: 45px;
-  padding: 30px 0;
-
-  border-top: 1px solid #b8b8b0;
-  border-bottom: 1px solid #b8b8b0;
-}
-
-.choice-warning p {
-  margin: 0;
-}
-
-.warning-main {
-  margin-top: 12px !important;
-
-  font-size: 27px;
-  line-height: 1.25;
-
-  font-weight: 700;
-}
-
-.instruction {
-  margin: 55px 0 12px;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}
-
-.allocation-title {
-  margin-top: 35px;
-
-  font-size: 10px;
-  letter-spacing: 0.16em;
-
-  color: #777770;
-}
-
-/* ==========================================
-   MISSION BRIEF — TYPOGRAPHY CLEANUP
-========================================== */
-
-/* ACCESS GRANTED — petit statut isolé */
-.access-status {
-  margin-bottom: 70px;
-
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-
-  color: #777770;
-}
-
-
-/* WELCOME ARCHIVIST — plus petit et plus élégant */
-.mission-content h2 {
-  margin: 0 0 48px;
-
-  font-size: clamp(52px, 6vw, 88px);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
-
-  font-weight: 700;
-}
-
-
-/* TEXTE PRINCIPAL — UNE SEULE TAILLE */
-.brief-text {
-  max-width: 620px;
-
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-.brief-text p {
-  margin: 0 0 20px;
-}
-
-
-/* "YOU" reste accentué sans agrandir toute la phrase */
-.important-line {
-  margin-top: 32px !important;
-
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-.important-line strong {
-  font-size: inherit;
-  font-weight: 800;
-}
-
-
-/* CONTRAINTE — même typo que le texte */
-.constraint {
-  max-width: 620px;
-
-  margin-top: 45px;
-  padding-top: 28px;
-
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-
-/* AVERTISSEMENT */
-.choice-warning {
-  margin-top: 45px;
-  padding: 28px 0;
-}
-
-.choice-warning p {
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-
-/* On accentue par le poids, PAS par une énorme taille */
-.warning-main {
-  margin-top: 10px !important;
-
-  font-size: 17px !important;
-  line-height: 1.55 !important;
-
-  font-weight: 700;
-}
-
-
-/* INSTRUCTION */
-.instruction {
-  margin: 48px 0 0;
-
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}
-
-
-/* YOUR ALLOCATION */
-.allocation-title {
-  margin-top: 40px;
-
-  font-size: 10px;
-  letter-spacing: 0.16em;
-
-  color: #777770;
-}
-
-
-/* LES 3 CHIFFRES */
-.resource strong {
-  font-size: 26px;
-}
 
 /* ==========================================
    PHYSICAL ARCHIVE
@@ -993,41 +1001,6 @@ body {
 
   font-size: 17px;
   line-height: 1.55;
-}
-
-
-/* CAPACITY */
-
-.capacity-box {
-  text-align: right;
-  min-width: 180px;
-
-  position: sticky;
-  top: 30px;
-
-  align-self: flex-start;
-
-  background: #f2f1ec;
-
-  padding: 12px 14px;
-
-  border: 1px solid #b8b8b0;
-
-  z-index: 10;
-}
-
-.capacity-box p {
-  margin: 0 0 10px;
-
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: #777770;
-}
-
-.capacity-box strong {
-  display: block;
-  font-size: 38px;
-  letter-spacing: -0.03em;
 }
 
 
@@ -1217,13 +1190,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .capacity-box {
-    width: 100%;
-    text-align: left;
-  }
-
-  .object-grid {
+.object-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1283,180 +1250,7 @@ body {
 
 @media (max-width: 800px) {
 
-  .floating-capacity {
-    top: 75px;
-    right: 12px;
-
-    min-width: 125px;
-
-    padding: 10px 12px;
-  }
-
-  .floating-capacity strong {
-    font-size: 22px;
-  }
-
-}
-/* SELECTED CARD */
-
-.archive-card.selected {
-  border: 2px solid #111111;
-}
-
-.archive-card.selected .card-image {
-  opacity: 0.65;
-}
-
-.archive-card.selected .archive-button {
-  font-weight: 800;
-}
-/* ==========================================
-   ARCHIVED STATE
-========================================== */
-
-.archive-card.selected {
-  border: 2px solid #111111;
-}
-
-.archive-card.selected .card-image {
-  opacity: 0.55;
-}
-
-.archive-card.selected .archive-button {
-  font-weight: 800;
-}
-
-.archive-card.selected::after {
-  content: "ARCHIVED";
-
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
-  padding: 7px 9px;
-
-  background: #111111;
-  color: #f2f1ec;
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-}
-
-.archive-card {
-  position: relative;
-}
-
-/* ==========================================
-   CARD DETAILS
-========================================== */
-
-.card-represents {
-  margin: 20px 0 16px;
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-
-  color: #777770;
-}
-
-
-.info-button {
-  margin-bottom: 20px;
-
-  padding: 0;
-
-  border: none;
-  background: transparent;
-
-  color: #111111;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-
-  cursor: pointer;
-}
-
-
-.card-details {
-  margin: 0 0 24px;
-
-  padding: 20px 0;
-
-  border-top: 1px solid #c8c7c0;
-  border-bottom: 1px solid #c8c7c0;
-
-  font-size: 13px;
-  line-height: 1.55;
-
-  color: #444440;
-}
-
-
-.card-details p {
-  margin: 0 0 15px;
-}
-
-
-.card-details p:last-child {
-  margin-bottom: 0;
-}
-
-
-.detail-label {
-  margin-top: 20px !important;
-  margin-bottom: 7px !important;
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-
-  color: #777770;
-}
-
-
-.detail-label:first-child {
-  margin-top: 0 !important;
-}
-
-.floating-capacity {
-  position: fixed;
-
-  top: 90px;
-  right: 48px;
-
-  z-index: 50;
-
-  background: #f2f1ec;
-  color: #111111;
-
-  border: 1px solid #b8b8b0;
-
-  padding: 12px 16px;
-
-  min-width: 150px;
-
-  text-align: right;
-}
-
-.floating-capacity p {
-  margin: 0 0 6px;
-
-  font-size: 9px;
-  letter-spacing: 0.14em;
-
-  color: #777770;
-}
-
-.floating-capacity strong {
-  display: block;
-
-  font-size: 28px;
-  letter-spacing: -0.03em;
-}
-/* ==========================================
+  /* ==========================================
    NEXT BUTTON — HOVER
    Animation du bouton quand on passe la souris
 ========================================== */
@@ -1472,26 +1266,6 @@ body {
   background: transparent;
   color: #111111;
   transform: translateY(-2px);
-}
-
-
-/* ==========================================
-   DIGITAL ARCHIVE — CARD BUTTON
-   Même logique que le bouton Physical
-========================================== */
-
-.digital-archive-button {
-  border: none;
-  background: transparent;
-  color: #111111;
-
-  padding: 0;
-
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-
-  cursor: pointer;
 }
 
 
@@ -1768,7 +1542,7 @@ body {
   align-self: start;
 }
 
-.detail-label {
+.card-details .digital-detail .detail-label {
   margin: 0 0 8px;
 
   font-family: monospace;
@@ -2954,261 +2728,4 @@ body {
     gap: 30px;
   }
 
-}
-/* ==========================================
-   SCREEN 2 — MISSION BRIEF
-   ENTRY ANIMATIONS
-========================================== */
-
-
-/* HEADER */
-
-.mission-header {
-  opacity: 0;
-
-  animation: missionFade 0.7s ease forwards;
-  animation-delay: 0.1s;
-}
-
-
-/* ACCESS GRANTED */
-
-.access-status {
-  opacity: 0;
-  transform: translateY(8px);
-
-  animation: missionReveal 0.7s ease forwards;
-  animation-delay: 0.3s;
-}
-
-
-/* WELCOME ARCHIVIST */
-
-.mission-content h2 {
-  opacity: 0;
-
-  transform:
-    translateY(28px)
-    scale(0.97);
-
-  animation: missionTitleReveal 0.9s
-    cubic-bezier(0.16, 1, 0.3, 1)
-    forwards;
-
-  animation-delay: 0.45s;
-}
-
-
-/* PREMIER TEXTE */
-
-.brief-text {
-  opacity: 0;
-  transform: translateY(18px);
-
-  animation: missionReveal 0.8s ease forwards;
-  animation-delay: 0.75s;
-}
-
-
-/* CONTRAINTE */
-
-.constraint {
-  opacity: 0;
-  transform: translateY(15px);
-
-  animation: missionReveal 0.8s ease forwards;
-  animation-delay: 0.95s;
-}
-
-
-/* WARNING */
-
-.choice-warning {
-  opacity: 0;
-  transform: translateY(15px);
-
-  animation: missionReveal 0.8s ease forwards;
-  animation-delay: 1.1s;
-}
-
-
-/* INSTRUCTION + ALLOCATION */
-
-.instruction,
-.allocation-title,
-.resources,
-.continue-button {
-  opacity: 0;
-  transform: translateY(12px);
-
-  animation: missionReveal 0.8s ease forwards;
-}
-
-
-.instruction {
-  animation-delay: 1.25s;
-}
-
-.allocation-title {
-  animation-delay: 1.35s;
-}
-
-.resources {
-  animation-delay: 1.45s;
-}
-
-.continue-button {
-  animation-delay: 1.6s;
-}
-
-
-/* ==========================================
-   ANIMATION — SIMPLE REVEAL
-========================================== */
-
-@keyframes missionReveal {
-
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-
-/* ==========================================
-   ANIMATION — WELCOME
-========================================== */
-
-@keyframes missionTitleReveal {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(28px)
-      scale(0.97);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-
-}
-
-
-/* ==========================================
-   ANIMATION — FADE
-========================================== */
-
-@keyframes missionFade {
-
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-
-}
-/* ==========================================
-   SCREEN 2 — MISSION BRIEF
-   SPACING POLISH
-========================================== */
-
-
-/* Contenu principal légèrement plus compact */
-
-.mission-content {
-  padding-top: 55px;
-  padding-bottom: 80px;
-}
-
-
-/* ACCESS GRANTED → WELCOME */
-
-.access-status {
-  margin-bottom: 62px;
-}
-
-
-/* WELCOME ARCHIVIST */
-
-.mission-content h2 {
-  margin-top: 0;
-  margin-bottom: 52px;
-}
-
-
-/* Bloc d'introduction */
-
-.brief-text {
-  margin-bottom: 58px;
-}
-
-
-/* Espacement des paragraphes */
-
-.brief-text p {
-  margin-top: 0;
-  margin-bottom: 27px;
-}
-
-.brief-text p:last-child {
-  margin-bottom: 0;
-}
-
-
-/* Contraintes */
-
-.constraint {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-
-/* Warning */
-
-.choice-warning {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-
-/* Phrase de décision */
-
-.instruction {
-  margin-top: 48px;
-  margin-bottom: 42px;
-}
-
-
-/* YOUR ALLOCATION */
-
-.allocation-title {
-  margin-bottom: 28px;
-}
-
-
-/* Ressources */
-
-.resources {
-  margin-bottom: 42px;
-}
-
-
-/* Bouton final */
-
-.continue-button {
-  margin-top: 0;
 }
