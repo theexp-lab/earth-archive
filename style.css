@@ -802,6 +802,7 @@ h1 {
 }
 
 .capacity-box strong {
+  display: block;
   font-size: 38px;
   letter-spacing: -0.03em;
 }
