@@ -3888,10 +3888,10 @@ body {
 
   padding: 0;
 
-  background: #0b0b0b;
-  color: #f2f1ec;
+  background: #f2f1ec;
+  color: #111111;
 
-  border: 1px solid #2c2c2c;
+  border: 1px solid #a7a79f;
 }
 
 
@@ -3903,7 +3903,7 @@ body {
 .terminal-system-info {
   padding: 28px 40px 32px;
 
-  border-bottom: 1px solid #2f2f2f;
+  border-bottom: 1px solid #a7a79f;
 
   font-family: monospace;
 }
@@ -3959,7 +3959,7 @@ body {
 .terminal-incoming {
   padding: 22px 40px;
 
-  border-bottom: 1px solid #2f2f2f;
+  border-bottom: 1px solid #a7a79f;
 
   font-family: monospace;
 
@@ -4077,7 +4077,7 @@ body {
 .terminal-close {
   padding: 26px 40px 30px;
 
-  border-top: 1px solid #2f2f2f;
+  border-top: 1px solid #a7a79f;
 
   font-family: monospace;
 
