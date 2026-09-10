@@ -576,22 +576,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // ==========================================
-  // 15. DIGITAL → BIOLOGICAL
-  // ==========================================
+// 15. DIGITAL → BIOLOGICAL
+// ==========================================
 
-  if (biologicalButton && digitalScreen && biologicalScreen) {
+if (biologicalButton && digitalScreen && biologicalScreen) {
 
-    biologicalButton.addEventListener("click", function () {
+  biologicalButton.addEventListener("click", function () {
 
-      digitalScreen.classList.add("hidden");
+    digitalScreen.classList.add("hidden");
 
-      biologicalScreen.classList.remove("hidden");
+    biologicalScreen.classList.remove("hidden");
 
-      window.scrollTo(0, 0);
+    // Lance l'animation d'entrée Biological
+    biologicalScreen.classList.add("biological-active");
 
-    });
+    window.scrollTo(0, 0);
 
-  }
+  });
+
+}
 
 
   // ==========================================
