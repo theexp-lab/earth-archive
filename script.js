@@ -70,17 +70,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (continueButton && missionScreen && physicalScreen) {
 
-    continueButton.addEventListener("click", function () {
+  continueButton.addEventListener("click", function () {
 
-      missionScreen.classList.add("hidden");
+    missionScreen.classList.add("hidden");
 
-      physicalScreen.classList.remove("hidden");
+    physicalScreen.classList.remove("hidden");
 
-      window.scrollTo(0, 0);
+    // Lance l'animation d'entrée Physical
+    physicalScreen.classList.add("physical-active");
 
-    });
+    window.scrollTo(0, 0);
 
-  }
+  });
+
+}
 
 
   // ==========================================
