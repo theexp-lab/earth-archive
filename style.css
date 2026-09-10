@@ -3988,7 +3988,7 @@ body {
 ========================================== */
 
 .terminal-message {
-  width: min(760px, calc(100% - 100px));
+  width: min(680px, calc(100% - 80px));
 
   margin: 0 auto;
 
@@ -4000,14 +4000,12 @@ body {
 
   font-family: Arial, sans-serif;
 
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.55;
 
   letter-spacing: -0.015em;
 
   opacity: 0.82;
-
-  white-space: nowrap;
 }
 
 
@@ -4033,7 +4031,7 @@ body {
 ========================================== */
 
 .terminal-farewell {
-  width: min(760px, calc(100% - 100px));
+  width: min(680px, calc(100% - 80px));
 
   margin: 0 auto;
 
