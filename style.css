@@ -171,11 +171,21 @@ body {
   animation-delay: 0.35s;
 }
 
-
 /* ==========================================
-   MAIN TITLE
+   MAIN TITLE — EARTH ARCHIVE
 ========================================== */
 
+.landing-title {
+  margin: 0;
+
+  font-size: clamp(90px, 12vw, 190px);
+  line-height: 0.73;
+
+  letter-spacing: -0.065em;
+  font-weight: 700;
+
+  text-align: center;
+}
 .landing-title-line {
   display: block;
 
