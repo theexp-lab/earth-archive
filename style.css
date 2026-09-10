@@ -2832,6 +2832,13 @@ body {
 }
 /* ==========================================
    MISSING ITEM — FINAL INPUT SCREEN
+   Direction artistique :
+   silence / human override / archive anomaly
+========================================== */
+
+
+/* ==========================================
+   1. MISSING — GENERAL SCREEN
 ========================================== */
 
 #missing-screen {
@@ -2843,91 +2850,131 @@ body {
 
 
 /* ==========================================
-   MISSING — MAIN CONTENT
+   2. MISSING — MAIN CONTENT
 ========================================== */
 
 .missing-content {
-  width: min(900px, calc(100% - 80px));
+  width: min(1050px, calc(100% - 80px));
 
-  margin: 100px auto 120px;
+  margin: 90px auto 120px;
 }
 
 
 /* ==========================================
-   MISSING — TITLE
+   3. MISSING — SYSTEM STATUS
 ========================================== */
 
-.missing-title {
-  margin: 20px 0 30px;
+.missing-content::before {
+  content: "UNREGISTERED ENTRY // ARCHIVIST DISCRETION";
 
-  font-size: clamp(60px, 9vw, 130px);
-  line-height: 0.82;
+  display: inline-block;
 
-  letter-spacing: -0.07em;
-}
+  margin-bottom: 55px;
+  padding: 8px 10px;
 
+  border: 1px solid #9c9c96;
 
-/* ==========================================
-   MISSING — QUESTION
-========================================== */
-
-.missing-question {
-  margin: 0 0 15px;
-
-  font-size: 24px;
-  font-weight: 600;
-}
-
-
-/* ==========================================
-   MISSING — DESCRIPTION
-========================================== */
-
-.missing-description {
-  max-width: 650px;
-
-  margin: 0 0 60px;
-
-  font-size: 15px;
-  line-height: 1.65;
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.13em;
 
   opacity: 0.7;
 }
 
 
 /* ==========================================
-   MISSING — INPUT AREA
+   4. MISSING — TITLE
+========================================== */
+
+.missing-title {
+  max-width: 900px;
+
+  margin: 0 0 38px;
+
+  font-size: clamp(72px, 10vw, 145px);
+  line-height: 0.78;
+
+  font-weight: 700;
+  letter-spacing: -0.075em;
+}
+
+
+/* ==========================================
+   5. MISSING — QUESTION
+========================================== */
+
+.missing-question {
+  margin: 0 0 14px;
+
+  font-size: 25px;
+  font-weight: 600;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* ==========================================
+   6. MISSING — DESCRIPTION
+========================================== */
+
+.missing-description {
+  max-width: 620px;
+
+  margin: 0 0 75px;
+
+  font-size: 15px;
+  line-height: 1.65;
+
+  opacity: 0.65;
+}
+
+
+/* ==========================================
+   7. MISSING — INPUT AREA
 ========================================== */
 
 .missing-input-area {
+  position: relative;
+
   padding-top: 18px;
 
-  border-top: 1px solid #9c9c96;
-  border-bottom: 1px solid #9c9c96;
+  border-top: 1px solid #8d8d87;
+  border-bottom: 1px solid #8d8d87;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.missing-input-area:focus-within {
+  border-color: #111111;
 }
 
 .missing-input-area label {
   display: block;
 
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 
   font-family: monospace;
   font-size: 9px;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+
+  opacity: 0.65;
 }
 
 
 /* ==========================================
-   MISSING — TEXTAREA
+   8. MISSING — TEXTAREA
 ========================================== */
 
 #missing-input {
   width: 100%;
-  min-height: 160px;
+  min-height: 180px;
 
   box-sizing: border-box;
 
-  padding: 0 0 30px;
+  padding: 0 0 35px;
 
   border: none;
   outline: none;
@@ -2938,26 +2985,27 @@ body {
   color: #111111;
 
   font-family: Arial, sans-serif;
-  font-size: clamp(24px, 4vw, 44px);
-  line-height: 1.15;
+  font-size: clamp(30px, 4.5vw, 54px);
+  line-height: 1.08;
 
-  letter-spacing: -0.03em;
+  letter-spacing: -0.045em;
 }
 
 #missing-input::placeholder {
   color: #111111;
 
-  opacity: 0.2;
+  opacity: 0.16;
 }
 
 
 /* ==========================================
-   MISSING — INPUT FOOTER
+   9. MISSING — INPUT FOOTER
 ========================================== */
 
 .missing-input-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   padding: 14px 0;
 
@@ -2971,21 +3019,138 @@ body {
   font-size: 9px;
   letter-spacing: 0.1em;
 
-  opacity: 0.55;
+  opacity: 0.5;
 }
 
 
 /* ==========================================
-   MISSING — FINAL BUTTON
+   10. MISSING — FINAL BUTTON
 ========================================== */
 
 .missing-submit {
-  margin-top: 45px;
+  margin-top: 50px;
 }
 
 
 /* ==========================================
-   MISSING — MOBILE
+   11. MISSING — ENTRY ANIMATION
+   La page apparaît après la cryobanque
+========================================== */
+
+#missing-screen.missing-active .missing-content::before {
+  opacity: 0;
+  transform: translateY(8px);
+
+  animation: missingStatusReveal 0.5s ease 0.08s forwards;
+}
+
+#missing-screen.missing-active .missing-title {
+  opacity: 0;
+  transform: translateY(24px);
+
+  animation: missingTitleReveal 0.75s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.18s
+    forwards;
+}
+
+#missing-screen.missing-active .missing-question {
+  opacity: 0;
+  transform: translateY(12px);
+
+  animation: missingFadeUp 0.55s ease 0.42s forwards;
+}
+
+#missing-screen.missing-active .missing-description {
+  opacity: 0;
+  transform: translateY(12px);
+
+  animation: missingFadeUp 0.55s ease 0.52s forwards;
+}
+
+#missing-screen.missing-active .missing-input-area {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: missingInputReveal 0.65s ease 0.65s forwards;
+}
+
+#missing-screen.missing-active .missing-submit {
+  opacity: 0;
+  transform: translateY(12px);
+
+  animation: missingFadeUp 0.55s ease 0.82s forwards;
+}
+
+
+/* ==========================================
+   12. MISSING — KEYFRAMES
+========================================== */
+
+@keyframes missingStatusReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes missingTitleReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    letter-spacing: -0.09em;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: -0.075em;
+  }
+
+}
+
+
+@keyframes missingFadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes missingInputReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* ==========================================
+   13. MISSING — MOBILE
 ========================================== */
 
 @media (max-width: 650px) {
@@ -2993,11 +3158,32 @@ body {
   .missing-content {
     width: calc(100% - 30px);
 
-    margin-top: 60px;
+    margin: 55px auto 80px;
+  }
+
+  .missing-content::before {
+    margin-bottom: 40px;
   }
 
   .missing-title {
-    font-size: 58px;
+    font-size: clamp(58px, 18vw, 90px);
+    line-height: 0.82;
+
+    margin-bottom: 32px;
+  }
+
+  .missing-question {
+    font-size: 21px;
+  }
+
+  .missing-description {
+    margin-bottom: 55px;
+  }
+
+  #missing-input {
+    min-height: 150px;
+
+    font-size: 34px;
   }
 
 }
