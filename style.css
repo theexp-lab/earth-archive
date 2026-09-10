@@ -1394,6 +1394,147 @@ body {
   transform: translateY(-2px);
 }
 
+/* ==========================================
+   PHYSICAL — ENTRY ANIMATION
+   Ouverture progressive du catalogue
+========================================== */
+
+
+/* HEADER */
+
+#physical-screen.physical-active .archive-header {
+  opacity: 0;
+  transform: translateY(14px);
+
+  animation: physicalHeaderReveal 0.55s ease 0.05s forwards;
+}
+
+
+/* INTRO : titre + description */
+
+#physical-screen.physical-active .archive-intro {
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: physicalIntroReveal 0.65s ease 0.18s forwards;
+}
+
+
+/* FLOATING CAPACITY */
+
+#physical-screen.physical-active .floating-capacity {
+  opacity: 0;
+  transform: translateY(-10px);
+
+  animation: physicalCapacityReveal 0.5s ease 0.30s forwards;
+}
+
+
+/* CARDS */
+
+#physical-screen.physical-active .archive-card {
+  opacity: 0;
+  transform: translateY(24px);
+
+  animation: physicalCardReveal 0.6s ease forwards;
+}
+
+
+/* ==========================================
+   PHYSICAL — CARD DELAYS
+========================================== */
+
+#physical-screen.physical-active .archive-card:nth-child(1) {
+  animation-delay: 0.30s;
+}
+
+#physical-screen.physical-active .archive-card:nth-child(2) {
+  animation-delay: 0.36s;
+}
+
+#physical-screen.physical-active .archive-card:nth-child(3) {
+  animation-delay: 0.42s;
+}
+
+#physical-screen.physical-active .archive-card:nth-child(4) {
+  animation-delay: 0.48s;
+}
+
+#physical-screen.physical-active .archive-card:nth-child(5) {
+  animation-delay: 0.54s;
+}
+
+#physical-screen.physical-active .archive-card:nth-child(6) {
+  animation-delay: 0.60s;
+}
+
+#physical-screen.physical-active .archive-card:nth-child(n+7) {
+  animation-delay: 0.66s;
+}
+
+
+/* ==========================================
+   PHYSICAL — KEYFRAMES
+========================================== */
+
+@keyframes physicalHeaderReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes physicalIntroReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes physicalCapacityReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes physicalCardReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
 
 /* ==========================================
    DIGITAL ARCHIVE — COMPUTER SYSTEM
