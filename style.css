@@ -3188,14 +3188,14 @@ body {
 
 }
 /* ==========================================
-   FINAL ARCHIVE — MISSION REPORT
-   Direction artistique :
-   mission report → final transmission → farewell
+   FINAL ARCHIVE — REDESIGN
+   Direction :
+   concise report → emotional transmission
 ========================================== */
 
 
 /* ==========================================
-   1. FINAL — GENERAL SCREEN
+   1. FINAL — GENERAL
 ========================================== */
 
 #summary-screen {
@@ -3211,29 +3211,29 @@ body {
 ========================================== */
 
 .summary-intro {
-  width: min(1200px, calc(100% - 80px));
+  width: min(1120px, calc(100% - 80px));
 
-  margin: 100px auto 70px;
+  margin: 95px auto 55px;
 }
 
 .summary-title {
-  margin: 20px 0 30px;
+  margin: 18px 0 28px;
 
-  font-size: clamp(70px, 11vw, 150px);
-  line-height: 0.78;
+  font-size: clamp(64px, 9vw, 125px);
+  line-height: 0.8;
 
-  letter-spacing: -0.075em;
+  letter-spacing: -0.07em;
 }
 
 .summary-description {
-  max-width: 600px;
+  max-width: 560px;
 
   margin: 0;
 
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
 
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 
@@ -3242,233 +3242,299 @@ body {
 ========================================== */
 
 .summary-resources {
-  width: min(1200px, calc(100% - 80px));
+  width: min(1120px, calc(100% - 80px));
 
-  margin: 0 auto 80px;
+  margin: 0 auto 90px;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
   border-top: 1px solid #999991;
-  border-left: 1px solid #999991;
+  border-bottom: 1px solid #999991;
 }
 
 .summary-resource {
-  padding: 24px;
+  padding: 22px 0;
 
-  border-right: 1px solid #999991;
-  border-bottom: 1px solid #999991;
+  border-right: 1px solid #b7b7b0;
 }
 
-.summary-resource p {
-  margin: 0 0 15px;
-
-  font-family: monospace;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-
-  opacity: 0.55;
+.summary-resource:last-child {
+  border-right: none;
 }
 
 .summary-resource strong {
+  display: block;
+
+  margin-bottom: 8px;
+  padding: 0 22px;
+
   font-family: monospace;
-  font-size: 26px;
+  font-size: 24px;
+}
+
+.summary-resource p {
+  margin: 0;
+  padding: 0 22px;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+
+  opacity: 0.5;
 }
 
 
 /* ==========================================
-   4. FINAL — ARCHIVE CONTENT
+   4. FINAL — ARCHIVE SUMMARY
 ========================================== */
 
 .summary-archive {
-  width: min(1200px, calc(100% - 80px));
+  width: min(1120px, calc(100% - 80px));
 
-  margin: 0 auto;
+  margin: 0 auto 150px;
 }
 
-.summary-section {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-
-  padding: 32px 0;
-
-  border-top: 1px solid #999991;
-}
-
-.summary-section:last-child {
-  border-bottom: 1px solid #999991;
-}
-
-
-/* ==========================================
-   5. FINAL — SECTION TITLES
-========================================== */
-
-.summary-section-header p {
-  margin: 0 0 8px;
-
-  font-family: monospace;
-  font-size: 9px;
-
-  opacity: 0.5;
-}
-
-.summary-section-header h3 {
-  margin: 0;
-
-  font-family: monospace;
-  font-size: 11px;
-
-  letter-spacing: 0.12em;
-}
-
-
-/* ==========================================
-   6. FINAL — SELECTED ITEMS
-========================================== */
-
-.summary-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.summary-item {
+.summary-archive-heading {
   display: flex;
   justify-content: space-between;
-  gap: 25px;
+  gap: 30px;
 
-  padding: 13px 0;
-
-  border-bottom: 1px solid #d1d1cb;
-}
-
-.summary-item:first-child {
-  padding-top: 0;
-}
-
-.summary-item:last-child {
-  border-bottom: none;
-}
-
-.summary-item span:first-child {
-  font-size: 15px;
-}
-
-.summary-item span:last-child {
-  font-family: monospace;
-  font-size: 9px;
-
-  opacity: 0.5;
-}
-
-
-/* ==========================================
-   7. FINAL — EMPTY CATEGORY
-========================================== */
-
-.summary-empty {
-  margin: 0;
-
-  font-family: monospace;
-  font-size: 10px;
-
-  opacity: 0.4;
-}
-
-
-/* ==========================================
-   8. FINAL — ARCHIVIST CONTRIBUTION
-========================================== */
-
-.summary-contribution #summary-missing {
-  margin: 0;
-
-  max-width: 800px;
-
-  font-size: clamp(28px, 4vw, 54px);
-  line-height: 1.05;
-
-  letter-spacing: -0.04em;
-}
-
-
-/* ==========================================
-   9. FINAL TRANSMISSION
-   Rupture avec le rapport de mission
-========================================== */
-
-.summary-reflection {
-  width: min(1200px, calc(100% - 80px));
-
-  margin: 180px auto 0;
-  padding: 35px 0 170px;
+  padding: 14px 0;
 
   border-top: 1px solid #111111;
+  border-bottom: 1px solid #b7b7b0;
 }
 
-
-/* ==========================================
-   10. FINAL TRANSMISSION — SYSTEM LABEL
-========================================== */
-
-.summary-reflection-label {
-  margin: 0 0 110px;
+.summary-archive-heading p {
+  margin: 0;
 
   font-family: monospace;
   font-size: 9px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
 
   opacity: 0.6;
 }
 
 
 /* ==========================================
-   11. FINAL TRANSMISSION — TITLE
+   5. FINAL — SUMMARY SECTION
 ========================================== */
 
-.final-transmission-title {
-  max-width: 1000px;
+.summary-section {
+  display: grid;
+  grid-template-columns: 170px 1fr;
 
-  margin: 0 0 65px;
+  padding: 22px 0;
 
-  font-size: clamp(58px, 9vw, 125px);
+  border-bottom: 1px solid #c3c3bd;
+}
+
+
+/* ==========================================
+   6. FINAL — SECTION HEADER
+========================================== */
+
+.summary-section-header p {
+  margin: 0 0 5px;
+
+  font-family: monospace;
+  font-size: 8px;
+
+  opacity: 0.45;
+}
+
+.summary-section-header h3 {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 10px;
+  letter-spacing: 0.11em;
+}
+
+
+/* ==========================================
+   7. FINAL — SELECTED ITEMS
+========================================== */
+
+.summary-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px 22px;
+}
+
+.summary-item {
+  display: flex;
+
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+}
+
+.summary-item span:first-child {
+  font-size: 13px;
+}
+
+.summary-item span:last-child {
+  font-family: monospace;
+  font-size: 8px;
+
+  opacity: 0.4;
+}
+
+.summary-item:not(:last-child)::after {
+  content: "·";
+
+  margin-left: 10px;
+
+  opacity: 0.3;
+}
+
+
+/* ==========================================
+   8. FINAL — EMPTY CATEGORY
+========================================== */
+
+.summary-empty {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 9px;
+
+  opacity: 0.35;
+}
+
+
+/* ==========================================
+   9. FINAL — ARCHIVIST ENTRY
+========================================== */
+
+.summary-contribution #summary-missing {
+  margin: 0;
+
+  font-size: clamp(20px, 2.5vw, 34px);
+  line-height: 1.1;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* ==========================================
+   10. FINAL — TRANSMISSION WRAPPER
+========================================== */
+
+.summary-transmission {
+  width: min(980px, calc(100% - 80px));
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================
+   11. FINAL — TRANSMISSION HEADER
+========================================== */
+
+.summary-transmission-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding: 15px 0;
+
+  border-top: 1px solid #111111;
+}
+
+.summary-transmission-header p {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+
+  opacity: 0.55;
+}
+
+
+/* ==========================================
+   12. FINAL — ARCHIVE COMPLETE
+========================================== */
+
+.final-opening {
+  padding: 90px 0 130px;
+}
+
+.final-opening h2 {
+  max-width: 760px;
+
+  margin: 0 0 60px;
+
+  font-size: clamp(62px, 8vw, 110px);
   line-height: 0.82;
 
   letter-spacing: -0.065em;
 }
 
-
-/* ==========================================
-   12. FINAL TRANSMISSION — MESSAGE
-========================================== */
-
-.final-transmission-message {
-  max-width: 760px;
+.final-opening-copy {
+  max-width: 520px;
 
   margin-left: auto;
 }
 
-.final-transmission-message p {
-  margin: 0 0 28px;
+.final-opening-copy p {
+  margin: 0 0 16px;
 
-  font-size: 18px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-.final-transmission-message .final-distance {
-  margin: 55px 0;
 
-  font-size: clamp(25px, 3.5vw, 42px);
-  line-height: 1.25;
+/* ==========================================
+   13. FINAL — STORY
+========================================== */
 
-  letter-spacing: -0.035em;
+.final-story {
+  max-width: 760px;
+
+  margin: 0 auto 150px;
 }
 
-.final-transmission-message .final-memory {
-  margin: 70px 0;
+.final-story-intro {
+  margin: 0 0 35px;
 
-  font-size: clamp(31px, 4.5vw, 58px);
-  line-height: 1.08;
+  font-size: 24px;
+  line-height: 1.4;
+
+  letter-spacing: -0.025em;
+}
+
+.final-story-lines {
+  margin: 0;
+
+  font-size: 27px;
+  line-height: 1.5;
+
+  letter-spacing: -0.03em;
+}
+
+
+/* ==========================================
+   14. FINAL — MEMORY
+========================================== */
+
+.final-memory-block {
+  max-width: 860px;
+
+  margin: 0 auto 160px;
+}
+
+.final-memory-block p {
+  margin: 0;
+
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.06;
 
   font-weight: 600;
   letter-spacing: -0.045em;
@@ -3476,76 +3542,104 @@ body {
 
 
 /* ==========================================
-   13. FINAL — THANK YOU
+   15. FINAL — FUTURE GENERATIONS
 ========================================== */
 
-.final-thanks {
-  margin-top: 110px;
-  padding-top: 30px;
+.final-generation-block {
+  max-width: 700px;
 
-  border-top: 1px solid #aaa9a3;
+  margin: 0 auto 120px;
 }
 
-.final-thanks p {
-  margin: 0;
+.final-generation-block > p:first-child {
+  margin: 0 0 36px;
 
   font-size: 18px;
   line-height: 1.6;
 }
 
+.final-generation-list {
+  margin: 0;
 
-/* ==========================================
-   14. FINAL — FAREWELL
-========================================== */
+  font-size: 28px;
+  line-height: 1.55;
 
-.final-farewell {
-  min-height: 80vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  padding: 120px 0 80px;
+  letter-spacing: -0.03em;
 }
 
-.final-farewell-small {
-  margin: 0 0 35px;
+
+/* ==========================================
+   16. FINAL — THANK YOU
+========================================== */
+
+.final-thanks {
+  max-width: 700px;
+
+  margin: 0 auto 190px;
+  padding-top: 22px;
+
+  border-top: 1px solid #b8b8b2;
+}
+
+.final-thanks p {
+  margin: 0;
 
   font-size: 17px;
   line-height: 1.6;
 }
 
-.final-farewell-memory {
-  max-width: 750px;
 
-  margin: 0 0 90px;
+/* ==========================================
+   17. FINAL — FAREWELL
+========================================== */
 
-  font-size: clamp(28px, 4vw, 52px);
-  line-height: 1.12;
+.final-farewell {
+  min-height: 90vh;
 
-  letter-spacing: -0.04em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 80px 0;
+}
+
+.final-safe {
+  margin: 0 0 34px;
+
+  font-size: 17px;
+}
+
+.final-remember {
+  max-width: 600px;
+
+  margin: 0 0 100px;
+
+  font-size: 30px;
+  line-height: 1.2;
+
+  letter-spacing: -0.03em;
 }
 
 .final-goodbye {
   margin: 0;
 
-  font-size: clamp(75px, 12vw, 170px);
-  line-height: 0.78;
+  font-size: clamp(80px, 11vw, 150px);
+  line-height: 0.8;
 
   letter-spacing: -0.075em;
 }
 
 
 /* ==========================================
-   15. FINAL — TRANSMISSION COMPLETE
+   18. FINAL — SYSTEM CLOSE
 ========================================== */
 
 .final-system-close {
-  padding: 28px 0;
-
   display: flex;
   justify-content: space-between;
   gap: 30px;
+
+  padding: 18px 0;
 
   border-top: 1px solid #111111;
   border-bottom: 1px solid #111111;
@@ -3555,22 +3649,22 @@ body {
   margin: 0;
 
   font-family: monospace;
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 8px;
+  letter-spacing: 0.11em;
 
-  opacity: 0.65;
+  opacity: 0.55;
 }
 
 
 /* ==========================================
-   16. FINAL — END / RESTART
+   19. FINAL — RESTART
 ========================================== */
 
 .summary-end {
-  width: min(1200px, calc(100% - 80px));
+  width: min(980px, calc(100% - 80px));
 
   margin: 0 auto;
-  padding: 35px 0 100px;
+  padding: 30px 0 100px;
 
   display: flex;
   justify-content: space-between;
@@ -3581,96 +3675,60 @@ body {
   margin: 0;
 
   font-family: monospace;
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 0.1em;
 
-  opacity: 0.55;
+  opacity: 0.45;
 }
 
 
 /* ==========================================
-   17. FINAL — ENTRY ANIMATION
-   Le rapport apparaît d'abord
+   20. FINAL — ENTRY ANIMATION
 ========================================== */
 
 #summary-screen.summary-active .summary-intro {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(18px);
 
-  animation: summaryReveal 0.7s ease 0.08s forwards;
+  animation: summaryReveal 0.65s ease 0.08s forwards;
 }
 
 #summary-screen.summary-active .summary-resources {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(14px);
 
-  animation: summaryReveal 0.6s ease 0.28s forwards;
+  animation: summaryReveal 0.55s ease 0.2s forwards;
 }
 
 #summary-screen.summary-active .summary-archive {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(14px);
 
-  animation: summaryReveal 0.65s ease 0.42s forwards;
+  animation: summaryReveal 0.6s ease 0.32s forwards;
 }
 
-
-/* ==========================================
-   18. FINAL — TRANSMISSION ANIMATION
-========================================== */
-
-#summary-screen.summary-active .summary-reflection-label {
+#summary-screen.summary-active .summary-transmission {
   opacity: 0;
 
-  animation: summarySimpleReveal 0.7s ease 0.65s forwards;
-}
-
-#summary-screen.summary-active .final-transmission-title {
-  opacity: 0;
-  transform: translateY(24px);
-
-  animation: summaryReveal 0.8s
-    cubic-bezier(0.16, 1, 0.3, 1)
-    0.75s
-    forwards;
-}
-
-#summary-screen.summary-active .final-transmission-message {
-  opacity: 0;
-  transform: translateY(18px);
-
-  animation: summaryReveal 0.75s ease 0.95s forwards;
-}
-
-#summary-screen.summary-active .final-farewell {
-  opacity: 0;
-  transform: translateY(20px);
-
-  animation: summaryReveal 0.9s ease 1.15s forwards;
-}
-
-#summary-screen.summary-active .final-system-close {
-  opacity: 0;
-
-  animation: summarySimpleReveal 0.8s ease 1.35s forwards;
+  animation: summaryFade 0.7s ease 0.5s forwards;
 }
 
 #summary-screen.summary-active .summary-end {
   opacity: 0;
 
-  animation: summarySimpleReveal 0.8s ease 1.5s forwards;
+  animation: summaryFade 0.7s ease 0.65s forwards;
 }
 
 
 /* ==========================================
-   19. FINAL — KEYFRAMES
+   21. FINAL — KEYFRAMES
 ========================================== */
 
 @keyframes summaryReveal {
 
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(18px);
   }
 
   to {
@@ -3680,7 +3738,7 @@ body {
 
 }
 
-@keyframes summarySimpleReveal {
+@keyframes summaryFade {
 
   from {
     opacity: 0;
@@ -3694,7 +3752,7 @@ body {
 
 
 /* ==========================================
-   20. FINAL — MOBILE
+   22. FINAL — MOBILE
 ========================================== */
 
 @media (max-width: 700px) {
@@ -3702,7 +3760,7 @@ body {
   .summary-intro,
   .summary-resources,
   .summary-archive,
-  .summary-reflection,
+  .summary-transmission,
   .summary-end {
     width: calc(100% - 30px);
   }
@@ -3712,46 +3770,94 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .summary-resource {
+    border-right: none;
+    border-bottom: 1px solid #b7b7b0;
+  }
+
+  .summary-resource:last-child {
+    border-bottom: none;
+  }
+
+
+  .summary-archive-heading,
+  .summary-transmission-header,
+  .final-system-close {
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
 
   .summary-section {
     grid-template-columns: 1fr;
 
-    gap: 30px;
+    gap: 18px;
   }
 
 
-  .summary-reflection {
-    margin-top: 120px;
-    padding-bottom: 100px;
+  .summary-list {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .summary-item:not(:last-child)::after {
+    display: none;
   }
 
 
-  .summary-reflection-label {
-    margin-bottom: 70px;
+  .final-opening {
+    padding: 70px 0 100px;
   }
 
-
-  .final-transmission-message {
+  .final-opening-copy {
     margin-left: 0;
   }
 
 
-  .final-farewell {
-    min-height: 70vh;
+  .final-story {
+    margin-bottom: 110px;
+  }
 
-    padding: 90px 0 60px;
+  .final-story-intro {
+    font-size: 21px;
+  }
+
+  .final-story-lines {
+    font-size: 23px;
+  }
+
+
+  .final-memory-block {
+    margin-bottom: 120px;
+  }
+
+
+  .final-generation-list {
+    font-size: 24px;
+  }
+
+
+  .final-thanks {
+    margin-bottom: 130px;
+  }
+
+
+  .final-farewell {
+    min-height: 75vh;
+  }
+
+
+  .final-remember {
+    margin-bottom: 70px;
+
+    font-size: 26px;
   }
 
 
   .final-goodbye {
-    font-size: clamp(70px, 20vw, 110px);
-  }
-
-
-  .final-system-close {
-    flex-direction: column;
-
-    gap: 8px;
+    font-size: clamp(72px, 20vw, 110px);
   }
 
 
@@ -3759,7 +3865,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
 
-    gap: 30px;
+    gap: 25px;
   }
 
 }
