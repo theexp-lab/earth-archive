@@ -773,6 +773,7 @@ if (biologicalButton && digitalScreen && biologicalScreen) {
       biologicalScreen.classList.add("hidden");
 
       missingScreen.classList.remove("hidden");
+      missingScreen.classList.add("missing-active");
 
       window.scrollTo(0, 0);
 
