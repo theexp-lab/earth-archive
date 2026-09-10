@@ -1950,51 +1950,59 @@ body {
 
 /* Barre supérieure */
 
-.digital-screen.digital-active .digital-system-bar {
+/* ==========================================
+   DIGITAL — ENTRY ANIMATION
+   Initialisation de l'ordinateur de mission
+========================================== */
+
+
+/* SYSTEM TOP BAR */
+
+#digital-screen.digital-active .digital-system-bar {
   opacity: 0;
   transform: translateY(-14px);
 
-  animation: digitalTopReveal 0.55s ease 0.10s forwards;
+  animation: digitalTopReveal 0.55s ease 0.05s forwards;
 }
 
 
-/* Barre de stockage */
+/* STORAGE */
 
-.digital-screen.digital-active .digital-storage {
+#digital-screen.digital-active .digital-storage {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(14px);
 
-  animation: digitalFadeUp 0.55s ease 0.25s forwards;
+  animation: digitalFadeUp 0.55s ease 0.18s forwards;
 }
 
 
-/* Liste des archives à gauche */
+/* DIRECTORY — LEFT PANEL */
 
-.digital-screen.digital-active .digital-directory {
+#digital-screen.digital-active .digital-directory {
   opacity: 0;
   transform: translateX(-24px);
 
-  animation: digitalLeftReveal 0.65s ease 0.40s forwards;
+  animation: digitalLeftReveal 0.65s ease 0.30s forwards;
 }
 
 
-/* Panneau d'information à droite */
+/* DETAIL — RIGHT PANEL */
 
-.digital-screen.digital-active .digital-detail {
+#digital-screen.digital-active .digital-detail {
   opacity: 0;
   transform: translateX(24px);
 
-  animation: digitalRightReveal 0.65s ease 0.55s forwards;
+  animation: digitalRightReveal 0.65s ease 0.42s forwards;
 }
 
 
-/* System log */
+/* SYSTEM LOG */
 
-.digital-screen.digital-active .digital-log {
+#digital-screen.digital-active .digital-log {
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(10px);
 
-  animation: digitalFadeUp 0.5s ease 0.75s forwards;
+  animation: digitalLogReveal 0.55s ease 0.58s forwards;
 }
 
 
@@ -2021,7 +2029,7 @@ body {
 
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
 
   to {
@@ -2057,6 +2065,21 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+
+}
+
+
+@keyframes digitalLogReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 
 }
