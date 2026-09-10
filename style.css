@@ -1808,7 +1808,133 @@ body {
 
   opacity: 0.85;
 }
+/* ==========================================
+   DIGITAL — ENTRY ANIMATION
+   L'interface s'initialise à l'ouverture
+========================================== */
 
+.digital-screen.digital-active .digital-system {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: digitalSystemReveal 0.8s ease forwards;
+}
+
+
+.digital-screen.digital-active .digital-system-bar {
+  opacity: 0;
+  transform: translateY(-10px);
+
+  animation: digitalElementReveal 0.6s ease 0.2s forwards;
+}
+
+
+.digital-screen.digital-active .digital-storage {
+  opacity: 0;
+  transform: translateY(10px);
+
+  animation: digitalElementReveal 0.6s ease 0.35s forwards;
+}
+
+
+.digital-screen.digital-active .digital-directory {
+  opacity: 0;
+  transform: translateX(-15px);
+
+  animation: digitalDirectoryReveal 0.7s ease 0.5s forwards;
+}
+
+
+.digital-screen.digital-active .digital-detail {
+  opacity: 0;
+  transform: translateX(15px);
+
+  animation: digitalDetailReveal 0.7s ease 0.65s forwards;
+}
+
+
+.digital-screen.digital-active .digital-log {
+  opacity: 0;
+
+  animation: digitalLogReveal 0.6s ease 0.85s forwards;
+}
+
+
+/* ==========================================
+   DIGITAL — ANIMATION KEYFRAMES
+========================================== */
+
+@keyframes digitalSystemReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes digitalElementReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+@keyframes digitalDirectoryReveal {
+
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+@keyframes digitalDetailReveal {
+
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+@keyframes digitalLogReveal {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
 
 /* ==========================================
    DIGITAL — MOBILE
