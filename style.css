@@ -4346,3 +4346,45 @@ body {
   }
 
 }
+/* ==========================================
+   FINAL TERMINAL — FORCE LIGHT VERSION
+========================================== */
+
+.terminal-final {
+  background: #f2f1ec !important;
+  color: #111111 !important;
+  border-color: #a7a79f !important;
+}
+
+.terminal-system-info,
+.terminal-incoming,
+.terminal-close {
+  background: #f2f1ec !important;
+  color: #111111 !important;
+  border-color: #a7a79f !important;
+}
+
+.terminal-message,
+.terminal-farewell {
+  background: transparent !important;
+  color: #111111 !important;
+}
+
+.terminal-message p,
+.terminal-farewell p,
+.terminal-system-info p,
+.terminal-incoming p,
+.terminal-close p,
+.terminal-system-data span,
+.terminal-system-data strong {
+  color: #111111 !important;
+}
+
+.terminal-system-info,
+.terminal-incoming {
+  border-bottom: 1px solid #a7a79f !important;
+}
+
+.terminal-close {
+  border-top: 1px solid #a7a79f !important;
+}
