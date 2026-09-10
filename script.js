@@ -89,17 +89,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (digitalButton && physicalScreen && digitalScreen) {
 
-    digitalButton.addEventListener("click", function () {
+  digitalButton.addEventListener("click", function () {
 
-      physicalScreen.classList.add("hidden");
+    physicalScreen.classList.add("hidden");
 
-      digitalScreen.classList.remove("hidden");
+    digitalScreen.classList.remove("hidden");
 
-      window.scrollTo(0, 0);
+    digitalScreen.classList.add("digital-active");
 
-    });
+    window.scrollTo(0, 0);
 
-  }
+  });
+
+}
 
 
   // ==========================================
