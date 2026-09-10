@@ -1803,65 +1803,69 @@ body {
 }
 /* ==========================================
    DIGITAL — ENTRY ANIMATION
-   L'interface s'initialise à l'ouverture
+   Initialisation du système à l'ouverture
 ========================================== */
 
-.digital-screen.digital-active .digital-system {
-  opacity: 0;
-  transform: translateY(18px);
 
-  animation: digitalSystemReveal 0.8s ease forwards;
-}
-
+/* Barre supérieure */
 
 .digital-screen.digital-active .digital-system-bar {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(-14px);
 
-  animation: digitalElementReveal 0.6s ease 0.2s forwards;
+  animation: digitalTopReveal 0.55s ease 0.10s forwards;
 }
 
+
+/* Barre de stockage */
 
 .digital-screen.digital-active .digital-storage {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(12px);
 
-  animation: digitalElementReveal 0.6s ease 0.35s forwards;
+  animation: digitalFadeUp 0.55s ease 0.25s forwards;
 }
 
+
+/* Liste des archives à gauche */
 
 .digital-screen.digital-active .digital-directory {
   opacity: 0;
-  transform: translateX(-15px);
+  transform: translateX(-24px);
 
-  animation: digitalDirectoryReveal 0.7s ease 0.5s forwards;
+  animation: digitalLeftReveal 0.65s ease 0.40s forwards;
 }
 
+
+/* Panneau d'information à droite */
 
 .digital-screen.digital-active .digital-detail {
   opacity: 0;
-  transform: translateX(15px);
+  transform: translateX(24px);
 
-  animation: digitalDetailReveal 0.7s ease 0.65s forwards;
+  animation: digitalRightReveal 0.65s ease 0.55s forwards;
 }
 
 
+/* System log */
+
 .digital-screen.digital-active .digital-log {
   opacity: 0;
+  transform: translateY(8px);
 
-  animation: digitalLogReveal 0.6s ease 0.85s forwards;
+  animation: digitalFadeUp 0.5s ease 0.75s forwards;
 }
 
 
 /* ==========================================
-   DIGITAL — ANIMATION KEYFRAMES
+   DIGITAL — KEYFRAMES
 ========================================== */
 
-@keyframes digitalSystemReveal {
+@keyframes digitalTopReveal {
 
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(-14px);
   }
 
   to {
@@ -1872,11 +1876,11 @@ body {
 }
 
 
-@keyframes digitalElementReveal {
+@keyframes digitalFadeUp {
 
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
 
   to {
@@ -1887,11 +1891,11 @@ body {
 }
 
 
-@keyframes digitalDirectoryReveal {
+@keyframes digitalLeftReveal {
 
   from {
     opacity: 0;
-    transform: translateX(-15px);
+    transform: translateX(-24px);
   }
 
   to {
@@ -1902,29 +1906,16 @@ body {
 }
 
 
-@keyframes digitalDetailReveal {
+@keyframes digitalRightReveal {
 
   from {
     opacity: 0;
-    transform: translateX(15px);
+    transform: translateX(24px);
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-
-}
-
-
-@keyframes digitalLogReveal {
-
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 
 }
