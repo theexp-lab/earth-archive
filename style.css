@@ -3189,6 +3189,13 @@ body {
 }
 /* ==========================================
    FINAL ARCHIVE — MISSION REPORT
+   Direction artistique :
+   mission report → final transmission → farewell
+========================================== */
+
+
+/* ==========================================
+   1. FINAL — GENERAL SCREEN
 ========================================== */
 
 #summary-screen {
@@ -3200,7 +3207,7 @@ body {
 
 
 /* ==========================================
-   FINAL — INTRO
+   2. FINAL — INTRO
 ========================================== */
 
 .summary-intro {
@@ -3231,7 +3238,7 @@ body {
 
 
 /* ==========================================
-   FINAL — RESOURCE REPORT
+   3. FINAL — RESOURCE REPORT
 ========================================== */
 
 .summary-resources {
@@ -3270,7 +3277,7 @@ body {
 
 
 /* ==========================================
-   FINAL — ARCHIVE CONTENT
+   4. FINAL — ARCHIVE CONTENT
 ========================================== */
 
 .summary-archive {
@@ -3281,7 +3288,6 @@ body {
 
 .summary-section {
   display: grid;
-
   grid-template-columns: 220px 1fr;
 
   padding: 32px 0;
@@ -3295,7 +3301,7 @@ body {
 
 
 /* ==========================================
-   FINAL — SECTION TITLES
+   5. FINAL — SECTION TITLES
 ========================================== */
 
 .summary-section-header p {
@@ -3318,7 +3324,7 @@ body {
 
 
 /* ==========================================
-   FINAL — SELECTED ITEMS
+   6. FINAL — SELECTED ITEMS
 ========================================== */
 
 .summary-list {
@@ -3357,7 +3363,7 @@ body {
 
 
 /* ==========================================
-   FINAL — EMPTY CATEGORY
+   7. FINAL — EMPTY CATEGORY
 ========================================== */
 
 .summary-empty {
@@ -3371,7 +3377,7 @@ body {
 
 
 /* ==========================================
-   FINAL — ARCHIVIST CONTRIBUTION
+   8. FINAL — ARCHIVIST CONTRIBUTION
 ========================================== */
 
 .summary-contribution #summary-missing {
@@ -3387,53 +3393,188 @@ body {
 
 
 /* ==========================================
-   FINAL — REFLECTION
+   9. FINAL TRANSMISSION
+   Rupture avec le rapport de mission
 ========================================== */
 
 .summary-reflection {
   width: min(1200px, calc(100% - 80px));
 
-  margin: 140px auto;
-  padding-top: 25px;
+  margin: 180px auto 0;
+  padding: 35px 0 170px;
 
   border-top: 1px solid #111111;
 }
 
+
+/* ==========================================
+   10. FINAL TRANSMISSION — SYSTEM LABEL
+========================================== */
+
 .summary-reflection-label {
-  margin: 0 0 50px;
+  margin: 0 0 110px;
 
   font-family: monospace;
   font-size: 9px;
-  letter-spacing: 0.12em;
-}
+  letter-spacing: 0.14em;
 
-.summary-reflection h2 {
-  max-width: 1050px;
-
-  margin: 0;
-
-  font-size: clamp(42px, 7vw, 95px);
-  line-height: 0.96;
-
-  letter-spacing: -0.055em;
+  opacity: 0.6;
 }
 
 
 /* ==========================================
-   FINAL — END
+   11. FINAL TRANSMISSION — TITLE
+========================================== */
+
+.final-transmission-title {
+  max-width: 1000px;
+
+  margin: 0 0 65px;
+
+  font-size: clamp(58px, 9vw, 125px);
+  line-height: 0.82;
+
+  letter-spacing: -0.065em;
+}
+
+
+/* ==========================================
+   12. FINAL TRANSMISSION — MESSAGE
+========================================== */
+
+.final-transmission-message {
+  max-width: 760px;
+
+  margin-left: auto;
+}
+
+.final-transmission-message p {
+  margin: 0 0 28px;
+
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.final-transmission-message .final-distance {
+  margin: 55px 0;
+
+  font-size: clamp(25px, 3.5vw, 42px);
+  line-height: 1.25;
+
+  letter-spacing: -0.035em;
+}
+
+.final-transmission-message .final-memory {
+  margin: 70px 0;
+
+  font-size: clamp(31px, 4.5vw, 58px);
+  line-height: 1.08;
+
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+
+/* ==========================================
+   13. FINAL — THANK YOU
+========================================== */
+
+.final-thanks {
+  margin-top: 110px;
+  padding-top: 30px;
+
+  border-top: 1px solid #aaa9a3;
+}
+
+.final-thanks p {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   14. FINAL — FAREWELL
+========================================== */
+
+.final-farewell {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 120px 0 80px;
+}
+
+.final-farewell-small {
+  margin: 0 0 35px;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.final-farewell-memory {
+  max-width: 750px;
+
+  margin: 0 0 90px;
+
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1.12;
+
+  letter-spacing: -0.04em;
+}
+
+.final-goodbye {
+  margin: 0;
+
+  font-size: clamp(75px, 12vw, 170px);
+  line-height: 0.78;
+
+  letter-spacing: -0.075em;
+}
+
+
+/* ==========================================
+   15. FINAL — TRANSMISSION COMPLETE
+========================================== */
+
+.final-system-close {
+  padding: 28px 0;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+}
+
+.final-system-close p {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+
+  opacity: 0.65;
+}
+
+
+/* ==========================================
+   16. FINAL — END / RESTART
 ========================================== */
 
 .summary-end {
   width: min(1200px, calc(100% - 80px));
 
   margin: 0 auto;
-  padding: 30px 0 100px;
+  padding: 35px 0 100px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border-top: 1px solid #111111;
 }
 
 .summary-end p {
@@ -3442,11 +3583,118 @@ body {
   font-family: monospace;
   font-size: 9px;
   letter-spacing: 0.1em;
+
+  opacity: 0.55;
 }
 
 
 /* ==========================================
-   FINAL — MOBILE
+   17. FINAL — ENTRY ANIMATION
+   Le rapport apparaît d'abord
+========================================== */
+
+#summary-screen.summary-active .summary-intro {
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: summaryReveal 0.7s ease 0.08s forwards;
+}
+
+#summary-screen.summary-active .summary-resources {
+  opacity: 0;
+  transform: translateY(16px);
+
+  animation: summaryReveal 0.6s ease 0.28s forwards;
+}
+
+#summary-screen.summary-active .summary-archive {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: summaryReveal 0.65s ease 0.42s forwards;
+}
+
+
+/* ==========================================
+   18. FINAL — TRANSMISSION ANIMATION
+========================================== */
+
+#summary-screen.summary-active .summary-reflection-label {
+  opacity: 0;
+
+  animation: summarySimpleReveal 0.7s ease 0.65s forwards;
+}
+
+#summary-screen.summary-active .final-transmission-title {
+  opacity: 0;
+  transform: translateY(24px);
+
+  animation: summaryReveal 0.8s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    0.75s
+    forwards;
+}
+
+#summary-screen.summary-active .final-transmission-message {
+  opacity: 0;
+  transform: translateY(18px);
+
+  animation: summaryReveal 0.75s ease 0.95s forwards;
+}
+
+#summary-screen.summary-active .final-farewell {
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: summaryReveal 0.9s ease 1.15s forwards;
+}
+
+#summary-screen.summary-active .final-system-close {
+  opacity: 0;
+
+  animation: summarySimpleReveal 0.8s ease 1.35s forwards;
+}
+
+#summary-screen.summary-active .summary-end {
+  opacity: 0;
+
+  animation: summarySimpleReveal 0.8s ease 1.5s forwards;
+}
+
+
+/* ==========================================
+   19. FINAL — KEYFRAMES
+========================================== */
+
+@keyframes summaryReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes summarySimpleReveal {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* ==========================================
+   20. FINAL — MOBILE
 ========================================== */
 
 @media (max-width: 700px) {
@@ -3469,6 +3717,41 @@ body {
     grid-template-columns: 1fr;
 
     gap: 30px;
+  }
+
+
+  .summary-reflection {
+    margin-top: 120px;
+    padding-bottom: 100px;
+  }
+
+
+  .summary-reflection-label {
+    margin-bottom: 70px;
+  }
+
+
+  .final-transmission-message {
+    margin-left: 0;
+  }
+
+
+  .final-farewell {
+    min-height: 70vh;
+
+    padding: 90px 0 60px;
+  }
+
+
+  .final-goodbye {
+    font-size: clamp(70px, 20vw, 110px);
+  }
+
+
+  .final-system-close {
+    flex-direction: column;
+
+    gap: 8px;
   }
 
 
